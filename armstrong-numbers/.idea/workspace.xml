@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8773fb4-a822-4b49-ae28-2a2541094521" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d6b55566-1b72-40f6-a4dd-e1fcf430ed7e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../two-fer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../two-fer/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -21,23 +21,22 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/TwoferTest.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ArmstrongNumbersTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <element signature="e#211#212#0" expanded="true" />
-                <element signature="e#248#249#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1088">
+              <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Twofer.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ArmstrongNumbers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="170">
+              <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -58,8 +57,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/TwoferTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Twofer.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ArmstrongNumbersTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ArmstrongNumbers.java" />
       </list>
     </option>
   </component>
@@ -69,50 +68,47 @@
     <option name="width" value="1750" />
     <option name="height" value="980" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="two-fer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="two-fer" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="armstrong-numbers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="armstrong-numbers" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
-              <item name="two-fer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="two-fer" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="armstrong-numbers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="armstrong-numbers" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="two-fer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="two-fer" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="armstrong-numbers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="armstrong-numbers" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
-              <item name="two-fer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="two-fer" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="armstrong-numbers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="armstrong-numbers" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="two-fer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="two-fer" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="armstrong-numbers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="armstrong-numbers" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
-              <item name="two-fer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="two-fer" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="armstrong-numbers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="armstrong-numbers" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -121,11 +117,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564817044036" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../armstrong-numbers" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564818152341" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -140,10 +137,10 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="TwoferTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="two-fer.test" />
+    <configuration name="ArmstrongNumbersTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="armstrong-numbers.test" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TwoferTest" />
+      <option name="MAIN_CLASS_NAME" value="ArmstrongNumbersTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -151,7 +148,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TwoferTest" />
+        <item itemvalue="JUnit.ArmstrongNumbersTest" />
       </list>
     </recent_temporary>
   </component>
@@ -160,61 +157,32 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f8773fb4-a822-4b49-ae28-2a2541094521" name="Default Changelist" comment="" />
-      <created>1564815962383</created>
+      <changelist id="d6b55566-1b72-40f6-a4dd-e1fcf430ed7e" name="Default Changelist" comment="" />
+      <created>1564817064333</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1564815962383</updated>
+      <updated>1564817064333</updated>
     </task>
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="TwoferTest - 2019.08.03 at 09h 12m 28s.xml">
-      <configuration name="TwoferTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TwoferTest - 2019.08.03 at 09h 12m 45s.xml">
-      <configuration name="TwoferTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TwoferTest - 2019.08.03 at 09h 14m 37s.xml">
-      <configuration name="TwoferTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TwoferTest - 2019.08.03 at 09h 15m 01s.xml">
-      <configuration name="TwoferTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TwoferTest - 2019.08.03 at 09h 16m 10s.xml">
-      <configuration name="TwoferTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TwoferTest - 2019.08.03 at 09h 16m 19s.xml">
-      <configuration name="TwoferTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TwoferTest - 2019.08.03 at 09h 18m 55s.xml">
-      <configuration name="TwoferTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TwoferTest - 2019.08.03 at 09h 20m 01s.xml">
-      <configuration name="TwoferTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TwoferTest - 2019.08.03 at 09h 21m 13s.xml">
-      <configuration name="TwoferTest" configurationId="JUnit" />
-    </history-entry>
-  </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24966443" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966443" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Build" weight="0.12606232" />
-      <window_info anchor="bottom" id="Messages" weight="0.3286119" />
+      <window_info anchor="bottom" id="Build" visible="true" weight="0.17988668" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -231,21 +199,20 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/TwoferTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/ArmstrongNumbersTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#211#212#0" expanded="true" />
-            <element signature="e#248#249#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1088">
+          <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Twofer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ArmstrongNumbers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="170">
+          <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
