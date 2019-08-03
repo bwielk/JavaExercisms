@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/pangram.iml" filepath="$PROJECT_DIR$/pangram.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pangram.main.iml" filepath="$PROJECT_DIR$/.idea/modules/pangram.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pangram.test.iml" filepath="$PROJECT_DIR$/.idea/modules/pangram.test.iml" />
+    </modules>
+  </component>
+</project>
