@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/rna-transcription.iml" filepath="$PROJECT_DIR$/rna-transcription.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rna-transcription.main.iml" filepath="$PROJECT_DIR$/.idea/modules/rna-transcription.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rna-transcription.test.iml" filepath="$PROJECT_DIR$/.idea/modules/rna-transcription.test.iml" />
+    </modules>
+  </component>
+</project>
