@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="196aa653-ae51-4a77-986d-699003aa9671" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/rna-transcription.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/rna-transcription.test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rna-transcription.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hamming/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hamming/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -135,8 +126,8 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564946392675" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564946468973" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../difference-of-squares" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -190,9 +181,25 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="RnaTranscriptionTest - 2019.08.04 at 21h 16m 18s.xml">
+      <configuration name="RnaTranscriptionTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RnaTranscriptionTest - 2019.08.04 at 21h 17m 07s.xml">
+      <configuration name="RnaTranscriptionTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RnaTranscriptionTest_testRnaTranscriptionOfCytosineIsGuanine - 2019.08.04 at 21h 19m 50s.xml">
+      <configuration name="RnaTranscriptionTest.testRnaTranscriptionOfCytosineIsGuanine" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RnaTranscriptionTest_testRnaTranscriptionOfCytosineIsGuanine - 2019.08.04 at 21h 20m 00s.xml">
+      <configuration name="RnaTranscriptionTest.testRnaTranscriptionOfCytosineIsGuanine" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RnaTranscriptionTest - 2019.08.04 at 21h 20m 15s.xml">
+      <configuration name="RnaTranscriptionTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
@@ -202,13 +209,13 @@
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24966443" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Build" weight="0.3286119" />
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
