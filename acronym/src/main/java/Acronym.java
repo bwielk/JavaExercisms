@@ -1,3 +1,5 @@
+import java.util.stream.Stream;
+
 class Acronym {
 
     private String[] phrase;
@@ -7,12 +9,9 @@ class Acronym {
     }
 
     String get() {
-        String acronym = "";
-        for(int word=0; word<phrase.length; word++){
-            if(!this.phrase[word].equals("")){
-                acronym += this.phrase[word].toUpperCase().charAt(0);
-            }
-        }
-        return acronym;
+        return Stream.of(this.phrase)
+                .filter(word -> !word.equals(""))
+                .map(word -> word.toUpperCase().substring(0,1))
+                .reduce("", String::concat);
     }
 }
