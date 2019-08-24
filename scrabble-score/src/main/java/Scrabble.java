@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.Stream;
 
 enum ScrabbleScores{
 
@@ -37,17 +38,16 @@ class Scrabble {
         this.listOfChars = !word.equals("") ? new ArrayList<>(Arrays.asList(word.replace(" ", "").split(""))) : null;
         this.result = 0;
         this.values = new HashMap<>();
-        for(ScrabbleScores scoreChart : ScrabbleScores.values()){
-            for(String character : scoreChart.getCharacters()){
-                this.values.put(character, scoreChart.getValue());
-            }
-        }
+        Stream.of(ScrabbleScores.values())
+                .forEach(scoreChart -> scoreChart.getCharacters()
+                .stream().forEach(character -> this.values.put(character, scoreChart.getValue())));
     }
 
     int getScore() {
         if(this.listOfChars == null){
             return this.result;
         }else {
+            Stream.of(tjs)
             for(String character : this.listOfChars) {
                 this.result += this.values.get(character.toUpperCase());
             }

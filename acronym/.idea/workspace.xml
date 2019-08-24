@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7e62348e-5f3d-49f4-a294-e40069744767" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Acronym.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Acronym.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/AcronymTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/AcronymTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Acronym.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Acronym.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../difference-of-squares/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../difference-of-squares/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="7e62348e-5f3d-49f4-a294-e40069744767" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -24,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Acronym.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+            <state relative-caret-position="153">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
               <folding>
                 <element signature="e#74#75#0" expanded="true" />
                 <element signature="e#177#178#0" expanded="true" />
@@ -37,10 +31,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/AcronymTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
+            <state relative-caret-position="850">
               <caret line="53" selection-start-line="53" selection-end-line="53" />
             </state>
           </provider>
@@ -126,8 +120,8 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564950379117" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564950388642" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../armstrong-numbers" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -204,18 +198,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AcronymTest - 2019.08.04 at 00h 45m 13s.xml">
-      <configuration name="AcronymTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AcronymTest - 2019.08.04 at 00h 46m 31s.xml">
-      <configuration name="AcronymTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AcronymTest - 2019.08.04 at 00h 47m 00s.xml">
-      <configuration name="AcronymTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AcronymTest_consecutiveDelimiters - 2019.08.04 at 00h 47m 45s.xml">
-      <configuration name="AcronymTest.consecutiveDelimiters" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="AcronymTest_consecutiveDelimiters - 2019.08.04 at 00h 51m 01s.xml">
       <configuration name="AcronymTest.consecutiveDelimiters" configurationId="JUnit" />
     </history-entry>
@@ -234,10 +216,21 @@
     <history-entry file="AcronymTest_punctuationWithoutWhitespace - 2019.08.04 at 21h 53m 41s.xml">
       <configuration name="AcronymTest.punctuationWithoutWhitespace" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="AcronymTest_punctuationWithoutWhitespace - 2019.08.04 at 22h 25m 40s.xml">
+      <configuration name="AcronymTest.punctuationWithoutWhitespace" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AcronymTest_punctuationWithoutWhitespace - 2019.08.04 at 22h 26m 12s.xml">
+      <configuration name="AcronymTest.punctuationWithoutWhitespace" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AcronymTest_basic - 2019.08.04 at 22h 26m 23s.xml">
+      <configuration name="AcronymTest.basic" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AcronymTest - 2019.08.04 at 22h 26m 33s.xml">
+      <configuration name="AcronymTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -249,12 +242,12 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39943343" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.3286119" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3286119" />
@@ -282,21 +275,21 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/AcronymTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Acronym.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
           <folding>
             <element signature="e#74#75#0" expanded="true" />
             <element signature="e#177#178#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/AcronymTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
         </state>
       </provider>
     </entry>
