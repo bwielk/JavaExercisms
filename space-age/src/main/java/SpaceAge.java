@@ -1,43 +1,72 @@
+enum OrbitalPeriods {
+
+    MERCURY(0.2408467),
+    VENUS( 0.61519726),
+    MARS(1.8808158),
+    JUPITER(11.862615),
+    SATURN(29.447498),
+    URANUS(84.016846),
+    NEPTUNE(164.79132);
+
+    private double orbitalPeriod;
+
+    OrbitalPeriods(double orbitalPeriod){
+        this.orbitalPeriod = orbitalPeriod;
+    }
+
+    public double getOrbitalPeriod() {
+        return this.orbitalPeriod;
+    }
+}
+
 class SpaceAge {
 
+    private double earthYearInSeconds = 31557600;
+    private double seconds;
+
     SpaceAge(double seconds) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        this.seconds = seconds;
     }
 
     double getSeconds() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        return this.seconds;
     }
 
     double onEarth() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+       return this.seconds/earthYearInSeconds;
     }
 
     double onMercury() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        return calculateOrbitalPeriod(OrbitalPeriods.MERCURY);
     }
 
     double onVenus() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        return calculateOrbitalPeriod(OrbitalPeriods.VENUS);
     }
 
     double onMars() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        return calculateOrbitalPeriod(OrbitalPeriods.MARS);
     }
 
     double onJupiter() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        return calculateOrbitalPeriod(OrbitalPeriods.JUPITER);
     }
 
     double onSaturn() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        return calculateOrbitalPeriod(OrbitalPeriods.SATURN);
     }
 
     double onUranus() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        return calculateOrbitalPeriod(OrbitalPeriods.URANUS);
     }
 
     double onNeptune() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        return calculateOrbitalPeriod(OrbitalPeriods.NEPTUNE);
+    }
+
+    private double calculateOrbitalPeriod(OrbitalPeriods planetOrbitalPeriod){
+        double yearInEarthSecondsOnAPlaner = earthYearInSeconds*planetOrbitalPeriod.getOrbitalPeriod();
+        return this.seconds/yearInEarthSecondsOnAPlaner;
     }
 
 }

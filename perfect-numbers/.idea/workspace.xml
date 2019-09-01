@@ -2,25 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18f8dae1-c774-455c-99d5-3d8946df6a86" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/perfect-numbers.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/perfect-numbers.test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/perfect-numbers.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../acronym/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../acronym/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../armstrong-numbers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../armstrong-numbers/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../difference-of-squares/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../difference-of-squares/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pangram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pangram/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../scrabble-score/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../scrabble-score/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scrabble-score/out/production/classes/Scrabble.class" beforeDir="false" afterPath="$PROJECT_DIR$/../scrabble-score/out/production/classes/Scrabble.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scrabble-score/out/production/classes/ScrabbleScores.class" beforeDir="false" afterPath="$PROJECT_DIR$/../scrabble-score/out/production/classes/ScrabbleScores.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scrabble-score/src/main/java/Scrabble.java" beforeDir="false" afterPath="$PROJECT_DIR$/../scrabble-score/src/main/java/Scrabble.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../space-age/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../space-age/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -62,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/NaturalNumber.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+            <state relative-caret-position="187">
+              <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -147,8 +130,8 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1566664094274" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../scrabble-score" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1566664540780" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../secret-handshake" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -201,10 +184,15 @@
     <history-entry file="NaturalNumberTest - 2019.08.24 at 18h 24m 13s.xml">
       <configuration name="NaturalNumberTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="NaturalNumberTest - 2019.08.24 at 18h 28m 00s.xml">
+      <configuration name="NaturalNumberTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NaturalNumberTest - 2019.08.24 at 18h 28m 22s.xml">
+      <configuration name="NaturalNumberTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22818792" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -216,12 +204,12 @@
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Build" order="10" visible="true" weight="0.3286119" />
@@ -259,8 +247,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/NaturalNumber.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+        <state relative-caret-position="187">
+          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
         </state>
       </provider>
     </entry>

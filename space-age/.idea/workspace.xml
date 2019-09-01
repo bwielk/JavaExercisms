@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c7cefd3-d598-458e-91d5-cec604f6b9f9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../acronym/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../acronym/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../armstrong-numbers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../armstrong-numbers/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../difference-of-squares/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../difference-of-squares/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pangram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pangram/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../secret-handshake/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../secret-handshake/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../secret-handshake/.idea/libraries/Gradle__junit_junit_4_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../secret-handshake/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../secret-handshake/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../secret-handshake/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../secret-handshake/.idea/modules/secret-handshake.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../secret-handshake/.idea/modules/secret-handshake.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../secret-handshake/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../secret-handshake/secret-handshake.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../perfect-numbers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../perfect-numbers/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scrabble-score/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../scrabble-score/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SpaceAge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpaceAge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SpaceAgeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SpaceAgeTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -23,20 +34,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/SpaceAge.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="6" selection-start-column="6" selection-end-column="6" />
+            <state relative-caret-position="307">
+              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+              <folding>
+                <element signature="e#142#143#0" expanded="true" />
+                <element signature="e#191#192#0" expanded="true" />
+                <element signature="e#225#226#0" expanded="true" />
+                <element signature="e#261#262#0" expanded="true" />
+                <element signature="e#126#127#0" expanded="true" />
+                <element signature="e#163#164#0" expanded="true" />
+                <element signature="e#191#192#0" expanded="true" />
+                <element signature="e#225#226#0" expanded="true" />
+                <element signature="e#250#251#0" expanded="true" />
+                <element signature="e#276#277#0" expanded="true" />
+                <element signature="e#329#330#0" expanded="true" />
+                <element signature="e#363#364#0" expanded="true" />
+                <element signature="e#705#706#0" expanded="true" />
+                <element signature="e#774#775#0" expanded="true" />
+                <element signature="e#795#796#0" expanded="true" />
+                <element signature="e#864#865#0" expanded="true" />
+                <element signature="e#1002#1003#0" expanded="true" />
+                <element signature="e#1067#1068#0" expanded="true" />
+                <element signature="e#1095#1096#0" expanded="true" />
+                <element signature="e#1160#1161#0" expanded="true" />
+                <element signature="e#1189#1190#0" expanded="true" />
+                <element signature="e#1235#1236#0" expanded="true" />
+                <element signature="e#1283#1284#0" expanded="true" />
+                <element signature="e#1353#1354#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/SpaceAgeTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="409">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -45,6 +85,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/test/java/SpaceAgeTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/SpaceAge.java" />
+      </list>
+    </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="85" />
@@ -92,7 +140,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564950623701" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567368534625" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -107,6 +155,44 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="JUnit.SpaceAgeTest">
+    <configuration name="SpaceAgeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="space-age.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SpaceAgeTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpaceAgeTest.ageOnEarth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="space-age.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SpaceAgeTest" />
+      <option name="METHOD_NAME" value="ageOnEarth" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpaceAgeTest.ageOnMars" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="space-age.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SpaceAgeTest" />
+      <option name="METHOD_NAME" value="ageOnMars" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.SpaceAgeTest" />
+        <item itemvalue="JUnit.SpaceAgeTest.ageOnMars" />
+        <item itemvalue="JUnit.SpaceAgeTest.ageOnEarth" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -120,24 +206,34 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="SpaceAgeTest_ageOnEarth - 2019.09.01 at 21h 54m 16s.xml">
+      <configuration name="SpaceAgeTest.ageOnEarth" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SpaceAgeTest - 2019.09.01 at 22h 03m 29s.xml">
+      <configuration name="SpaceAgeTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25637585" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.3286119" />
@@ -152,18 +248,67 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout>
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/SpaceAgeTest.java</url>
+          <line>10</line>
+          <properties class="SpaceAgeTest" method="ageOnEarth">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/SpaceAge.java</url>
+          <line>67</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/SpaceAge.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/SpaceAgeTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="6" selection-start-column="6" selection-end-column="6" />
+        <state relative-caret-position="409">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/SpaceAgeTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/SpaceAge.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="307">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+          <folding>
+            <element signature="e#142#143#0" expanded="true" />
+            <element signature="e#191#192#0" expanded="true" />
+            <element signature="e#225#226#0" expanded="true" />
+            <element signature="e#261#262#0" expanded="true" />
+            <element signature="e#126#127#0" expanded="true" />
+            <element signature="e#163#164#0" expanded="true" />
+            <element signature="e#191#192#0" expanded="true" />
+            <element signature="e#225#226#0" expanded="true" />
+            <element signature="e#250#251#0" expanded="true" />
+            <element signature="e#276#277#0" expanded="true" />
+            <element signature="e#329#330#0" expanded="true" />
+            <element signature="e#363#364#0" expanded="true" />
+            <element signature="e#705#706#0" expanded="true" />
+            <element signature="e#774#775#0" expanded="true" />
+            <element signature="e#795#796#0" expanded="true" />
+            <element signature="e#864#865#0" expanded="true" />
+            <element signature="e#1002#1003#0" expanded="true" />
+            <element signature="e#1067#1068#0" expanded="true" />
+            <element signature="e#1095#1096#0" expanded="true" />
+            <element signature="e#1160#1161#0" expanded="true" />
+            <element signature="e#1189#1190#0" expanded="true" />
+            <element signature="e#1235#1236#0" expanded="true" />
+            <element signature="e#1283#1284#0" expanded="true" />
+            <element signature="e#1353#1354#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

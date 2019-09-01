@@ -2,25 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b8471af-7d37-4242-91cb-1ebb5230ee5f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../perfect-numbers/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../perfect-numbers/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../perfect-numbers/.idea/libraries/Gradle__junit_junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../perfect-numbers/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../perfect-numbers/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../perfect-numbers/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../perfect-numbers/.idea/modules/perfect-numbers.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../perfect-numbers/.idea/modules/perfect-numbers.test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../perfect-numbers/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../perfect-numbers/perfect-numbers.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../acronym/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../acronym/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../armstrong-numbers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../armstrong-numbers/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../difference-of-squares/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../difference-of-squares/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pangram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pangram/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../secret-handshake/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../secret-handshake/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../secret-handshake/.idea/libraries/Gradle__junit_junit_4_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../secret-handshake/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../secret-handshake/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../secret-handshake/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../secret-handshake/.idea/modules/secret-handshake.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../secret-handshake/.idea/modules/secret-handshake.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../secret-handshake/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../secret-handshake/secret-handshake.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../perfect-numbers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../perfect-numbers/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Scrabble.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Scrabble.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/ScrabbleScores.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/ScrabbleScores.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Scrabble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scrabble.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../space-age/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../space-age/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../space-age/src/main/java/SpaceAge.java" beforeDir="false" afterPath="$PROJECT_DIR$/../space-age/src/main/java/SpaceAge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../space-age/src/test/java/SpaceAgeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../space-age/src/test/java/SpaceAgeTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -70,6 +66,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -113,7 +110,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -194,7 +190,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2342282" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21409395" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
