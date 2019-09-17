@@ -2,21 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b8471af-7d37-4242-91cb-1ebb5230ee5f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../secret-handshake/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../secret-handshake/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../secret-handshake/.idea/libraries/Gradle__junit_junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../secret-handshake/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../secret-handshake/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../secret-handshake/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../secret-handshake/.idea/modules/secret-handshake.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../secret-handshake/.idea/modules/secret-handshake.test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../secret-handshake/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../secret-handshake/secret-handshake.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../perfect-numbers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../perfect-numbers/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../darts/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../darts/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../darts/.idea/libraries/Gradle__junit_junit_4_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../darts/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../darts/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../darts/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../darts/.idea/modules/darts.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../darts/.idea/modules/darts.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../darts/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../darts/darts.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dnd-character/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dnd-character/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dnd-character/.idea/libraries/Gradle__junit_junit_4_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dnd-character/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dnd-character/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dnd-character/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dnd-character/.idea/modules/dnd-character.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dnd-character/.idea/modules/dnd-character.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dnd-character/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dnd-character/dnd-character.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secret-handshake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../secret-handshake/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secret-handshake/out/production/classes/HandshakeCalculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../secret-handshake/out/production/classes/HandshakeCalculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secret-handshake/src/main/java/HandshakeCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../secret-handshake/src/main/java/HandshakeCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../space-age/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../space-age/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../space-age/src/main/java/SpaceAge.java" beforeDir="false" afterPath="$PROJECT_DIR$/../space-age/src/main/java/SpaceAge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../space-age/src/test/java/SpaceAgeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../space-age/src/test/java/SpaceAgeTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />

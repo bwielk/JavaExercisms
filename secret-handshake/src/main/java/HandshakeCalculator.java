@@ -11,6 +11,9 @@ class HandshakeCalculator {
         Integer binaryValue = Integer.parseInt(Integer.toBinaryString(number));
         List<Integer> values = Arrays.asList(Signal.values()).stream().map(x -> x.getValue()).collect(Collectors.toList());
         boolean toBeReversed = binaryValue > 10000;
+        if(binaryValue == 10000){
+            return results;
+        }
         Collections.reverse(values);
         binaryValue = toBeReversed ? binaryValue - 10000 : binaryValue;
         for(Integer num : values){
@@ -21,7 +24,6 @@ class HandshakeCalculator {
                 binaryValue -= num;
             }
         }
-        if(toBeReversed) Collections.reverse(results);
         return results;
     }
 
