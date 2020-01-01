@@ -12,6 +12,10 @@ class IsbnVerifier {
             numbersInStringToVerify.set(numbersInStringToVerify.size()-1, "10");
         }
 
+        if(numbersInStringToVerify.size() != 10){
+            return false;
+        }
+
         List<Integer> numberInStringToVerify;
         try{
             numberInStringToVerify = numbersInStringToVerify.stream()
