@@ -18,30 +18,30 @@ public class IsbnVerifierTest {
         assertTrue(isbnVerifier.isValid("3-598-21508-8"));
     }
 
-//    @Test
-//    public void invalidIsbnCheckDigit() {
-//        assertFalse(isbnVerifier.isValid("3-598-21508-9"));
-//    }
-//
-//    @Test
-//    public void validIsbnNumberWithCheckDigitOfTen() {
-//        assertTrue(isbnVerifier.isValid("3-598-21507-X"));
-//    }
-//
-//    @Test
-//    public void checkDigitIsACharacterOtherThanX() {
-//        assertFalse(isbnVerifier.isValid("3-598-21507-A"));
-//    }
-//
-//    @Test
-//    public void invalidCharacterInIsbn() {
-//        assertFalse(isbnVerifier.isValid("3-598-P1581-X"));
-//    }
-//
-//    @Test
-//    public void xIsOnlyValidAsACheckDigit() {
-//        assertFalse(isbnVerifier.isValid("3-598-2X507-9"));
-//    }
+    @Test
+    public void invalidIsbnCheckDigit() {
+        assertFalse(isbnVerifier.isValid("3-598-21508-9"));
+    }
+
+    @Test
+    public void validIsbnNumberWithCheckDigitOfTen() {
+        assertTrue(isbnVerifier.isValid("3-598-21507-X"));
+    }
+
+    @Test
+    public void checkDigitIsACharacterOtherThanX() {
+        assertFalse(isbnVerifier.isValid("3-598-21507-A"));
+    }
+
+    @Test
+    public void invalidCharacterInIsbn() {
+        assertFalse(isbnVerifier.isValid("3-598-P1581-X"));
+    }
+
+    @Test
+    public void xIsOnlyValidAsACheckDigit() {
+        assertFalse(isbnVerifier.isValid("3-598-2X507-9"));
+    }
 //
 //    @Test
 //    public void validIsbnWithoutSeparatingDashes() {

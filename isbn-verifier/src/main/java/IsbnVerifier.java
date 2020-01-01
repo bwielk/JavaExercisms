@@ -7,17 +7,28 @@ import java.util.stream.IntStream;
 class IsbnVerifier {
 
     boolean isValid(String stringToVerify) {
-        List<Integer> numberInStringToVerify = Arrays.stream(stringToVerify.replace("-", "")
-                .split(""))
-                .map(x ->Integer.parseInt(x)).collect(Collectors.toList());
+        List<String> numbersInStringToVerify = Arrays.asList(stringToVerify.toUpperCase().replace("-", "").split(""));
+        if(numbersInStringToVerify.get(numbersInStringToVerify.size()-1).equals("X")){
+            numbersInStringToVerify.set(numbersInStringToVerify.size()-1, "10");
+        }
+
+        List<Integer> numberInStringToVerify;
+        try{
+            numberInStringToVerify = numbersInStringToVerify.stream()
+                            .map(x -> Integer.parseInt(x))
+                            .collect(Collectors.toList());
+        }catch(NumberFormatException e){
+            return false;
+        }
+
         List<Integer> multipliers = IntStream.rangeClosed(1, 10).boxed().collect(Collectors.toList());
         Collections.reverse(multipliers);
 
-        Integer totalResultOfCalculationsToCheck = 0;
+        Integer totalSumOfISBNDigitsToCheck = 0;
         for(int i=0; i<multipliers.size(); i++){
-            totalResultOfCalculationsToCheck += numberInStringToVerify.get(i)*multipliers.get(i);
+            totalSumOfISBNDigitsToCheck += numberInStringToVerify.get(i)*multipliers.get(i);
         }
-        return totalResultOfCalculationsToCheck%11 == 0;
+        return totalSumOfISBNDigitsToCheck%11 == 0;
     }
 
 }
