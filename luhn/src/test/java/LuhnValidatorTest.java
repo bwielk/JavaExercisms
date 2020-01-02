@@ -42,31 +42,31 @@ public class LuhnValidatorTest {
         assertTrue(luhnValidator.isValid("055 444 285"));
     }
 
-//
-//    @Test
-//    public void testInvalidCanadianSINInvalid() {
-//        assertFalse(luhnValidator.isValid("055 444 286"));
-//    }
-//
-//
-//    @Test
-//    public void testInvalidCreditCardInvalid() {
-//        assertFalse(luhnValidator.isValid("8273 1232 7352 0569"));
-//    }
-//
-//
-//    @Test
-//    public void testValidNumberWithAnEvenNumberOfDigits() {
-//        assertTrue(luhnValidator.isValid("095 245 88"));
-//    }
-//
-//
-//    @Test
-//    public void testValidNumberWithAnOddNumberOfSpaces() {
-//        assertTrue(luhnValidator.isValid("234 567 891 234"));
-//    }
-//
-//
+
+    @Test
+    public void testInvalidCanadianSINInvalid() {
+        assertFalse(luhnValidator.isValid("055 444 286"));
+    }
+
+
+    @Test
+    public void testInvalidCreditCardInvalid() {
+        assertFalse(luhnValidator.isValid("8273 1232 7352 0569"));
+    }
+
+
+    @Test
+    public void testValidNumberWithAnEvenNumberOfDigits() {
+        assertTrue(luhnValidator.isValid("095 245 88"));
+    }
+
+
+    @Test
+    public void testValidNumberWithAnOddNumberOfSpaces() {
+        assertTrue(luhnValidator.isValid("234 567 891 234"));
+    }
+
+
 //    @Test
 //    public void testValidStringsWithANonDigitAtEndInvalid() {
 //        assertFalse(luhnValidator.isValid("059a"));
