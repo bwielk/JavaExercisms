@@ -15,116 +15,116 @@ public class SumOfMultiplesTest {
         int output = new SumOfMultiples(1, set).getSum();
         assertEquals(0, output);
     }
-//
-//    @Test
-//    public void testOneFactorHasMultiplesWithinLimit() {
-//
-//        int[] set = {
-//            3,
-//            5
-//        };
-//        int output = new SumOfMultiples(4, set).getSum();
-//        assertEquals(3, output);
-//
-//    }
-//
-//    @Test
-//    public void testMoreThanOneMultipleWithinLimit() {
-//
-//        int[] set = {
-//            3
-//        };
-//        int output = new SumOfMultiples(7, set).getSum();
-//        assertEquals(9, output);
-//
-//    }
-//
-//    @Test
-//    public void testMoreThanOneFactorWithMultiplesWithinLimit() {
-//
-//        int[] set = {
-//            3,
-//            5
-//        };
-//        int output = new SumOfMultiples(10, set).getSum();
-//        assertEquals(23, output);
-//
-//    }
-//
-//    @Test
-//    public void testEachMultipleIsOnlyCountedOnce() {
-//
-//        int[] set = {
-//            3,
-//            5
-//        };
-//        int output = new SumOfMultiples(100, set).getSum();
-//        assertEquals(2318, output);
-//
-//    }
-//
-//    @Test
-//    public void testAMuchLargerLimit() {
-//
-//        int[] set = {
-//            3,
-//            5
-//        };
-//        int output = new SumOfMultiples(1000, set).getSum();
-//        assertEquals(233168, output);
-//
-//    }
-//
-//    @Test
-//    public void testThreeFactors() {
-//
-//        int[] set = {
-//            7,
-//            13,
-//            17
-//        };
-//        int output = new SumOfMultiples(20, set).getSum();
-//        assertEquals(51, output);
-//
-//    }
-//
-//    @Test
-//    public void testFactorsNotRelativelyPrime() {
-//
-//        int[] set = {
-//            4,
-//            6
-//        };
-//        int output = new SumOfMultiples(15, set).getSum();
-//        assertEquals(30, output);
-//
-//    }
-//
-//    @Test
-//    public void testSomePairsOfFactorsRelativelyPrimeAndSomeNot() {
-//
-//        int[] set = {
-//            5,
-//            6,
-//            8
-//        };
-//        int output = new SumOfMultiples(150, set).getSum();
-//        assertEquals(4419, output);
-//
-//    }
-//
-//    @Test
-//    public void testOneFactorIsAMultipleOfAnother() {
-//
-//        int[] set = {
-//            5,
-//            25
-//        };
-//        int output = new SumOfMultiples(51, set).getSum();
-//        assertEquals(275, output);
-//
-//    }
-//
+
+    @Test
+    public void testOneFactorHasMultiplesWithinLimit() {
+
+        int[] set = {
+            3,
+            5
+        };
+        int output = new SumOfMultiples(4, set).getSum();
+        assertEquals(3, output);
+
+    }
+
+    @Test
+    public void testMoreThanOneMultipleWithinLimit() {
+
+        int[] set = {
+            3
+        };
+        int output = new SumOfMultiples(7, set).getSum();
+        assertEquals(9, output);
+
+    }
+
+    @Test
+    public void testMoreThanOneFactorWithMultiplesWithinLimit() {
+
+        int[] set = {
+            3,
+            5
+        };
+        int output = new SumOfMultiples(10, set).getSum();
+        assertEquals(23, output);
+
+    }
+
+    @Test
+    public void testEachMultipleIsOnlyCountedOnce() {
+
+        int[] set = {
+            3,
+            5
+        };
+        int output = new SumOfMultiples(100, set).getSum();
+        assertEquals(2318, output);
+
+    }
+
+    @Test
+    public void testAMuchLargerLimit() {
+
+        int[] set = {
+            3,
+            5
+        };
+        int output = new SumOfMultiples(1000, set).getSum();
+        assertEquals(233168, output);
+
+    }
+
+    @Test
+    public void testThreeFactors() {
+
+        int[] set = {
+            7,
+            13,
+            17
+        };
+        int output = new SumOfMultiples(20, set).getSum();
+        assertEquals(51, output);
+
+    }
+
+    @Test
+    public void testFactorsNotRelativelyPrime() {
+
+        int[] set = {
+            4,
+            6
+        };
+        int output = new SumOfMultiples(15, set).getSum();
+        assertEquals(30, output);
+
+    }
+
+    @Test
+    public void testSomePairsOfFactorsRelativelyPrimeAndSomeNot() {
+
+        int[] set = {
+            5,
+            6,
+            8
+        };
+        int output = new SumOfMultiples(150, set).getSum();
+        assertEquals(4419, output);
+
+    }
+
+    @Test
+    public void testOneFactorIsAMultipleOfAnother() {
+
+        int[] set = {
+            5,
+            25
+        };
+        int output = new SumOfMultiples(51, set).getSum();
+        assertEquals(275, output);
+
+    }
+
 //    @Test
 //    public void testMuchLargerFactors() {
 //

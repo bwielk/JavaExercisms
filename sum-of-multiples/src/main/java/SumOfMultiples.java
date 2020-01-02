@@ -1,8 +1,8 @@
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 class SumOfMultiples {
 
@@ -15,11 +15,21 @@ class SumOfMultiples {
     }
 
     int getSum() {
+        List<Integer> alreadyAddedMultiples =  new ArrayList<>();
+
         int valueToReturn = 0;
-        if(this.setOfNumbers.stream().anyMatch(x -> x > this.numbertoCheck)){
-            valueToReturn = 0;
+        if(this.setOfNumbers.stream().allMatch(x -> x > this.numbertoCheck)){
+            return valueToReturn;
+        }else{
+            for(Integer factorFromSet : setOfNumbers) {
+                for (int presumableMultiple = 0; presumableMultiple < numbertoCheck; presumableMultiple++) {
+                    if (presumableMultiple % factorFromSet == 0 && !alreadyAddedMultiples.contains(presumableMultiple)) {
+                        alreadyAddedMultiples.add(presumableMultiple);
+                        valueToReturn += presumableMultiple;
+                    }
+                }
+            }
         }
         return valueToReturn;
     }
-
 }
