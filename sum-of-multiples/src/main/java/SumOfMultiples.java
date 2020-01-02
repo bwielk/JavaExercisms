@@ -12,6 +12,8 @@ class SumOfMultiples {
     SumOfMultiples(int number, int[] set) {
         this.setOfNumbers = IntStream.of(set).boxed().collect(Collectors.toList());
         this.numbertoCheck = number;
+        //get rid of the 0s
+        this.setOfNumbers.removeIf(x -> x == 0);
     }
 
     int getSum() {

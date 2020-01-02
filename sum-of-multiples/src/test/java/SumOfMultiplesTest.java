@@ -125,73 +125,73 @@ public class SumOfMultiplesTest {
 
     }
 
-//    @Test
-//    public void testMuchLargerFactors() {
-//
-//        int[] set = {
-//            43,
-//            47
-//        };
-//        int output = new SumOfMultiples(10000, set).getSum();
-//        assertEquals(2203160, output);
-//
-//    }
-//
-//    @Test
-//    public void testAllNumbersAreMultiplesOf1() {
-//
-//        int[] set = {
-//            1
-//        };
-//        int output = new SumOfMultiples(100, set).getSum();
-//        assertEquals(4950, output);
-//
-//    }
-//
-//    @Test
-//    public void testNoFactorsMeanAnEmptySum() {
-//
-//        int[] set = {};
-//        int output = new SumOfMultiples(10000, set).getSum();
-//        assertEquals(0, output);
-//
-//    }
-//
-//    @Test
-//    public void testSumOfMultiplesOfZeroIsZero() {
-//
-//        int[] set = {
-//            0
-//        };
-//        int output = new SumOfMultiples(1, set).getSum();
-//        assertEquals(0, output);
-//
-//    }
-//
-//    @Test
-//    public void testFactorZeroDoesNotAffectTheSumOfMultiplesOfOtherFactors() {
-//
-//        int[] set = {
-//            3,
-//            0
-//        };
-//        int output = new SumOfMultiples(4, set).getSum();
-//        assertEquals(3, output);
-//
-//    }
-//
-//    @Test
-//    public void testSolutionsUsingIncludeExcludeMustExtendToCardinalityGreater3() {
-//
-//        int[] set = {
-//            2,
-//            3,
-//            5,
-//            7,
-//            11
-//        };
-//        int output = new SumOfMultiples(10000, set).getSum();
-//        assertEquals(39614537, output);
-//    }
+    @Test
+    public void testMuchLargerFactors() {
+
+        int[] set = {
+            43,
+            47
+        };
+        int output = new SumOfMultiples(10000, set).getSum();
+        assertEquals(2203160, output);
+
+    }
+
+    @Test
+    public void testAllNumbersAreMultiplesOf1() {
+
+        int[] set = {
+            1
+        };
+        int output = new SumOfMultiples(100, set).getSum();
+        assertEquals(4950, output);
+
+    }
+
+    @Test
+    public void testNoFactorsMeanAnEmptySum() {
+
+        int[] set = {};
+        int output = new SumOfMultiples(10000, set).getSum();
+        assertEquals(0, output);
+
+    }
+
+    @Test
+    public void testSumOfMultiplesOfZeroIsZero() {
+
+        int[] set = {
+            0
+        };
+        int output = new SumOfMultiples(1, set).getSum();
+        assertEquals(0, output);
+
+    }
+
+    @Test
+    public void testFactorZeroDoesNotAffectTheSumOfMultiplesOfOtherFactors() {
+
+        int[] set = {
+            3,
+            0
+        };
+        int output = new SumOfMultiples(4, set).getSum();
+        assertEquals(3, output);
+
+    }
+
+    @Test
+    public void testSolutionsUsingIncludeExcludeMustExtendToCardinalityGreater3() {
+
+        int[] set = {
+            2,
+            3,
+            5,
+            7,
+            11
+        };
+        int output = new SumOfMultiples(10000, set).getSum();
+        assertEquals(39614537, output);
+    }
 
 }
