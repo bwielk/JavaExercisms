@@ -8,7 +8,7 @@ class LuhnValidator {
         if (candidate.replace(" ", "").length() < 2) {
             return false;
         }else{
-            //turns chars into integers. Returns falls if it comes across a non digit value that in fact should not be there
+            //turns chars into integers. Returns false if it comes across a non digit value that in fact should not be there
             List<Integer> candidateAsList;
             try{
                  candidateAsList = Arrays.asList(candidate.split(""))
@@ -16,13 +16,13 @@ class LuhnValidator {
             }catch(NumberFormatException e){
                 return false;
             }
-            //conducts the calculations and replacements from right to left
+            //conducts required calculations and replacements from right to left of the list of digits
             for(int i = candidateAsList.size()-2; i>=0; i-=2){
                 int numberToDouble = candidateAsList.get(i)*2;
                 int replacingValue = numberToDouble>9 ? numberToDouble-9 : numberToDouble;
                 candidateAsList.set(i, replacingValue);
             }
-            //summing up all the values from the list after calculations
+            //summing up all the values from the list of digits after calculations
             Integer totalOfNewlyCalculatedLuhn = candidateAsList.stream().mapToInt(Integer::intValue).sum();
             return totalOfNewlyCalculatedLuhn%10 ==0;
         }
