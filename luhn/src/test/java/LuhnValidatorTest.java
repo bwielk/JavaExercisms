@@ -121,8 +121,8 @@ public class LuhnValidatorTest {
 //     * (https://github.com/exercism/java/issues/972).
 //    */
 //
-//    @Test
-//    public void testStringContainingSymbolsInvalidJavaTrackSpecific() {
-//        assertFalse(luhnValidator.isValid("85&"));
-//    }
+    @Test
+    public void testStringContainingSymbolsInvalidJavaTrackSpecific() {
+        assertFalse(luhnValidator.isValid("85&"));
+    }
 }
