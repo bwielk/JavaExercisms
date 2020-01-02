@@ -5,10 +5,10 @@ import java.util.stream.Collectors;
 class LuhnValidator {
 
     boolean isValid(String candidate) {
-        candidate = candidate.replace(" ", "");
-        if (candidate.length() < 2) {
+        if (candidate.replace(" ", "").length() < 2) {
             return false;
         }else{
+            //turns chars into integers. Returns falls if it comes across a non digit value that in fact should not be there
             List<Integer> candidateAsList;
             try{
                  candidateAsList = Arrays.asList(candidate.split(""))
@@ -16,14 +16,13 @@ class LuhnValidator {
             }catch(NumberFormatException e){
                 return false;
             }
+            //conducts the calculations and replacements from right to left
             for(int i = candidateAsList.size()-2; i>=0; i-=2){
                 int numberToDouble = candidateAsList.get(i)*2;
-                if(numberToDouble>9){
-                    candidateAsList.set(i, numberToDouble-9);
-                }else{
-                    candidateAsList.set(i, numberToDouble);
-                }
+                int replacingValue = numberToDouble>9 ? numberToDouble-9 : numberToDouble;
+                candidateAsList.set(i, replacingValue);
             }
+            //summing up all the values from the list after calculations
             Integer totalOfNewlyCalculatedLuhn = candidateAsList.stream().mapToInt(Integer::intValue).sum();
             return totalOfNewlyCalculatedLuhn%10 ==0;
         }
