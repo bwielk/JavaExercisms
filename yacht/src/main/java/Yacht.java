@@ -1,5 +1,6 @@
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 class Yacht {
 
@@ -37,6 +38,18 @@ class Yacht {
                 break;
             case FULL_HOUSE:
                 checkFullHouse();
+                break;
+            case FOUR_OF_A_KIND:
+                checkFourOfAKind();
+                break;
+            case BIG_STRAIGHT:
+                checkBigStraight();
+                break;
+            case LITTLE_STRAIGHT:
+                checkLittleStraight();
+                break;
+            case CHOICE:
+                checkChoice();
                 break;
         }
        return result;
@@ -84,6 +97,35 @@ class Yacht {
                 result = 0;
             }
         }
+    }
+
+    private void checkFourOfAKind(){
+        Map<Integer, Integer> mapOfints = mapNumberOfInts();
+        try{
+            result = mapOfints.entrySet().stream().filter(x -> x.getValue() >= 4).findFirst().get().getKey()*4;
+        }catch (NoSuchElementException e) {
+            result = 0;
+        }
+    }
+
+    private void checkBigStraight(){
+        List<Integer> bigStraightDice = IntStream.range(2, 7).boxed().collect(Collectors.toList());
+        Collections.sort(this.dice);
+        if(bigStraightDice.equals(this.dice)){
+            result = YachtCategory.BIG_STRAIGHT.getPoints();
+        }
+    }
+
+    private void checkLittleStraight(){
+        List<Integer> littleStraightDice = IntStream.range(1, 6).boxed().collect(Collectors.toList());
+        Collections.sort(this.dice);
+        if(littleStraightDice.equals(this.dice)){
+            result = YachtCategory.LITTLE_STRAIGHT.getPoints();
+        }
+    }
+
+    private void checkChoice(){
+        result = this.dice.stream().reduce(Integer::sum).get();
     }
 
     private Integer conductFilteringDesiredNumbers(YachtCategory yachtCategory){

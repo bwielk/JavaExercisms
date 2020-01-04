@@ -103,101 +103,101 @@ public class YachtTest {
     }
 
 
-//    @Test
-//    public void yachtIsNotAFullHouse() {
-//        Yacht yacht = new Yacht(new int[]{ 2, 2, 2, 2, 2 }, YachtCategory.FULL_HOUSE);
-//        assertEquals(0, yacht.score());
-//    }
-//
-//
-//    @Test
-//    public void fourOfAKind() {
-//        Yacht yacht = new Yacht(new int[]{ 6, 6, 4, 6, 6 }, YachtCategory.FOUR_OF_A_KIND);
-//        assertEquals(24, yacht.score());
-//    }
-//
-//
-//    @Test
-//    public void yachtCanBeScoredAsFourOfAKind() {
-//        Yacht yacht = new Yacht(new int[]{ 3, 3, 3, 3, 3 }, YachtCategory.FOUR_OF_A_KIND);
-//        assertEquals(12, yacht.score());
-//    }
-//
-//
-//    @Test
-//    public void fullHouseIsNotFourOfAKind() {
-//        Yacht yacht = new Yacht(new int[]{ 3, 3, 3, 5, 5 }, YachtCategory.FOUR_OF_A_KIND);
-//        assertEquals(0, yacht.score());
-//    }
-//
-//
-//    @Test
-//    public void littleStraight() {
-//        Yacht yacht = new Yacht(new int[]{ 3, 5, 4, 1, 2 }, YachtCategory.LITTLE_STRAIGHT);
-//        assertEquals(30, yacht.score());
-//    }
-//
-//
-//    @Test
-//    public void littleStraightAsBigStraight() {
-//        Yacht yacht = new Yacht(new int[]{ 1, 2, 3, 4, 5 }, YachtCategory.BIG_STRAIGHT);
-//        assertEquals(0, yacht.score());
-//    }
-//
-//
-//    @Test
-//    public void fourInOrderButNotALittleStraight() {
-//        Yacht yacht = new Yacht(new int[]{ 1, 1, 2, 3, 4 }, YachtCategory.LITTLE_STRAIGHT);
-//        assertEquals(0, yacht.score());
-//    }
-//
-//
-//    @Test
-//    public void noPairsButNotALittleStraight() {
-//        Yacht yacht = new Yacht(new int[]{ 1, 2, 3, 4, 6 }, YachtCategory.LITTLE_STRAIGHT);
-//        assertEquals(0, yacht.score());
-//    }
-//
-//
-//    @Test
-//    public void minimumIs1MaximumIs5ButNotALittleStraight() {
-//        Yacht yacht = new Yacht(new int[]{ 1, 1, 3, 4, 5 }, YachtCategory.LITTLE_STRAIGHT);
-//        assertEquals(0, yacht.score());
-//    }
-//
-//
-//    @Test
-//    public void bigStraight() {
-//        Yacht yacht = new Yacht(new int[]{ 4, 6, 2, 5, 3 }, YachtCategory.BIG_STRAIGHT);
-//        assertEquals(30, yacht.score());
-//    }
-//
-//
-//    @Test
-//    public void bigStraightAsLittleStraight() {
-//        Yacht yacht = new Yacht(new int[]{ 6, 5, 4, 3, 2 }, YachtCategory.LITTLE_STRAIGHT);
-//        assertEquals(0, yacht.score());
-//    }
-//
-//
-//    @Test
-//    public void noPairsButNotABigStraight() {
-//        Yacht yacht = new Yacht(new int[]{ 6, 5, 4, 3, 1 }, YachtCategory.BIG_STRAIGHT);
-//        assertEquals(0, yacht.score());
-//    }
-//
-//
-//    @Test
-//    public void choice() {
-//        Yacht yacht = new Yacht(new int[]{ 3, 3, 5, 6, 6 }, YachtCategory.CHOICE);
-//        assertEquals(23, yacht.score());
-//    }
-//
-//
-//    @Test
-//    public void yachtAsChoice() {
-//        Yacht yacht = new Yacht(new int[]{ 2, 2, 2, 2, 2 }, YachtCategory.CHOICE);
-//        assertEquals(10, yacht.score());
-//    }
+    @Test
+    public void yachtIsNotAFullHouse() {
+        Yacht yacht = new Yacht(new int[]{ 2, 2, 2, 2, 2 }, YachtCategory.FULL_HOUSE);
+        assertEquals(0, yacht.score());
+    }
+
+
+    @Test
+    public void fourOfAKind() {
+        Yacht yacht = new Yacht(new int[]{ 6, 6, 4, 6, 6 }, YachtCategory.FOUR_OF_A_KIND);
+        assertEquals(24, yacht.score());
+    }
+
+
+    @Test
+    public void yachtCanBeScoredAsFourOfAKind() {
+        Yacht yacht = new Yacht(new int[]{ 3, 3, 3, 3, 3 }, YachtCategory.FOUR_OF_A_KIND);
+        assertEquals(12, yacht.score());
+    }
+
+
+    @Test
+    public void fullHouseIsNotFourOfAKind() {
+        Yacht yacht = new Yacht(new int[]{ 3, 3, 3, 5, 5 }, YachtCategory.FOUR_OF_A_KIND);
+        assertEquals(0, yacht.score());
+    }
+
+
+    @Test
+    public void littleStraight() {
+        Yacht yacht = new Yacht(new int[]{ 3, 5, 4, 1, 2 }, YachtCategory.LITTLE_STRAIGHT);
+        assertEquals(30, yacht.score());
+    }
+
+
+    @Test
+    public void littleStraightAsBigStraight() {
+        Yacht yacht = new Yacht(new int[]{ 1, 2, 3, 4, 5 }, YachtCategory.BIG_STRAIGHT);
+        assertEquals(0, yacht.score());
+    }
+
+
+    @Test
+    public void fourInOrderButNotALittleStraight() {
+        Yacht yacht = new Yacht(new int[]{ 1, 1, 2, 3, 4 }, YachtCategory.LITTLE_STRAIGHT);
+        assertEquals(0, yacht.score());
+    }
+
+
+    @Test
+    public void noPairsButNotALittleStraight() {
+        Yacht yacht = new Yacht(new int[]{ 1, 2, 3, 4, 6 }, YachtCategory.LITTLE_STRAIGHT);
+        assertEquals(0, yacht.score());
+    }
+
+
+    @Test
+    public void minimumIs1MaximumIs5ButNotALittleStraight() {
+        Yacht yacht = new Yacht(new int[]{ 1, 1, 3, 4, 5 }, YachtCategory.LITTLE_STRAIGHT);
+        assertEquals(0, yacht.score());
+    }
+
+
+    @Test
+    public void bigStraight() {
+        Yacht yacht = new Yacht(new int[]{ 4, 6, 2, 5, 3 }, YachtCategory.BIG_STRAIGHT);
+        assertEquals(30, yacht.score());
+    }
+
+
+    @Test
+    public void bigStraightAsLittleStraight() {
+        Yacht yacht = new Yacht(new int[]{ 6, 5, 4, 3, 2 }, YachtCategory.LITTLE_STRAIGHT);
+        assertEquals(0, yacht.score());
+    }
+
+
+    @Test
+    public void noPairsButNotABigStraight() {
+        Yacht yacht = new Yacht(new int[]{ 6, 5, 4, 3, 1 }, YachtCategory.BIG_STRAIGHT);
+        assertEquals(0, yacht.score());
+    }
+
+
+    @Test
+    public void choice() {
+        Yacht yacht = new Yacht(new int[]{ 3, 3, 5, 6, 6 }, YachtCategory.CHOICE);
+        assertEquals(23, yacht.score());
+    }
+
+
+    @Test
+    public void yachtAsChoice() {
+        Yacht yacht = new Yacht(new int[]{ 2, 2, 2, 2, 2 }, YachtCategory.CHOICE);
+        assertEquals(10, yacht.score());
+    }
 
 }
