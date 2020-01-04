@@ -1,5 +1,4 @@
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 class Yacht {
@@ -36,6 +35,9 @@ class Yacht {
             case SIXES:
                 checkSixes();
                 break;
+            case FULL_HOUSE:
+                checkFullHouse();
+                break;
         }
        return result;
     }
@@ -70,7 +72,33 @@ class Yacht {
         result = conductFilteringDesiredNumbers(YachtCategory.SIXES);
     }
 
+    private void checkFullHouse(){
+        Map<Integer, Integer> mapOfints = mapNumberOfInts();
+        //get keys by their values to check if there are 3 elements of the same number and 2 elements of the same number
+        if(mapOfints.size() == 2){
+            try{
+                int threeNumbersOfOneValue = mapOfints.entrySet().stream().filter(x -> x.getValue() == 3).findFirst().get().getKey()*3;
+                int twoNumbersOfOneValue = mapOfints.entrySet().stream().filter(x -> x.getValue() == 2).findFirst().get().getKey()*2;
+                result = threeNumbersOfOneValue + twoNumbersOfOneValue;
+            }catch (NoSuchElementException e) {
+                result = 0;
+            }
+        }
+    }
+
     private Integer conductFilteringDesiredNumbers(YachtCategory yachtCategory){
         return this.dice.stream().filter(x -> x == yachtCategory.getPoints()).collect(Collectors.toList()).size()*yachtCategory.getPoints();
+    }
+
+    private Map<Integer, Integer> mapNumberOfInts(){
+        Map<Integer, Integer> mapOfInts = new HashMap<>();
+        this.dice.forEach(number -> {
+            if(!mapOfInts.keySet().contains(number)){
+                mapOfInts.put(number, 1);
+            }else{
+                mapOfInts.put(number, mapOfInts.get(number)+1);
+            }
+        });
+        return mapOfInts;
     }
 }

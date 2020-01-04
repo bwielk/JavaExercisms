@@ -6,12 +6,12 @@ enum YachtCategory {
     THREES(3),
     FOURS(4),
     FIVES(5),
-    SIXES(6);
-//    FULL_HOUSE,
-//    FOUR_OF_A_KIND,
-//    LITTLE_STRAIGHT,
-//    BIG_STRAIGHT,
-//    CHOICE
+    SIXES(6),
+    FULL_HOUSE(null),
+    FOUR_OF_A_KIND(null),
+    LITTLE_STRAIGHT(30),
+    BIG_STRAIGHT(30),
+    CHOICE(null);
 
     private Integer points;
 
