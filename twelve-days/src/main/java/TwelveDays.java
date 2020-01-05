@@ -65,6 +65,6 @@ class TwelveDays {
     }
     
     String sing() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        return verses(1, 12);
     }
 }
