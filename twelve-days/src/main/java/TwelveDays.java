@@ -14,10 +14,25 @@ class TwelveDays {
             "ten Lords-a-Leaping",
             "eleven Pipers Piping",
             "twelve Drummers Drumming"};
-    String[] ordinals = {"", "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth",
-    "eleventh", "twelfth"};
+
+    String[] ordinals = {"",
+            "first",
+            "second",
+            "third",
+            "fourth",
+            "fifth",
+            "sixth",
+            "seventh",
+            "eighth",
+            "ninth",
+            "tenth",
+            "eleventh",
+            "twelfth"};
 
     String verse(int verseNumber) {
+        if(verseNumber <= 0 || verseNumber > 12){
+            throw new IllegalArgumentException("Accepted verse number values are between 1(inclusive) and 12(inclusive)");
+        }
         String createdVerse = String.format(verseCore, ordinals[verseNumber]);
         for(int index = verseNumber-1; index>-1; index--){
             createdVerse += gifts[index];
@@ -35,7 +50,18 @@ class TwelveDays {
     }
 
     String verses(int startVerse, int endVerse) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        if(endVerse <= startVerse){
+            throw new IllegalArgumentException("End verse value cannot be greater or equal to start verse value");
+        }
+        String createdVerses = "";
+        for(int index=startVerse; index<=endVerse; index++){
+            createdVerses += verse(index);
+            //here trying to figure out if a new line separator is needed
+            if(index+1 <= endVerse){
+                createdVerses += "\n";
+            }
+        }
+        return createdVerses;
     }
     
     String sing() {

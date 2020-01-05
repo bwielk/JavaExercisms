@@ -1,5 +1,4 @@
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -10,6 +9,14 @@ public class TwelveDaysTest {
     @Before
     public void setup() {
         twelveDays = new TwelveDays();
+    }
+
+
+    @Test(expected = IllegalArgumentException.class)
+    public void versesOfNumbersGreaterThan12AndLessThan0CannotBeGenerated(){
+        twelveDays.verse(-1);
+        twelveDays.verse(0);
+        twelveDays.verse(13);
     }
 
     @Test
@@ -117,75 +124,81 @@ public class TwelveDaysTest {
         assertEquals(expectedVerseTwelve, twelveDays.verse(12));
     }
 
-//
-//    @Test
-//    public void testFirstThreeVerses() {
-//        String expectedVersesOneToThree = "On the first day of Christmas my true love gave to me: " +
-//                "a Partridge in a Pear Tree.\n\n" +
-//                "On the second day of Christmas my true love gave to me: two Turtle Doves, " +
-//                "and a Partridge in a Pear Tree.\n\n" +
-//                "On the third day of Christmas my true love gave to me: three French Hens, two Turtle Doves, " +
-//                "and a Partridge in a Pear Tree.\n";
-//        assertEquals(expectedVersesOneToThree, twelveDays.verses(1, 3));
-//    }
-//
-//
-//    @Test
-//    public void testFourthToSixthVerses() {
-//        String expectedVersesFourToSix = "On the fourth day of Christmas my true love gave to me: " +
-//                "four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n\n" +
-//                "On the fifth day of Christmas my true love gave to me: five Gold Rings, four Calling Birds, " +
-//                "three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n\n" +
-//                "On the sixth day of Christmas my true love gave to me: six Geese-a-Laying, five Gold Rings, " +
-//                "four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n";
-//        assertEquals(expectedVersesFourToSix, twelveDays.verses(4, 6));
-//    }
-//
-//
-//    @Test
-//    public void testSingWholeSong() {
-//        String expectedSong = "On the first day of Christmas my true love gave to me: a Partridge in a Pear Tree.\n" +
-//                "\n" +
-//                "On the second day of Christmas my true love gave to me: two Turtle Doves, " +
-//                "and a Partridge in a Pear Tree.\n" +
-//                "\n" +
-//                "On the third day of Christmas my true love gave to me: three French Hens, two Turtle Doves, " +
-//                "and a Partridge in a Pear Tree.\n" +
-//                "\n" +
-//                "On the fourth day of Christmas my true love gave to me: four Calling Birds, three French Hens, " +
-//                "two Turtle Doves, and a Partridge in a Pear Tree.\n" +
-//                "\n" +
-//                "On the fifth day of Christmas my true love gave to me: five Gold Rings, four Calling Birds, " +
-//                "three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n" +
-//                "\n" +
-//                "On the sixth day of Christmas my true love gave to me: six Geese-a-Laying, five Gold Rings, " +
-//                "four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n" +
-//                "\n" +
-//                "On the seventh day of Christmas my true love gave to me: seven Swans-a-Swimming, " +
-//                "six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, " +
-//                "and a Partridge in a Pear Tree.\n" +
-//                "\n" +
-//                "On the eighth day of Christmas my true love gave to me: eight Maids-a-Milking, " +
-//                "seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, " +
-//                "three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n" +
-//                "\n" +
-//                "On the ninth day of Christmas my true love gave to me: nine Ladies Dancing, eight Maids-a-Milking," +
-//                " seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, " +
-//                "three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n" +
-//                "\n" +
-//                "On the tenth day of Christmas my true love gave to me: ten Lords-a-Leaping, nine Ladies Dancing," +
-//                " eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, " +
-//                "four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n" +
-//                "\n" +
-//                "On the eleventh day of Christmas my true love gave to me: eleven Pipers Piping, " +
-//                "ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, " +
-//                "six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, " +
-//                "and a Partridge in a Pear Tree.\n" +
-//                "\n" +
-//                "On the twelfth day of Christmas my true love gave to me: twelve Drummers Drumming, " +
-//                "eleven Pipers Piping, ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, " +
-//                "seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, " +
-//                "three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n";
-//        assertEquals(expectedSong, twelveDays.sing());
-//    }
+
+    @Test
+    public void testFirstThreeVerses() {
+        String expectedVersesOneToThree = "On the first day of Christmas my true love gave to me: " +
+                "a Partridge in a Pear Tree.\n\n" +
+                "On the second day of Christmas my true love gave to me: two Turtle Doves, " +
+                "and a Partridge in a Pear Tree.\n\n" +
+                "On the third day of Christmas my true love gave to me: three French Hens, two Turtle Doves, " +
+                "and a Partridge in a Pear Tree.\n";
+        assertEquals(expectedVersesOneToThree, twelveDays.verses(1, 3));
+    }
+
+
+    @Test
+    public void testFourthToSixthVerses() {
+        String expectedVersesFourToSix = "On the fourth day of Christmas my true love gave to me: " +
+                "four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n\n" +
+                "On the fifth day of Christmas my true love gave to me: five Gold Rings, four Calling Birds, " +
+                "three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n\n" +
+                "On the sixth day of Christmas my true love gave to me: six Geese-a-Laying, five Gold Rings, " +
+                "four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n";
+        assertEquals(expectedVersesFourToSix, twelveDays.verses(4, 6));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void invalidVerseNumbersPassedToVersesMethod(){
+        twelveDays.verses(6,4);
+        twelveDays.verses(1,0);
+    }
+
+
+    @Test
+    public void testSingWholeSong() {
+        String expectedSong = "On the first day of Christmas my true love gave to me: a Partridge in a Pear Tree.\n" +
+                "\n" +
+                "On the second day of Christmas my true love gave to me: two Turtle Doves, " +
+                "and a Partridge in a Pear Tree.\n" +
+                "\n" +
+                "On the third day of Christmas my true love gave to me: three French Hens, two Turtle Doves, " +
+                "and a Partridge in a Pear Tree.\n" +
+                "\n" +
+                "On the fourth day of Christmas my true love gave to me: four Calling Birds, three French Hens, " +
+                "two Turtle Doves, and a Partridge in a Pear Tree.\n" +
+                "\n" +
+                "On the fifth day of Christmas my true love gave to me: five Gold Rings, four Calling Birds, " +
+                "three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n" +
+                "\n" +
+                "On the sixth day of Christmas my true love gave to me: six Geese-a-Laying, five Gold Rings, " +
+                "four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n" +
+                "\n" +
+                "On the seventh day of Christmas my true love gave to me: seven Swans-a-Swimming, " +
+                "six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, " +
+                "and a Partridge in a Pear Tree.\n" +
+                "\n" +
+                "On the eighth day of Christmas my true love gave to me: eight Maids-a-Milking, " +
+                "seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, " +
+                "three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n" +
+                "\n" +
+                "On the ninth day of Christmas my true love gave to me: nine Ladies Dancing, eight Maids-a-Milking," +
+                " seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, " +
+                "three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n" +
+                "\n" +
+                "On the tenth day of Christmas my true love gave to me: ten Lords-a-Leaping, nine Ladies Dancing," +
+                " eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, " +
+                "four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n" +
+                "\n" +
+                "On the eleventh day of Christmas my true love gave to me: eleven Pipers Piping, " +
+                "ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, " +
+                "six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, " +
+                "and a Partridge in a Pear Tree.\n" +
+                "\n" +
+                "On the twelfth day of Christmas my true love gave to me: twelve Drummers Drumming, " +
+                "eleven Pipers Piping, ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, " +
+                "seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, " +
+                "three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n";
+        assertEquals(expectedSong, twelveDays.sing());
+    }
 }
