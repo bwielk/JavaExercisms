@@ -1,6 +1,3 @@
-import java.util.Arrays;
-import java.util.List;
-
 class RotationalCipher {
 
     private int shiftKey;
@@ -40,7 +37,7 @@ class RotationalCipher {
     int findIndexOfACharInString(Character c){
         int indexToReturn = 0;
         for(int i=0; i<alphabet.length; i++){
-            if(alphabet[i] == c){
+            if(String.valueOf(alphabet[i]).equalsIgnoreCase(String.valueOf(c))){
                 indexToReturn = i;
             }
         }
