@@ -16,15 +16,23 @@ class RotationalCipher {
 
     String rotate(String data) {
         String result = "";
+        boolean isUpperCase = false;
         for(int index=0; index<data.length(); index++){
-            int indexOfTheCharacterInAlphabet = findIndexOfACharInString(data.charAt(index));
-            int rotationalIndex = 0;
-            if(indexOfTheCharacterInAlphabet+shiftKey >= 26){
-                rotationalIndex = (indexOfTheCharacterInAlphabet+shiftKey%alphabet.length);
+            if(Character.isAlphabetic(data.charAt(index))){
+                Character character = data.charAt(index);
+                isUpperCase = Character.isUpperCase(character);
+                int indexOfTheCharacterInAlphabet = findIndexOfACharInString(character);
+                int rotationalIndex = 0;
+                if(indexOfTheCharacterInAlphabet+shiftKey >= 26){
+                    rotationalIndex = (indexOfTheCharacterInAlphabet+shiftKey%alphabet.length);
+                }else{
+                    rotationalIndex = indexOfTheCharacterInAlphabet+shiftKey;
+                }
+                Character charToAdd = alphabet[rotationalIndex];
+                result += isUpperCase ? charToAdd.toString().toUpperCase() : charToAdd.toString().toLowerCase();
             }else{
-                rotationalIndex = indexOfTheCharacterInAlphabet+shiftKey;
+                result += data.charAt(index);
             }
-            result += alphabet[rotationalIndex];
         }
         return result;
     }
