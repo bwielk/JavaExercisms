@@ -20,11 +20,11 @@ public class RotationalCipherTest {
     }
 
 
-//    @Test
-//    public void rotateSingleCharacterBy26() {
-//        rotationalCipher = new RotationalCipher(26);
-//        Assert.assertEquals("a", rotationalCipher.rotate("a"));
-//    }
+    @Test
+    public void rotateSingleCharacterBy26() {
+        rotationalCipher = new RotationalCipher(26);
+        Assert.assertEquals("a", rotationalCipher.rotate("a"));
+    }
 //
 //
 //    @Test
