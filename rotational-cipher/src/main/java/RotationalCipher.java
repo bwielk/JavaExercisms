@@ -18,7 +18,13 @@ class RotationalCipher {
         String result = "";
         for(int index=0; index<data.length(); index++){
             int indexOfTheCharacterInAlphabet = findIndexOfACharInString(data.charAt(index));
-            result += alphabet[indexOfTheCharacterInAlphabet+shiftKey];
+            int rotationalIndex = 0;
+            if(indexOfTheCharacterInAlphabet+shiftKey >= 26){
+                rotationalIndex = (indexOfTheCharacterInAlphabet+shiftKey%alphabet.length);
+            }else{
+                rotationalIndex = indexOfTheCharacterInAlphabet+shiftKey;
+            }
+            result += alphabet[rotationalIndex];
         }
         return result;
     }
