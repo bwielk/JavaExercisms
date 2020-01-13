@@ -10,6 +10,18 @@ class LargestSeriesProductCalculator {
     }
 
     long calculateLargestProductForSeriesLength(int numberOfDigits) {
+        if(numberOfDigits > inputNumber.length()) {
+            throw new IllegalArgumentException("Series length must be less than or equal to the length of the string to search.");
+        }
+        if(Arrays.asList(inputNumber.split(""))
+                .stream()
+                .anyMatch(x -> Character.isAlphabetic(x.charAt(0)))){
+            throw new IllegalArgumentException("String to search may only contain digits.");
+        }
+        return conductCalculations(numberOfDigits);
+    }
+
+    long conductCalculations(int numberOfDigits){
         Map<String, Integer> results = new HashMap<>();
         for(int index=0; index<=inputNumber.length()-numberOfDigits; index++){
             String seriesOfNumbers = inputNumber.substring(index, index+numberOfDigits);
