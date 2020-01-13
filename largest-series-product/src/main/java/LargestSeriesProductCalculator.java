@@ -13,7 +13,7 @@ class LargestSeriesProductCalculator {
         Map<String, Integer> results = new HashMap<>();
         for(int index=0; index<=inputNumber.length()-numberOfDigits; index++){
             String seriesOfNumbers = inputNumber.substring(index, index+numberOfDigits);
-            List<Integer> sequenceOfInts = Arrays.asList(inputNumber.split(""))
+            List<Integer> sequenceOfInts = Arrays.asList(seriesOfNumbers.split(""))
                     .stream().map(x -> Integer.valueOf(x)).collect(Collectors.toList());
             Integer productOfMultiplying =  sequenceOfInts.stream()
                     .reduce(1, (x, y) -> x*y);
