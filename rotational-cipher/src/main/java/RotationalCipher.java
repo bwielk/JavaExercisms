@@ -20,8 +20,8 @@ class RotationalCipher {
                 isUpperCase = Character.isUpperCase(character);
                 int indexOfTheCharacterInAlphabet = findIndexOfACharInString(character);
                 int rotationalIndex = 0;
-                if(indexOfTheCharacterInAlphabet+shiftKey >= 26){
-                    rotationalIndex = (indexOfTheCharacterInAlphabet+shiftKey%alphabet.length);
+                if(indexOfTheCharacterInAlphabet+shiftKey >= alphabet.length){
+                    rotationalIndex = (indexOfTheCharacterInAlphabet+shiftKey)%alphabet.length;
                 }else{
                     rotationalIndex = indexOfTheCharacterInAlphabet+shiftKey;
                 }
