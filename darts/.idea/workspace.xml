@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="75986aff-ed79-4d8a-885e-3ce5725a6e79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/darts.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/darts.test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/darts.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dnd-character/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dnd-character/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dnd-character/.idea/libraries/Gradle__junit_junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dnd-character/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dnd-character/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dnd-character/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dnd-character/.idea/modules/dnd-character.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dnd-character/.idea/modules/dnd-character.test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dnd-character/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dnd-character/dnd-character.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scrabble-score/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../scrabble-score/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../secret-handshake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../secret-handshake/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../secret-handshake/out/production/classes/HandshakeCalculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../secret-handshake/out/production/classes/HandshakeCalculator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../secret-handshake/src/main/java/HandshakeCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../secret-handshake/src/main/java/HandshakeCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../space-age/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../space-age/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -59,7 +35,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Darts.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
+            <state relative-caret-position="323">
               <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
             </state>
           </provider>
@@ -124,7 +100,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568743709913" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568745074847" />
     <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/ryanair_automated_tests" />
   </component>
   <component name="RunDashboard">
@@ -224,9 +200,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25637585" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25637585" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -236,12 +211,12 @@
       <window_info anchor="bottom" id="Messages" weight="0.3286119" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Build" order="10" visible="true" weight="0.3286119" />
@@ -319,7 +294,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Darts.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
+        <state relative-caret-position="323">
           <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
         </state>
       </provider>
