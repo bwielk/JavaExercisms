@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 class Matrix {
 
@@ -10,10 +11,9 @@ class Matrix {
     Matrix(String matrixAsString) {
         this.matrixAtString = matrixAsString;
         List<String> splitMatrixStrings = Arrays.asList(matrixAsString.split("\n"));
-        for(String row : splitMatrixStrings){
+        for(String row : splitMatrixStrings) {
             matrixes.add(Arrays.asList(row.split(" ")));
         }
-        System.out.println("HellO");
     }
 
     int[] getRow(int rowNumber) {
@@ -21,7 +21,7 @@ class Matrix {
     }
 
     int[] getColumn(int columnNumber) {
-        int[] ints = new int[]{1};
-        return ints;
+        return matrixes.stream().map(matrixRow -> matrixRow.get(columnNumber-1)).collect(Collectors.toList())
+                .stream().mapToInt(Integer::parseInt).toArray();
     }
 }
