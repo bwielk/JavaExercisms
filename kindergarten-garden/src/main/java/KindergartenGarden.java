@@ -35,7 +35,7 @@ class KindergartenGarden {
         Integer indexOfTheSecondPlantInARow = indexOfFirstPlantInARow+1;
 
         for(String row : rows){
-            plantsToReturn.add(Plant.getPlant(row.charAt(indexOfAStudentInTheList)));
+            plantsToReturn.add(Plant.getPlant(row.charAt(indexOfFirstPlantInARow)));
             plantsToReturn.add(Plant.getPlant(row.charAt(indexOfTheSecondPlantInARow)));
         }
         return plantsToReturn;
