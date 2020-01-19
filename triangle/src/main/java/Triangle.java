@@ -36,7 +36,7 @@ class Triangle {
      * @return
      */
     boolean isIsosceles() {
-        return sidesAsSet.size() == 2 || sidesAsSet.size() == 3;
+        return sidesAsSet.size() == 2 || sidesAsSet.size() == 1;
     }
 
     /**
