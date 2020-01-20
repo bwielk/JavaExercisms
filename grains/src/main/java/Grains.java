@@ -19,7 +19,6 @@ class Grains {
     }
 
     BigInteger grainsOnBoard() {
-        BigInteger result = new BigInteger(String.valueOf(0));
         grainsOnBoard = new ArrayList<>();
         grainsOnBoard.add(new BigInteger(String.valueOf(1)));
         grainsOnSquare(64);
