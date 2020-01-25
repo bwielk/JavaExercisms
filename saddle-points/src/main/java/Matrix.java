@@ -7,17 +7,22 @@ class Matrix {
 
     Matrix(List<List<Integer>> values) {
         this.values = values;
-        for(int col=0; col<values.get(0).size(); col++){
-            List<Integer> columnValues = new ArrayList<>();
-            for(List<Integer> row : values){
-                columnValues.add(row.get(col));
+        if(!values.isEmpty()){
+            for(int col=0; col<values.get(0).size(); col++){
+                List<Integer> columnValues = new ArrayList<>();
+                for(List<Integer> row : values){
+                    columnValues.add(row.get(col));
+                }
+                this.columns.add(columnValues);
             }
-            this.columns.add(columnValues);
         }
     }
 
     Set<MatrixCoordinate> getSaddlePoints() {
         Set<MatrixCoordinate> coordinates = new HashSet<>();
+        if(this.values.isEmpty()){
+            return Collections.emptySet();
+        }
         Integer rowIndex = 0;
         for(List<Integer> row: values){
             HashMap<Integer, Integer> rowAnalysisResult = findGreaterOrEqualNumberInARow(row);
