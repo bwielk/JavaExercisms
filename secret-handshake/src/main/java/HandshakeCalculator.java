@@ -9,22 +9,25 @@ class HandshakeCalculator {
     List<Signal> calculateHandshake(int number) {
         List<Signal> results = new ArrayList<>();
         Integer binaryValue = Integer.parseInt(Integer.toBinaryString(number));
+        //create a list of values assigned to gestures
         List<Integer> values = Arrays.asList(Signal.values()).stream().map(x -> x.getValue()).collect(Collectors.toList());
-        boolean toBeReversed = binaryValue > 10000;
-        if(binaryValue == 10000){
-            return results;
-        }
+        Collections.sort(values);
         Collections.reverse(values);
-        binaryValue = toBeReversed ? binaryValue - 10000 : binaryValue;
+        //determine if the order of the results has to be reversed in the end
+        boolean toBeReversed = binaryValue >= 10000;
+        if(toBeReversed){
+            binaryValue -=10000;
+        }
         for(Integer num : values){
             if(binaryValue >= num){
-                for(Signal signal : Signal.values()){
-                    if(num == signal.getValue()) results.add(signal);
-                }
+                results.add(Arrays.asList(Signal.values()).stream().filter(x -> x.getValue() == num).collect(Collectors.toList()).get(0));
                 binaryValue -= num;
             }
         }
+        //if no need to reverse, then retain the standard logic.
+        if(!toBeReversed){
+            Collections.reverse(results);
+        }
         return results;
     }
-
 }
