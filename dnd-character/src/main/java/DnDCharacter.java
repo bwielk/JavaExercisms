@@ -5,8 +5,32 @@ import java.util.Random;
 
 class DnDCharacter {
 
+    private int modifier;
+    private int strength;
+    private int ability;
+    private int dexterity;
+    private int constitution;
+    private int intelligence;
+    private int charisma;
+    private int wisdom;
+    private int hitpoints;
+
+    public DnDCharacter(){
+        this.constitution = generateValue();
+        this.modifier = modifier(constitution);
+        this.strength = generateValue();
+        this.ability = generateValue();
+        this.dexterity = generateValue();
+        this.intelligence = generateValue();
+        this.charisma = generateValue();
+        this.wisdom = generateValue();
+        this.hitpoints = 10 + modifier;
+    }
+
+
     int ability() {
-        return generateValue();
+        System.out.println("ABILITY = " +ability);
+        return ability;
     }
 
     int modifier(int input) {
@@ -14,38 +38,45 @@ class DnDCharacter {
     }
 
     int getStrength() {
-        return generateValue();
+        System.out.println("STRENGTH = " +strength);
+        return strength;
     }
 
     int getDexterity() {
-        return generateValue();
+        System.out.println("DEXTERITY = " +dexterity);
+        return dexterity;
     }
 
     int getConstitution() {
-        return generateValue();
+        System.out.println("CONSTITUTION = " +constitution);
+        return constitution;
     }
 
     int getIntelligence() {
-        return generateValue();
+        System.out.println("INTELLIGENCE = " +intelligence);
+        return intelligence;
     }
 
     int getWisdom() {
-        return generateValue();
+        System.out.println("WISDOM = " +wisdom);
+        return wisdom;
     }
 
     int getCharisma() {
-        return generateValue();
+        System.out.println("CHARISMA = " +charisma);
+        return charisma;
     }
 
     int getHitpoints() {
-        return generateValue();
+        System.out.println("INTELLIGENCE = " +hitpoints);
+        return hitpoints;
     }
 
     private int generateValue(){
         List<Integer> dice = new ArrayList<>();
         Random random = new Random();
         for(int i = 0; i<4; i++){
-            dice.add(1 + random.nextInt(7 - 1 + 1));
+            dice.add(1 + random.nextInt(6 - 1 + 1));
         }
         Collections.sort(dice);
         dice.remove(0);
