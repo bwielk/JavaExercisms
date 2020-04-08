@@ -35,13 +35,20 @@ class PhoneNumber {
     private String phoneNumber;
 
     public PhoneNumber(String phoneNumber){
-        if(phoneNumber.length() == 11 && phoneNumber.charAt(0) != '1'){
+        if(!PhoneNumberChecker.checkHasNoLetters(phoneNumber)){
+            throw new IllegalArgumentException(illegalCharacterExceptionMessage);
+        }
+        String phoneNumberToAssign = DigitExtractor.extractDigitsFromString(phoneNumber);
+        if(phoneNumberToAssign.length() == 11 && phoneNumberToAssign.charAt(0) != '1'){
             throw new IllegalArgumentException(numberIs11DigitsButDoesNotStartWith1ExceptionMessage);
         }
-        if(phoneNumber.length() < 10){
+        if(phoneNumberToAssign.length() < 10){
             throw new IllegalArgumentException(wrongLengthExceptionMessage);
         }
-        this.phoneNumber = phoneNumber;
+        if(phoneNumberToAssign.length() > 11){
+            throw new IllegalArgumentException(moreThan11DigitsExceptionMessage);
+        }
+        this.phoneNumber = phoneNumberToAssign;
     }
 
     public String getNumber(){
@@ -63,5 +70,17 @@ class DigitExtractor{
                 .map(String::toString)
                 .collect(Collectors.toList());
         return String.join("", extractedDigits);
+    }
+}
+
+class PhoneNumberChecker{
+
+    public static boolean checkHasNoLetters(String phoneNumber){
+        for(int i = 0; i<phoneNumber.length(); i++){
+            if(Character.isAlphabetic(phoneNumber.charAt(i))){
+                return false;
+            }
+        }
+        return true;
     }
 }
