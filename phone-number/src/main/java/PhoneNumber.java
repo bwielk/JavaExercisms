@@ -45,15 +45,23 @@ class PhoneNumber {
     }
 
     public String getNumber(){
-        List<String> extractedDigits = Arrays.asList(this.phoneNumber.split(""))
-                .stream()
-                .filter(x -> Character.isDigit(x.charAt(0)))
-                .map(String::toString)
-                .collect(Collectors.toList());
-        if(extractedDigits.size() == 11 && extractedDigits.get(0).charAt(0) == '1'){
-            extractedDigits.remove(0);
+        String extractedDigits = DigitExtractor.extractDigitsFromString(this.phoneNumber);
+        if(extractedDigits.length() == 11 && extractedDigits.charAt(0) == '1'){
+            return extractedDigits.substring(1);
         }
         return String.join("", extractedDigits);
     }
 
+}
+
+class DigitExtractor{
+
+    public static String extractDigitsFromString(String string){
+        List<String> extractedDigits = Arrays.asList(string.split(""))
+                .stream()
+                .filter(x -> Character.isDigit(x.charAt(0)))
+                .map(String::toString)
+                .collect(Collectors.toList());
+        return String.join("", extractedDigits);
+    }
 }

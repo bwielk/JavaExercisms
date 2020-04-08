@@ -79,8 +79,7 @@ public class PhoneNumberTest {
                 expectedNumber, actualNumber
         );
     }
-    
-    @Ignore("Remove to run test")
+
     @Test
     public void validWhen11DigitsAndStartingWith1EvenWithPunctuation() {
         String expectedNumber = "2234567890";
