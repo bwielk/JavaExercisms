@@ -41,7 +41,6 @@ class Robot {
             return existingNames.contains(name);
         }
     }
-
 }
 
 class RandomLetterGenerator{
