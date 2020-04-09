@@ -14,7 +14,7 @@ class PigLatinTranslator{
         if(vowels.contains(String.valueOf(word.charAt(0)))){
             transformedWord = word + "ay";
         }else{
-            transformedWord = word.substring(1,word.length()-1) + word.charAt(0) + "ay";
+            transformedWord = word.substring(1) + word.charAt(0) + "ay";
         }
         return transformedWord;
     }
