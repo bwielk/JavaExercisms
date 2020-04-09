@@ -70,7 +70,6 @@ public class PhoneNumberTest {
         new PhoneNumber("22234567890");
     }
 
-    @Ignore
     @Test
     public void validWhen11DigitsAndStartingWith1() {
         String expectedNumber = "2234567890";
@@ -105,7 +104,6 @@ public class PhoneNumberTest {
         new PhoneNumber("123-abc-7890");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void invalidWithPunctuations() {
         expectedException.expect(IllegalArgumentException.class);
@@ -113,7 +111,6 @@ public class PhoneNumberTest {
         new PhoneNumber("123-@:!-7890");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void invalidIfAreaCodeStartsWith0() {
         expectedException.expect(IllegalArgumentException.class);
@@ -121,15 +118,13 @@ public class PhoneNumberTest {
         new PhoneNumber("(023) 456-7890");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void invalidIfAreaCodeStartsWith1() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage(areaCodeStartsWithOneExceptionMessage);
         new PhoneNumber("(123) 456-7890");
     }
-    
-    @Ignore("Remove to run test")
+
     @Test
     public void invalidIfExchangeCodeStartsWith0() {
         expectedException.expect(IllegalArgumentException.class);
@@ -137,39 +132,34 @@ public class PhoneNumberTest {
         new PhoneNumber("(223) 056-7890");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void invalidIfExchangeCodeStartsWith1() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage(exchangeCodeStartsWithOneExceptionMessage);
         new PhoneNumber("(223) 156-7890");
     }
-    
-    @Ignore("Remove to run test")
+
     @Test
     public void invalidIfAreaCodeStartsWith0OnValid11DigitNumber() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage(areaCodeStartsWithZeroExceptionMessage);
         new PhoneNumber("1 (023) 456-7890");
     }
-    
-    @Ignore("Remove to run test")
+
     @Test
     public void invalidIfAreaCodeStartsWith1OnValid11DigitNumber() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage(areaCodeStartsWithOneExceptionMessage);
         new PhoneNumber("1 (123) 456-7890");
     }
-    
-    @Ignore("Remove to run test")
+
     @Test
     public void invalidIfExchangeCodeStartsWith0OnValid11DigitNumber() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage(exchangeCodeStartsWithZeroExceptionMessage);
         new PhoneNumber("1 (223) 056-7890");
     }
-    
-    @Ignore("Remove to run test")
+
     @Test
     public void invalidIfExchangeCodeStartsWith1OnValid11DigitNumber() {
         expectedException.expect(IllegalArgumentException.class);

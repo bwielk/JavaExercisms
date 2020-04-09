@@ -38,9 +38,36 @@ class PhoneNumber {
         if(!PhoneNumberChecker.checkHasNoLetters(phoneNumber)){
             throw new IllegalArgumentException(illegalCharacterExceptionMessage);
         }
+        if(PhoneNumberChecker.checkHasPunctuation(phoneNumber)){
+            throw new IllegalArgumentException(illegalPunctuationExceptionMessage);
+        }
         String phoneNumberToAssign = DigitExtractor.extractDigitsFromString(phoneNumber);
+        if(phoneNumberToAssign.length() == 10 && phoneNumberToAssign.charAt(0) == '0'){
+            throw new IllegalArgumentException(areaCodeStartsWithZeroExceptionMessage);
+        }
+        if(phoneNumberToAssign.length() == 10 && phoneNumberToAssign.charAt(0) == '1'){
+            throw new IllegalArgumentException(areaCodeStartsWithOneExceptionMessage);
+        }
         if(phoneNumberToAssign.length() == 11 && phoneNumberToAssign.charAt(0) != '1'){
             throw new IllegalArgumentException(numberIs11DigitsButDoesNotStartWith1ExceptionMessage);
+        }
+        if(phoneNumberToAssign.length() == 10 && phoneNumberToAssign.charAt(3) == '0'){
+            throw new IllegalArgumentException(exchangeCodeStartsWithZeroExceptionMessage);
+        }
+        if(phoneNumberToAssign.length() == 10 && phoneNumberToAssign.charAt(3) == '1'){
+            throw new IllegalArgumentException(exchangeCodeStartsWithOneExceptionMessage);
+        }
+        if(phoneNumberToAssign.length() == 11 && phoneNumberToAssign.charAt(1) == '1'){
+            throw new IllegalArgumentException(areaCodeStartsWithOneExceptionMessage);
+        }
+        if(phoneNumberToAssign.length() == 11 && phoneNumberToAssign.charAt(1) == '0'){
+            throw new IllegalArgumentException(areaCodeStartsWithZeroExceptionMessage);
+        }
+        if(phoneNumberToAssign.length() == 11 && phoneNumberToAssign.charAt(4) == '0'){
+            throw new IllegalArgumentException(exchangeCodeStartsWithZeroExceptionMessage);
+        }
+        if(phoneNumberToAssign.length() == 11 && phoneNumberToAssign.charAt(4) == '1'){
+            throw new IllegalArgumentException(exchangeCodeStartsWithOneExceptionMessage);
         }
         if(phoneNumberToAssign.length() < 10){
             throw new IllegalArgumentException(wrongLengthExceptionMessage);
@@ -82,5 +109,9 @@ class PhoneNumberChecker{
             }
         }
         return true;
+    }
+    //+,-,(,. and ) are allowed
+    public static boolean checkHasPunctuation(String phoneNumber){
+        return phoneNumber.matches(".*[@:!#\\\n\\t\"\'~£%^*_`;><^]+.*");
     }
 }
