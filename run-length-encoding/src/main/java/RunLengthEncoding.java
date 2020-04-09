@@ -30,6 +30,26 @@ class RunLengthEncoding{
     }
 
     public String decode(String stringToDecode){
-        return "";
+        String result = "";
+        String amountOfChars = "";
+        if(stringToDecode.equals(result)){
+            return result;
+        }
+        for(int i=0; i<stringToDecode.length(); i++){
+            if(Character.isDigit(stringToDecode.charAt(i))){
+                amountOfChars += stringToDecode.charAt(i);
+            }else{
+                if(amountOfChars.isEmpty()){
+                    result += stringToDecode.charAt(i);
+                }else{
+                    //attach the char x times
+                    for(int j=0; j<Integer.parseInt(amountOfChars); j++){
+                        result += stringToDecode.charAt(i);
+                    }
+                }
+                amountOfChars = "";
+            }
+        }
+        return result;
     }
 }
