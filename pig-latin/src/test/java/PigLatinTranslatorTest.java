@@ -58,25 +58,21 @@ public class PigLatinTranslatorTest {
         assertEquals("enonxay", pigLatinTranslator.translate("xenon"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testWordBeginningWithQWithoutAFollowingU() {
         assertEquals("atqay", pigLatinTranslator.translate("qat"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testChTreatedLikeAConsonantAtTheBeginningOfAWord() {
         assertEquals("airchay", pigLatinTranslator.translate("chair"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testQuTreatedLikeAConsonantAtTheBeginningOfAWord() {
         assertEquals("eenquay", pigLatinTranslator.translate("queen"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testQuAndAPrecedingConsonantTreatedLikeAConsonantAtTheBeginningOfAWord() {
         assertEquals("aresquay", pigLatinTranslator.translate("square"));

@@ -4,19 +4,24 @@ import java.util.List;
 class PigLatinTranslator{
 
     private List<String> vowels;
+    private List<String> consonantClusters;
 
     public PigLatinTranslator(){
         vowels = Arrays.asList("aeiou".split(""));
+        consonantClusters = Arrays.asList("ch", "qu", "squ");
     }
 
     public String translate(String word) {
-        String transformedWord = null;
         if(vowels.contains(String.valueOf(word.charAt(0)))){
-            transformedWord = word + "ay";
+           return word + "ay";
         }else{
-            transformedWord = word.substring(1) + word.charAt(0) + "ay";
+            for(String cluster : consonantClusters) {
+                if(cluster.equals(word.substring(0, cluster.length()))) {
+                    return word.substring(cluster.length()) + cluster + "ay";
+                }
+            }
+            return word.substring(1) + word.charAt(0) + "ay";
         }
-        return transformedWord;
     }
 }
 
