@@ -5,22 +5,26 @@ import java.util.Random;
 class Robot {
 
     private static List<String> existingNames;
+    private String name = null;
+
 
     Robot() {
         existingNames = new ArrayList<>();
     }
 
     public String getName() {
-        String newName = generateName();
-        while(new RobotNameDuplicationChecker().exists(newName)){
-            newName = generateName();
+        if(name == null){
+            name = generateName();
+            while(new RobotNameDuplicationChecker().exists(name)){
+                name = generateName();
+            }
+            existingNames.add(name);
         }
-        existingNames.add(newName);
-        return newName;
+        return name;
     }
 
     public void reset() {
-
+        name = null;
     }
 
     private String generateName(){

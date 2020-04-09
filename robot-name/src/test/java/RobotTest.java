@@ -24,10 +24,11 @@ public class RobotTest {
 
     @Test
     public void differentRobotsHaveDifferentNames() {
-        assertThat(robot.getName(), not(equalTo(new Robot().getName())));
+        for(int i=0; i<9999; i++){
+            assertThat(robot.getName(), not(equalTo(new Robot().getName())));
+        }
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void resetName() {
         final String name = robot.getName();
