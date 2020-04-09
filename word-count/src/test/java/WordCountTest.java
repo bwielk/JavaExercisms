@@ -68,7 +68,6 @@ public class WordCountTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void handlesExpandedLists() {
         expectedWordCount.put("one", 1);
@@ -81,7 +80,6 @@ public class WordCountTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void ignorePunctuation() {
         expectedWordCount.put("car", 1);
@@ -97,7 +95,6 @@ public class WordCountTest {
 
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void includeNumbers() {
         expectedWordCount.put("testing", 2);
@@ -110,7 +107,6 @@ public class WordCountTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void normalizeCase() {
         expectedWordCount.put("go", 3);
@@ -122,7 +118,6 @@ public class WordCountTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void withApostrophes() {
         expectedWordCount.put("first", 1);
