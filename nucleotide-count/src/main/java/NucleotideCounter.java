@@ -19,11 +19,7 @@ class NucleotideCounter{
     public Map<Character, Integer> nucleotideCounts(){
         for(int i=0; i<dna.length(); i++){
             Character currentChar = dna.charAt(i);
-            if(nucleotideCounter.keySet().contains(currentChar)){
-                nucleotideCounter.put(currentChar, nucleotideCounter.get(currentChar)+1);
-            }else{
-                nucleotideCounter.put(currentChar, 1);
-            }
+            nucleotideCounter.put(currentChar, nucleotideCounter.get(currentChar)+1);
         }
         return nucleotideCounter;
     }
