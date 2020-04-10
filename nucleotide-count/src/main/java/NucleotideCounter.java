@@ -11,7 +11,7 @@ class NucleotideCounter{
         this.nucleotideCounter.put('G', 0);
         this.nucleotideCounter.put('T', 0);
         if(isDnaValid(dna)){
-            this.dna = dna;
+            this.dna = dna.toUpperCase();
         }
 
     }
