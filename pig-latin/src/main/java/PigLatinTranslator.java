@@ -7,8 +7,8 @@ class PigLatinTranslator{
     private List<String> consonantClusters;
 
     public PigLatinTranslator(){
-        vowels = Arrays.asList("aeiou".split(""));
-        consonantClusters = Arrays.asList("ch", "qu", "squ");
+        vowels = Arrays.asList("a", "e", "i", "o", "u", "yt");
+        consonantClusters = Arrays.asList("ch", "qu", "squ", "sch", "th");
     }
 
     public String translate(String word) {
