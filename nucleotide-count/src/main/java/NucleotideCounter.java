@@ -13,7 +13,6 @@ class NucleotideCounter{
         if(isDnaValid(dna)){
             this.dna = dna.toUpperCase();
         }
-
     }
 
     public Map<Character, Integer> nucleotideCounts(){
