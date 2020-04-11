@@ -21,6 +21,7 @@ class Allergies {
                 allergies.add(Arrays.stream(Allergen.values()).filter(x -> x.getScore() == value).collect(Collectors.toList()).get(0));
             }
         }
+        Collections.reverse(allergies);
     }
 
     public boolean isAllergicTo(Allergen allergen){
