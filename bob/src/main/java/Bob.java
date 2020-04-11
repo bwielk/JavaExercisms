@@ -1,11 +1,23 @@
 class Bob{
 
     public String hey(String yourSay){
-        if(yourSay.equals(yourSay.toUpperCase())){
-            return "Whoa, chill out!";
+        String unnecessaryPunctuationFree = yourSay.replaceAll(
+                "[\"\\#$%&()*+,\n\r\t" +
+                        "\\-./:;<=>@\\[\n" +
+                        "\\\\\\]^_‘{|}~]", "")
+                .trim();
+        if(unnecessaryPunctuationFree.replaceAll(" ", "").isEmpty()){
+            return "Fine. Be that way!";
         }
-        if(yourSay.charAt(yourSay.length()-1) == '?'){
+        if(unnecessaryPunctuationFree.equals(unnecessaryPunctuationFree.toUpperCase())
+                && unnecessaryPunctuationFree.charAt(unnecessaryPunctuationFree.length()-1) == '?'){
+            return "Calm down, I know what I'm doing!";
+        }
+        if(unnecessaryPunctuationFree.charAt(unnecessaryPunctuationFree.length()-1) == '?'){
             return "Sure.";
+        }
+        if(unnecessaryPunctuationFree.equals(unnecessaryPunctuationFree.toUpperCase())){
+            return "Whoa, chill out!";
         }
         return "Whatever.";
     }
