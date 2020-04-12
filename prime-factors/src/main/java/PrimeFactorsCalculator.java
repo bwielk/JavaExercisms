@@ -3,11 +3,14 @@ import java.util.List;
 
 class PrimeFactorsCalculator{
 
+    List<Long> primeNumbers = new ArrayList<>();
+
     public List<Long> calculatePrimeFactorsOf(Long number){
         Long numberToProcess = number;
+        generatePrimes(number);
         List<Long> results = new ArrayList<>();
-        for(long i=2; i<number; i++){
-            if(isPrimary(i) && numberToProcess%i==0){
+        for(long i=2; i<=number; i++){
+            if(primeNumbers.contains(i) && numberToProcess%i==0){
                 while(numberToProcess%i==0){
                     results.add(i);
                     numberToProcess/=i;
@@ -24,5 +27,13 @@ class PrimeFactorsCalculator{
             }
         }
         return true;
+    }
+
+    private void generatePrimes(Long number){
+        for(long i=2; i<=number; i++){
+            if(isPrimary(i)){
+                primeNumbers.add(i);
+            }
+        }
     }
 }
