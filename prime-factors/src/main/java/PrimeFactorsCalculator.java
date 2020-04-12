@@ -7,7 +7,9 @@ class PrimeFactorsCalculator{
 
     public List<Long> calculatePrimeFactorsOf(Long number){
         Long numberToProcess = number;
-        generatePrimes(number);
+        if(primeNumbers.isEmpty()){
+            generatePrimes(number);
+        }
         List<Long> results = new ArrayList<>();
         for(long i=2; i<=number; i++){
             if(primeNumbers.contains(i) && numberToProcess%i==0){

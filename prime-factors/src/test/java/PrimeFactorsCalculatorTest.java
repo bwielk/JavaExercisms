@@ -45,7 +45,7 @@ public class PrimeFactorsCalculatorTest {
     public void testProductOfPrimes() {
         assertEquals(Arrays.asList(5L, 17L, 23L, 461L), primeFactorsCalculator.calculatePrimeFactorsOf(901255L));
     }
-
+    
     @Test
     public void testFactorsIncludingALargePrime() {
         assertEquals(Arrays.asList(11L, 9539L, 894119L), primeFactorsCalculator.calculatePrimeFactorsOf(93819012551L));
