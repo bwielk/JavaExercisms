@@ -11,13 +11,17 @@ class Allergies {
     private List<Allergen> allergies;
 
     public Allergies(Integer allergyScore){
-        this.allergyScore = allergyScore;
+        if(allergyScore <= 255){
+            this.allergyScore = allergyScore;
+        }else{
+            this.allergyScore = allergyScore%256;
+        }
         this.allergyValues = Arrays.stream(Allergen.values()).map(Allergen::getScore).collect(Collectors.toList());
         Collections.reverse(allergyValues);
         this.allergies = new ArrayList<>();
         for(Integer value : allergyValues){
             if(allergyScore >= value){
-                allergyScore-= value;
+                this.allergyScore-= value;
                 allergies.add(Arrays.stream(Allergen.values()).filter(x -> x.getScore() == value).collect(Collectors.toList()).get(0));
             }
         }
