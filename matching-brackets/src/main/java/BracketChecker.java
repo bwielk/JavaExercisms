@@ -8,13 +8,14 @@ class BracketChecker {
     List<String> acceptedBracketPairs = Arrays.asList("[]", "{}", "()");
 
     public BracketChecker(String bracketsString){
-        this.brackets = bracketsString.replace(" ", "");
+        this.brackets = bracketsString.replace(" ", "").replaceAll("[a-zA-Z0-9!\\\\\"#$%&'*+,-.\\/:;<=>?@^_`|~]", "");
     }
 
     public boolean areBracketsMatchedAndNestedCorrectly(){
         String bracketsCopy = this.brackets;
         List<String> reorderedBrackets = new ArrayList<>();
-        while(!bracketsCopy.isEmpty()){
+        Integer attemptsToFindAnExistingPairOfBrackets = 0;
+        while(attemptsToFindAnExistingPairOfBrackets<=3){
             for(String acceptedBracket : acceptedBracketPairs){
                 if(bracketsCopy.contains(acceptedBracket)){
                     reorderedBrackets.add(acceptedBracket);
@@ -23,6 +24,12 @@ class BracketChecker {
                     brokenBrackets[beginningIndex] = ' ';
                     brokenBrackets[beginningIndex+1] = ' ';
                     bracketsCopy = String.valueOf(brokenBrackets).replaceAll(" " , "");
+                    attemptsToFindAnExistingPairOfBrackets=0;
+                }else{
+                    attemptsToFindAnExistingPairOfBrackets++;
+                    if(attemptsToFindAnExistingPairOfBrackets == 3){
+                        break;
+                    }
                 }
             }
         }
