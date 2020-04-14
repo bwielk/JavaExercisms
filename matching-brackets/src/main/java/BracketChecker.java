@@ -13,7 +13,6 @@ class BracketChecker {
 
     public boolean areBracketsMatchedAndNestedCorrectly(){
         String bracketsCopy = this.brackets;
-        String filteredString = "";
         //to allow looping through until it's clear that there are no extractable pair in the string
         Integer attemptsToFindAnExistingPairOfBrackets = 0;
         //opening and closing brackets should create a string of even length
@@ -29,7 +28,6 @@ class BracketChecker {
                     brokenBrackets[beginningIndex] = ' ';
                     brokenBrackets[beginningIndex+1] = ' ';
                     bracketsCopy = String.valueOf(brokenBrackets).replaceAll(" " , "");
-                    filteredString += acceptedBracket;
                     attemptsToFindAnExistingPairOfBrackets=0;
                 }else{
                     attemptsToFindAnExistingPairOfBrackets++;
