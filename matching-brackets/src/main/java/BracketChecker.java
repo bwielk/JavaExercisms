@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -8,12 +7,13 @@ class BracketChecker {
     List<String> acceptedBracketPairs = Arrays.asList("[]", "{}", "()");
 
     public BracketChecker(String bracketsString){
+        //get rid of unnecessary chars
         this.brackets = bracketsString.replace(" ", "").replaceAll("[a-zA-Z0-9!\\\\\"#$%&'*+,-.\\/:;<=>?@^_`|~]", "");
     }
 
     public boolean areBracketsMatchedAndNestedCorrectly(){
         String bracketsCopy = this.brackets;
-        //to allow looping through until it's clear that there are no extractable pair in the string
+        //to allow looping through until it's clear that there are no extractable pairs of braces in the string
         Integer attemptsToFindAnExistingPairOfBrackets = 0;
         //opening and closing brackets should create a string of even length
         if(bracketsCopy.length()%2!=0){
