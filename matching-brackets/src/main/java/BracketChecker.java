@@ -13,8 +13,14 @@ class BracketChecker {
 
     public boolean areBracketsMatchedAndNestedCorrectly(){
         String bracketsCopy = this.brackets;
-        List<String> reorderedBrackets = new ArrayList<>();
+        String filteredString = "";
+        //to allow looping through until it's clear that there are no extractable pair in the string
         Integer attemptsToFindAnExistingPairOfBrackets = 0;
+        //opening and closing brackets should create a string of even length
+        if(bracketsCopy.length()%2!=0){
+            return false;
+        }
+        //extract nested braces so it can be checked if the string is correct
         while(attemptsToFindAnExistingPairOfBrackets<=3){
             for(String acceptedBracket : acceptedBracketPairs){
                 if(bracketsCopy.contains(acceptedBracket)){
@@ -23,8 +29,8 @@ class BracketChecker {
                     brokenBrackets[beginningIndex] = ' ';
                     brokenBrackets[beginningIndex+1] = ' ';
                     bracketsCopy = String.valueOf(brokenBrackets).replaceAll(" " , "");
+                    filteredString += acceptedBracket;
                     attemptsToFindAnExistingPairOfBrackets=0;
-                    this.brackets += acceptedBracket;
                 }else{
                     attemptsToFindAnExistingPairOfBrackets++;
                     if(attemptsToFindAnExistingPairOfBrackets == 3){
@@ -33,16 +39,10 @@ class BracketChecker {
                 }
             }
         }
-        if(brackets.length()%2!=0){
+        //the copy of the string that is the parameter of the entire method should be empty after clearing and bracket extraction
+        if(bracketsCopy.length()!=0){
             return false;
         }
-
-        for(int i=0; i<brackets.length(); i+=2){
-            String pair = new StringBuffer().append(brackets.charAt(i)).append(brackets.charAt(i+1)).toString();
-                if(!acceptedBracketPairs.contains(pair)) {
-                    return false;
-                }
-            }
         return true;
     }
 }
