@@ -151,7 +151,6 @@ public class BankAccountTest {
         bankAccount.getBalance();
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void canAdjustBalanceConcurrently() throws BankAccountActionInvalidException, InterruptedException {
         bankAccount.open();
