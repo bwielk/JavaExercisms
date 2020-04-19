@@ -31,7 +31,6 @@ public class HouseTest {
         assertEquals(expected, house.verse(verse));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void verseThree() {
         String expected =

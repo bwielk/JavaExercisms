@@ -19,8 +19,12 @@ class House{
         }else{
             result+= "This";
         }
-        for(int i=1; i<verse; i++){
-            result+=String.format(verses.get(i), items.get(i));
+        int verseToAdd = 1;
+        for(int i=verse-1; i!=0; i--, verseToAdd++){
+            if(i <= verse-2){
+                result+= "that";
+            }
+            result+=String.format(verses.get(verseToAdd), items.get(i));
         }
         result += "that lay in the house that Jack built.";
         return result;
