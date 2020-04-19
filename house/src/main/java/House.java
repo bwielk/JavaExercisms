@@ -6,10 +6,10 @@ class House{
     private Map<Integer, String> verses;
 
     public House(){
-        items = Arrays.asList("", "malt", "rat");
+        items = Arrays.asList("", "malt", "rat", "cat");
         verses = new HashMap<>();
-        verses.put(1, " is the %s ");
-        verses.put(2, " ate the %s ");
+        verses.put(3, " ate the %s ");
+        verses.put(4, " killed the %s ");
     }
 
     public String verse(Integer verse){
@@ -17,10 +17,10 @@ class House{
         if(verse <= 1){
             return "This is the house that Jack built.";
         }else{
-            result+= "This";
+            result+= String.format("This is the %s ", items.get(verse-1));
         }
-        int verseToAdd = 1;
-        for(int i=verse-1; i!=0; i--, verseToAdd++){
+        int verseToAdd = verse;
+        for(int i=verse-2; i!=0; i--, verseToAdd--){
             if(i <= verse-2){
                 result+= "that";
             }
