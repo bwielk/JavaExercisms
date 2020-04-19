@@ -51,10 +51,17 @@ class House{
     }
 
     public String verses(Integer start, Integer end){
-        return "";
+        String result = "";
+        for(int i=start; i<=end; i++){
+            result+=verse(i);
+            if(i!=end){
+                result+="\n";
+            }
+        }
+        return result;
     }
 
     public String sing(){
-        return "";
+        return verses(1,12);
     }
 }

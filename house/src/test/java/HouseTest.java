@@ -187,7 +187,6 @@ public class HouseTest {
         assertEquals(expected, house.verse(verse));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void multipleVerses() {
         String expected =
@@ -228,7 +227,6 @@ public class HouseTest {
         assertEquals(expected, house.verses(startVerse, endVerse));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void wholeRhyme() {
         String expected =
