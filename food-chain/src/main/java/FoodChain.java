@@ -17,20 +17,24 @@ class FoodChain {
             return result;
         }
         for(int i=verse-1; i>-1; i--){
-            if(i == verse-1 && verse == 7){
-                result += String.format("I don't know how she swallowed a %s!\n", foodList.get(i));
-            }
-            if(i == verse-1 && verse == 6){
-                result += String.format("Just opened her throat and swallowed a %s!\n", foodList.get(i));
-            }
-            if(i == verse-1 && verse == 5){
-                result += String.format("What a hog, to swallow a %s!\n", foodList.get(i));
-            }
-            if(i == verse-1 && verse == 4){
-                result += String.format("Imagine that, to swallow a %s!\n", foodList.get(i));
-            }
-            if(i == verse-1 && verse == 3) {
-                result += String.format("How absurd to swallow a %s!\n", foodList.get(i));
+            if(i == verse-1){
+                switch(verse){
+                    case 7:
+                        result += String.format("I don't know how she swallowed a %s!\n", foodList.get(i));
+                        break;
+                    case 6:
+                        result += String.format("Just opened her throat and swallowed a %s!\n", foodList.get(i));
+                        break;
+                    case 5:
+                        result += String.format("What a hog, to swallow a %s!\n", foodList.get(i));
+                        break;
+                    case 4:
+                        result += String.format("Imagine that, to swallow a %s!\n", foodList.get(i));
+                        break;
+                    case 3:
+                        result += String.format("How absurd to swallow a %s!\n", foodList.get(i));
+                        break;
+                }
             }
             if(verse > 3 && i>2){
                 result += String.format("She swallowed the %s to catch the %s.\n", foodList.get(i), foodList.get(i-1));
