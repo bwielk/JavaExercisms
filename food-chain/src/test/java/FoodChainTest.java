@@ -120,7 +120,6 @@ public class FoodChainTest {
 
 
     @Test
-    @Ignore("Remove to run test.")
     public void multipleVerses() {
         int startVerse = 1;
         int endVerse = 3;
@@ -144,7 +143,6 @@ public class FoodChainTest {
 
 
     @Test
-    @Ignore("Remove to run test.")
     public void wholeSong() {
         int startVerse = 1;
         int endVerse = 8;

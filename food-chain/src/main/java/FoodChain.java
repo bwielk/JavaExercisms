@@ -50,6 +50,13 @@ class FoodChain {
     }
 
     public String verses(Integer start, Integer end){
-        return "";
+        String result = "";
+        for(int i=start; i<=end; i++){
+            result+=verse(i);
+            if(i!=end) {
+                result+="\n\n";
+            }
+        }
+        return result;
     }
 }
