@@ -98,7 +98,6 @@ public class TransposeTest {
         assertEquals(expected, transpose.transpose(input));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void secondLineLongerThanFirstLine() {
         String input = "The first line.\n" +
@@ -124,7 +123,6 @@ public class TransposeTest {
         assertEquals(expected, transpose.transpose(input));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void mixedLineLength() {
         String input = "The longest line.\n" +

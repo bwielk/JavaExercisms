@@ -19,13 +19,22 @@ class Transpose{
             List<String> splitString = Arrays.asList(input.split("\n"));
             Integer lengthOfTheLongestString = Collections.max(splitString.stream().map(String::length).collect(Collectors.toList()));
             for(int i=0; i<lengthOfTheLongestString; i++){
+                String transposedWord = "";
                 for(String word: splitString){
                     try{
-                        result+=word.charAt(i);
+                        if(!transposedWord.isEmpty()
+                                && transposedWord.charAt(transposedWord.length()-1) == ' '
+                                && word.charAt(i)!=' '){
+                            char[] transposedWordToReplace = transposedWord.toCharArray();
+                            transposedWordToReplace[transposedWord.length()-1] = ' ';
+                            transposedWord=String.valueOf(transposedWordToReplace);
+                        }
+                        transposedWord+=word.charAt(i);
                     }catch (StringIndexOutOfBoundsException e){
-                        result+="";
+                        transposedWord+=" ";
                     }
                 }
+                result+=transposedWord;
                 if(i<lengthOfTheLongestString-1){
                     result+="\n";
                 }
