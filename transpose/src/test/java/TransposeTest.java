@@ -53,7 +53,6 @@ public class TransposeTest {
         assertEquals(expected, transpose.transpose(input));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void singleLine() {
         String input = "Single line.";
@@ -74,7 +73,6 @@ public class TransposeTest {
         assertEquals(expected, transpose.transpose(input));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void firstLineLongerThanSecondLine() {
         String input = "The fourth line.\n" +
