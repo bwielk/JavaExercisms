@@ -18,7 +18,6 @@ public class TournamentTest {
         assertEquals("Team                           | MP |  W |  D |  L |  P\n", tournament.printTable());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void aWinIsThreePointsALossIsZeroPoints() {
         tournament.applyResults("Allegoric Alaskans;Blithering Badgers;win");
