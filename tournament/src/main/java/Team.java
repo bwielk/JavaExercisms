@@ -5,6 +5,15 @@ public class Team {
     private int draw = 0;
     private int losses = 0;
     private int playedGames = 0;
+    private int totalPoints = 0;
+
+    public int getTotalPoints() {
+        return totalPoints;
+    }
+
+    public void setTotalPoints(int totalPoints) {
+        this.totalPoints = totalPoints;
+    }
 
     public Team(String teamName) {
         this.teamName = teamName;

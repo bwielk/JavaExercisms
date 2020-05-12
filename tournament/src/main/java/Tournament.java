@@ -1,6 +1,7 @@
 import com.sun.xml.internal.ws.util.StringUtils;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 class Tournament {
 
@@ -16,21 +17,28 @@ class Tournament {
     }
 
     public String printTable(){
-        for(String name : teams.keySet()){
-            String teamName = StringUtils.capitalize(name.toLowerCase()) +
-                    String.join("", Collections.nCopies(31-name.length(), " "));
-            String matchesPlayed = String.valueOf(teams.get(name).getPlayedGames());
-            String wins = String.valueOf(teams.get(name).getWins());
-            String draws = String.valueOf(teams.get(name).getDraw());
-            String losses = String.valueOf(teams.get(name).getLosses());
-            String points = String.valueOf(
-                    teams.get(name).getWins()*pointsTable.get("win")+
-                    teams.get(name).getDraw()*pointsTable.get("draw")+
-                    teams.get(name).getLosses()*pointsTable.get("loss")
-            );
-            tableContent += String.format("%s|  %s |  $s |  $s |  $s\n");
+        List<Team> teamsInformation = new ArrayList<>(teams.values());
+        teamsInformation.sort((t1, t2) -> Integer.compare(t2.getTotalPoints(), t1.getTotalPoints()));
+        for(Team team : teamsInformation){
+            String teamName = Arrays.stream(team.getTeamName()
+                    .toLowerCase()
+                    .split("\\s+"))
+                    .map(t -> t.substring(0, 1).toUpperCase() + t.substring(1))
+                    .collect(Collectors.joining(" ")) +
+                    String.join("", Collections.nCopies(31-team.getTeamName().length(), " "));
+            String matchesPlayed = String.valueOf(team.getPlayedGames());
+            String wins = String.valueOf(team.getWins());
+            String draws = String.valueOf(team.getDraw());
+            String losses = String.valueOf(team.getLosses());
+            String points = String.valueOf(team.getTotalPoints());
+            tableContent += teamName+
+                    "|  "+ matchesPlayed +
+                    " |  "+ wins +
+                    " |  "+ draws +
+                    " |  "+ losses +
+                    " |  "+ points +"\n";
         }
-        return tableHeader;
+        return tableHeader + tableContent;
     }
 
     public void applyResults(String gamesPlayed){
@@ -50,15 +58,23 @@ class Tournament {
                 switch (gameResult) {
                     case "win":
                         teamToUpdate1.setWins(teamToUpdate1.getWins() + 1);
+                        teamToUpdate1.setTotalPoints(teamToUpdate1.getTotalPoints() +
+                                pointsTable.get("win"));
                         teamToUpdate2.setLosses(teamToUpdate2.getLosses() + 1);
                         break;
                     case "draw":
                         teamToUpdate1.setWins(teamToUpdate1.getDraw() + 1);
+                        teamToUpdate1.setTotalPoints(teamToUpdate1.getTotalPoints() +
+                                pointsTable.get("draw"));
                         teamToUpdate2.setLosses(teamToUpdate2.getDraw() + 1);
+                        teamToUpdate2.setTotalPoints(teamToUpdate2.getTotalPoints() +
+                                pointsTable.get("draw"));
                         break;
                     case "loss":
                         teamToUpdate1.setLosses(teamToUpdate1.getLosses() + 1);
                         teamToUpdate2.setWins(teamToUpdate2.getWins() + 1);
+                        teamToUpdate2.setTotalPoints(teamToUpdate1.getTotalPoints() +
+                                pointsTable.get("win"));
                         break;
                 }
                 teams.put(team1Name, teamToUpdate1);
