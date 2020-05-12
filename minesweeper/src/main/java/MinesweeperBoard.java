@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -17,8 +16,15 @@ class MinesweeperBoard {
     }
 
     public List<String> withNumbers(){
+        /**
+         * We are going over each line of the matrix
+         */
         for(int line=0; line<matrix.length; line++){
             String currentLine = matrix[line];
+            /**
+             * Here we're checking if we're coming across a '*' char that will kick off
+             * the entire mechanism of updating the chars (named here as SLOTS)
+             */
             for(int index=0; index<currentLine.length(); index++){
                 if(currentLine.charAt(index) == '*'){
                     try{
