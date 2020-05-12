@@ -28,7 +28,6 @@ public class TournamentTest {
                 tournament.printTable());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void aWinCanAlsoBeExpressedAsALoss() {
         tournament.applyResults("Blithering Badgers;Allegoric Alaskans;loss");
@@ -39,7 +38,6 @@ public class TournamentTest {
                 tournament.printTable());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void aDifferentTeamCanWin() {
         tournament.applyResults("Blithering Badgers;Allegoric Alaskans;win");
@@ -50,7 +48,6 @@ public class TournamentTest {
                 tournament.printTable());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void aDrawIsOnePointEach() {
         tournament.applyResults("Allegoric Alaskans;Blithering Badgers;draw");
@@ -61,7 +58,6 @@ public class TournamentTest {
                 tournament.printTable());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void thereCanBeMoreThanOneMatch() {
         tournament.applyResults(
@@ -74,7 +70,6 @@ public class TournamentTest {
                 tournament.printTable());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void thereCanBeMoreThanOneWinner() {
         tournament.applyResults(
@@ -87,7 +82,6 @@ public class TournamentTest {
                 tournament.printTable());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void thereCanBeMoreThanTwoTeams() {
         tournament.applyResults(
@@ -102,7 +96,6 @@ public class TournamentTest {
                 tournament.printTable());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void typicalInput() {
         tournament.applyResults(
@@ -121,7 +114,6 @@ public class TournamentTest {
                 tournament.printTable());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void incompleteCompetition() {
         tournament.applyResults(
@@ -138,7 +130,6 @@ public class TournamentTest {
                 tournament.printTable());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void tiesBrokenAlphabetically() {
         tournament.applyResults(

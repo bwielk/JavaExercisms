@@ -18,7 +18,9 @@ class Tournament {
 
     public String printTable(){
         List<Team> teamsInformation = new ArrayList<>(teams.values());
-        teamsInformation.sort((t1, t2) -> Integer.compare(t2.getTotalPoints(), t1.getTotalPoints()));
+        Collections.sort(teamsInformation, (t1, t2) ->
+                (t1.getTotalPoints() != t2.getTotalPoints()) ? Integer.compare(t2.getTotalPoints(), t1.getTotalPoints())
+                : t1.getTeamName().compareTo(t2.getTeamName()));
         for(Team team : teamsInformation){
             String teamName = Arrays.stream(team.getTeamName()
                     .toLowerCase()
