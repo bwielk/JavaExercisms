@@ -5,30 +5,19 @@ import java.util.List;
 class WordProblemSolver {
 
     public int solve(String sentence) {
-        String foundNumberAsChars = "";
         List<Integer> foundNumbers = new ArrayList<>();
         List<String> foundActions = new ArrayList<>();
 
-        for (int c = 0; c < sentence.length(); c++) {
-            if (Character.isDigit(sentence.charAt(c))) {
-                try {
-                    if (sentence.charAt(c - 1) == '-') {
-                        foundNumberAsChars += sentence.charAt(c - 1);
-                    }
-                } catch (ArrayIndexOutOfBoundsException e) {
-                    System.out.println(e.getMessage());
-                }
-
-                int startingCharForIntSearch = c;
-                while (Character.isDigit(sentence.charAt(startingCharForIntSearch))) {
-                    foundNumberAsChars += sentence.charAt(startingCharForIntSearch);
-                    startingCharForIntSearch += 1;
-                }
-                c = startingCharForIntSearch;
-                foundNumbers.add(Integer.parseInt(foundNumberAsChars));
-                foundNumberAsChars = "";
+        Arrays.asList(sentence.replace("?", "").split(" ")).forEach(x -> {
+            if (x.contains(Actions.ADD) || x.contains(Actions.SUBTRACT)
+                    || x.contains(Actions.MULTIPLY) || x.contains(Actions.DIVIDED)) {
+                foundActions.add(x);
             }
-        }
+            if (x.matches("-?\\d+(.\\d+)?")){
+                foundNumbers.add(Integer.parseInt(x));
+            }
+            System.out.println("");
+        });
 
         if(foundNumbers.size() == 0){
             throw new IllegalArgumentException("I'm sorry, I don't understand the question!");
@@ -37,13 +26,6 @@ class WordProblemSolver {
         int total = 0;
         if (foundNumbers.size() == 1 && String.format(Actions.WHAT_IS, foundNumbers.get(0)).equals(sentence)) {
             return foundNumbers.get(0);}
-
-        Arrays.asList(sentence.split(" ")).forEach(x -> {
-            if (x.contains(Actions.ADD) || x.contains(Actions.SUBTRACT)
-                    || x.contains(Actions.MULTIPLY) || x.contains(Actions.DIVIDED)) {
-                foundActions.add(x);
-            }
-        });
 
         if (foundActions.size() == 0 && !String.format(Actions.WHAT_IS, foundNumbers.get(0)).equals(sentence)){
             throw new IllegalArgumentException("I'm sorry, I don't understand the question!");
