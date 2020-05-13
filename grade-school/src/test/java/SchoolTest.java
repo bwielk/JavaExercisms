@@ -24,7 +24,6 @@ public class SchoolTest {
         assertEquals(expected, school.roster());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void addingMoreStudentsAddsThemToTheSameSortedRoster() {
         school = new School();
@@ -36,7 +35,6 @@ public class SchoolTest {
         assertEquals(expected, school.roster());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void addingStudentsToDifferentGradesAddsThemToTheSameSortedRoster() {
         school = new School();
@@ -46,15 +44,12 @@ public class SchoolTest {
         assertEquals(expected, school.roster());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void rosterReturnsAnEmptyListIfThereAreNoStudentsEnrolled() {
         school = new School();
         List<String> expected = Arrays.asList();
         assertEquals(expected, school.roster());
     }
-
-    @Ignore("Remove to run test")
     @Test
     public void studentNamesWithGradesAreDisplayedInTheSameSortedRoster() {
         school = new School();
@@ -69,7 +64,6 @@ public class SchoolTest {
         assertEquals(expected, school.roster());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void gradeReturnsTheStudentsInThatGradeInAlphabeticalOrder() {
         school = new School();
@@ -80,7 +74,6 @@ public class SchoolTest {
         assertEquals(expected, school.grade(5));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void gradeReturnsAnEmptyListIfThereAreNoStudentsInThatGrade() {
         school = new School();
