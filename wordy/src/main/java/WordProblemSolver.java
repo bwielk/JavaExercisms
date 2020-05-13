@@ -5,25 +5,36 @@ import java.util.List;
 class WordProblemSolver {
 
     public int solve(String sentence) {
+
+        String regexForCheckingNumbers = "-?\\d+(.\\d+)?";
+
         List<Integer> foundNumbers = new ArrayList<>();
         List<String> foundActions = new ArrayList<>();
+        List<String> splitSentence = Arrays.asList(sentence.replace("?", "").split(" "));
 
-        Arrays.asList(sentence.replace("?", "").split(" ")).forEach(x -> {
+        for(int word=0; word<splitSentence.size(); word++){
+            String x = splitSentence.get(word);
             if (x.contains(Actions.ADD) || x.contains(Actions.SUBTRACT)
                     || x.contains(Actions.MULTIPLY) || x.contains(Actions.DIVIDED)) {
                 foundActions.add(x);
             }
-            if (x.matches("-?\\d+(.\\d+)?")){
+            if (x.matches(regexForCheckingNumbers)){
                 foundNumbers.add(Integer.parseInt(x));
+                try{
+                    if(splitSentence.get(word+1).matches(regexForCheckingNumbers)){
+                        throw new IllegalArgumentException("I'm sorry, I don't understand the question!");
+                    }
+                }catch(ArrayIndexOutOfBoundsException e){
+                    System.out.print(e.getMessage());
+                }
+
             }
-            System.out.println("");
-        });
+        }
 
         if(foundNumbers.size() == 0){
             throw new IllegalArgumentException("I'm sorry, I don't understand the question!");
         }
 
-        int total = 0;
         if (foundNumbers.size() == 1 && String.format(Actions.WHAT_IS, foundNumbers.get(0)).equals(sentence)) {
             return foundNumbers.get(0);}
 
@@ -38,6 +49,7 @@ class WordProblemSolver {
         int numberIndexLimit = 2;
         int currentIndexNumber= 1;
         int currentNumberToManipulate = foundNumbers.get(0);
+        int total = 0;
 
         for (int action = 0; action < foundActions.size(); action++) {
             for (int number = currentIndexNumber; number < numberIndexLimit; number++) {
