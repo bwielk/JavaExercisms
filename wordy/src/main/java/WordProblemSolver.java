@@ -41,24 +41,37 @@ class WordProblemSolver {
         if (foundNumbers.size() == 1) {
             return foundNumbers.get(0);}
 
+        int numberIndexLimit = 2;
+        int currentIndexNumber= 1;
+        int currentNumberToManipulate = foundNumbers.get(0);
+
         for (int action = 0; action < foundActions.size(); action++) {
-            for (int number = 0; number < foundNumbers.size(); number++) {
+            for (int number = currentIndexNumber; number < numberIndexLimit; number++) {
+                int result = 0;
                 switch (foundActions.get(action)) {
                     case Actions.ADD:
-                        foundNumbers.stream().reduce(0, Integer::sum);
+                        result = currentNumberToManipulate + foundNumbers.get(number);
                         break;
                     case Actions.SUBTRACT:
-                        foundNumbers.get(0) - foundNumbers.get(1);
+                        result = currentNumberToManipulate - foundNumbers.get(number);
                         break;
                     case Actions.MULTIPLY:
-                        foundNumbers.get(0) * foundNumbers.get(1);
+                        result = currentNumberToManipulate * foundNumbers.get(number);
                         break;
                     case Actions.DIVIDED:
-                        foundNumbers.get(0) / foundNumbers.get(1);
+                        result = currentNumberToManipulate / foundNumbers.get(number);
                         break;
                 }
+                currentNumberToManipulate=result;
+                if(number+1==numberIndexLimit){
+                    currentIndexNumber++;
+                }
+            }
+            if(currentIndexNumber<foundNumbers.size()){
+                numberIndexLimit++;
             }
         }
+        total += currentNumberToManipulate;
         return total;
     }
 }
