@@ -32,6 +32,15 @@ class WordProblemSolver {
             if(sentence.contains("plus")){
                 return foundNumbers.stream().reduce(0, Integer::sum);
             }
+            if(sentence.contains("minus")){
+                return foundNumbers.get(0)-foundNumbers.get(1);
+            }
+            if(sentence.contains("multipl")){
+                return  foundNumbers.get(0)*foundNumbers.get(1);
+            }
+            if(sentence.contains("divide")){
+                return  foundNumbers.get(0)/foundNumbers.get(1);
+            }
         }
         return 0;
     }

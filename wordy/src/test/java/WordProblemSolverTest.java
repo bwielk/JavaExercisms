@@ -23,7 +23,7 @@ public class WordProblemSolverTest {
     public void testSingleAddition2() {
         assertEquals(55, solver.solve("What is 53 plus 2?"));
     }
-    
+
     @Test
     public void testSingleAdditionWithNegativeNumbers() {
         assertEquals(-11, solver.solve("What is -1 plus -10?"));
@@ -34,19 +34,16 @@ public class WordProblemSolverTest {
         assertEquals(45801, solver.solve("What is 123 plus 45678?"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testSingleSubtraction() {
         assertEquals(16, solver.solve("What is 4 minus -12?"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testSingleMultiplication() {
         assertEquals(-75, solver.solve("What is -3 multiplied by 25?"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testSingleDivision() {
         assertEquals(-11, solver.solve("What is 33 divided by -3?"));
