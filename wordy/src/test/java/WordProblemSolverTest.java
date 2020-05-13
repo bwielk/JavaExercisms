@@ -84,7 +84,6 @@ public class WordProblemSolverTest {
         assertEquals(2, solver.solve("What is -12 divided by 2 divided by -3?"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testUnknownOperation() {
         IllegalArgumentException expected =
@@ -96,7 +95,6 @@ public class WordProblemSolverTest {
             .hasMessage("I'm sorry, I don't understand the question!");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testNonMathQuestion() {
         // See https://en.wikipedia.org/wiki/President_of_the_United_States if you really need to know!
@@ -109,7 +107,6 @@ public class WordProblemSolverTest {
             .hasMessage("I'm sorry, I don't understand the question!");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testMissingAnOperand() {
         IllegalArgumentException expected =
@@ -121,7 +118,6 @@ public class WordProblemSolverTest {
             .hasMessage("I'm sorry, I don't understand the question!");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testNoOperandsOrOperators() {
         IllegalArgumentException expected =
@@ -133,7 +129,6 @@ public class WordProblemSolverTest {
             .hasMessage("I'm sorry, I don't understand the question!");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testTwoOperationsInARow() {
         IllegalArgumentException expected =
@@ -145,7 +140,6 @@ public class WordProblemSolverTest {
             .hasMessage("I'm sorry, I don't understand the question!");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testTwoNumbersAfterOperation() {
         IllegalArgumentException expected =
@@ -157,7 +151,6 @@ public class WordProblemSolverTest {
             .hasMessage("I'm sorry, I don't understand the question!");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testPostfixNotation() {
         IllegalArgumentException expected =
@@ -169,7 +162,6 @@ public class WordProblemSolverTest {
             .hasMessage("I'm sorry, I don't understand the question!");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testPrefixNotation() {
         IllegalArgumentException expected =

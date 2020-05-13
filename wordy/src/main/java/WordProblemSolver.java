@@ -9,13 +9,6 @@ class WordProblemSolver {
         List<Integer> foundNumbers = new ArrayList<>();
         List<String> foundActions = new ArrayList<>();
 
-        Arrays.asList(sentence.split(" ")).forEach(x -> {
-            if (x.contains(Actions.ADD) || x.contains(Actions.SUBTRACT)
-                    || x.contains(Actions.MULTIPLY) || x.contains(Actions.DIVIDED)) {
-                foundActions.add(x);
-            }
-        });
-
         for (int c = 0; c < sentence.length(); c++) {
             if (Character.isDigit(sentence.charAt(c))) {
                 try {
@@ -37,9 +30,28 @@ class WordProblemSolver {
             }
         }
 
+        if(foundNumbers.size() == 0){
+            throw new IllegalArgumentException("I'm sorry, I don't understand the question!");
+        }
+
         int total = 0;
-        if (foundNumbers.size() == 1) {
+        if (foundNumbers.size() == 1 && String.format(Actions.WHAT_IS, foundNumbers.get(0)).equals(sentence)) {
             return foundNumbers.get(0);}
+
+        Arrays.asList(sentence.split(" ")).forEach(x -> {
+            if (x.contains(Actions.ADD) || x.contains(Actions.SUBTRACT)
+                    || x.contains(Actions.MULTIPLY) || x.contains(Actions.DIVIDED)) {
+                foundActions.add(x);
+            }
+        });
+
+        if (foundActions.size() == 0 && !String.format(Actions.WHAT_IS, foundNumbers.get(0)).equals(sentence)){
+            throw new IllegalArgumentException("I'm sorry, I don't understand the question!");
+        }
+
+        if (foundNumbers.size() != foundActions.size()+1){
+            throw new IllegalArgumentException("I'm sorry, I don't understand the question!");
+        }
 
         int numberIndexLimit = 2;
         int currentIndexNumber= 1;
@@ -63,7 +75,7 @@ class WordProblemSolver {
                         break;
                 }
                 currentNumberToManipulate=result;
-                if(number+1==numberIndexLimit){
+                if(number+1<=numberIndexLimit){
                     currentIndexNumber++;
                 }
             }
