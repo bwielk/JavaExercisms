@@ -1,20 +1,10 @@
-import com.sun.xml.internal.ws.util.StringUtils;
-
 import java.util.*;
 import java.util.stream.Collectors;
 
 class Tournament {
 
-    private String tableHeader = "Team                           | MP |  W |  D |  L |  P\n";
     private String tableContent = "";
-    private Map<String, Integer> pointsTable = new HashMap<>();
     private Map<String, Team> teams = new HashMap<>();
-
-    public Tournament(){
-        pointsTable.put("win", 3);
-        pointsTable.put("draw", 1);
-        pointsTable.put("loss", 0);
-    }
 
     public String printTable(){
         List<Team> teamsInformation = new ArrayList<>(teams.values());
@@ -47,17 +37,17 @@ class Tournament {
             String losses = String.valueOf(team.getLosses());
             String points = String.valueOf(team.getTotalPoints());
 
-            tableContent += String.format("%s|  %s |  %s |  %s |  %s |  %s\n",
+            tableContent += String.format(TableFormatting.TABLE_ROW,
                     teamName, matchesPlayed, wins, draws, losses, points);
         }
-        return tableHeader + tableContent;
+        return TableFormatting.TABLE_HEADER + tableContent;
     }
 
     public void applyResults(String gamesPlayed){
-        String[] splitGamesPlayed = gamesPlayed.split("\n");
+        String[] splitGamesPlayed = gamesPlayed.split(ExpectedCSVFormatting.LINE_SPLIT);
 
         for(int game=0; game<splitGamesPlayed.length; game++){
-            String[] splitGameData = splitGamesPlayed[game].split(";");
+            String[] splitGameData = splitGamesPlayed[game].split(ExpectedCSVFormatting.DELIMETER);
             if(splitGameData.length == 3){//check the amount of data is adequate
                 String team1Name = splitGameData[0].toUpperCase();
                 String team2Name = splitGameData[1].toUpperCase();
@@ -69,25 +59,25 @@ class Tournament {
                 teamToUpdate1.setPlayedGames(teamToUpdate1.getPlayedGames()+1);
                 teamToUpdate2.setPlayedGames(teamToUpdate2.getPlayedGames()+1);
                 switch (gameResult) {
-                    case "win":
+                    case GameStatuses.WIN:
                         teamToUpdate1.setWins(teamToUpdate1.getWins() + 1);
                         teamToUpdate1.setTotalPoints(teamToUpdate1.getTotalPoints() +
-                                pointsTable.get("win"));
+                                Points.WIN.getPoints());
                         teamToUpdate2.setLosses(teamToUpdate2.getLosses() + 1);
                         break;
-                    case "draw":
+                    case GameStatuses.DRAW:
                         teamToUpdate1.setDraw(teamToUpdate1.getDraw() + 1);
                         teamToUpdate1.setTotalPoints(teamToUpdate1.getTotalPoints() +
-                                pointsTable.get("draw"));
+                                Points.DRAW.getPoints());
                         teamToUpdate2.setDraw(teamToUpdate2.getDraw() + 1);
                         teamToUpdate2.setTotalPoints(teamToUpdate2.getTotalPoints() +
-                                pointsTable.get("draw"));
+                                Points.DRAW.getPoints());
                         break;
-                    case "loss":
+                    case GameStatuses.LOSS:
                         teamToUpdate1.setLosses(teamToUpdate1.getLosses() + 1);
                         teamToUpdate2.setWins(teamToUpdate2.getWins() + 1);
                         teamToUpdate2.setTotalPoints(teamToUpdate2.getTotalPoints() +
-                                pointsTable.get("win"));
+                                Points.WIN.getPoints());
                         break;
                 }
                 teams.put(team1Name, teamToUpdate1);
