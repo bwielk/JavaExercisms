@@ -110,7 +110,6 @@ public class BowlingGameTest {
         assertEquals(30, game.score());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void aStrikeWithTheOneRollBonusAfterASpareInTheLastFrameDoesNotGetABonus() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 3, 10};
@@ -119,7 +118,6 @@ public class BowlingGameTest {
         assertEquals(20, game.score());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void allStrikesIsAPerfectGame() {
         int[] rolls = {10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10};
@@ -128,7 +126,6 @@ public class BowlingGameTest {
         assertEquals(300, game.score());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void rollsCanNotScoreNegativePoints() {
         int[] rolls = {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
