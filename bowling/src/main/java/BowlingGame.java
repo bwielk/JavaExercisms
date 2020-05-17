@@ -3,7 +3,6 @@ import java.util.List;
 
 class BowlingGame {
 
-    private List<Integer> rolls = new ArrayList<>();
     private List<Frame> frames = new ArrayList<>();
 
     public void roll(int roll){
@@ -45,17 +44,15 @@ class BowlingGame {
     public int score(){
         int result = 0;
 
-        for(int ballThrow = 0; ballThrow<rolls.size(); ballThrow++){
+        for(int frame = 0; frame<frames.size(); frame++){
             try{
-                if( rolls.get(ballThrow) == 10){
-                    result += 10 + rolls.get(ballThrow+1) + rolls.get(ballThrow+2);
+                if(frames.get(frame).isStrike()){
+                    result += 10 + frames.get(frame+1).getTotalRolls();
                 }else{
-                    if( rolls.get(ballThrow) + rolls.get(ballThrow+1) == 10){
-                        result += 10 + rolls.get(ballThrow+2);
-                        ballThrow++;
-                    }else if( rolls.get(ballThrow) + rolls.get(ballThrow+1) < 10) {
-                        result += rolls.get(ballThrow) + rolls.get(ballThrow + 1);
-                        ballThrow++;
+                    if( frames.get(frame).getTotalRolls() == 10){
+                        result += 10 + frames.get(frame+1).getFirstRoll();
+                    }else if( frames.get(frame).getTotalRolls()< 10) {
+                        result += frames.get(frame).getTotalRolls();
                     }
                 }
             }catch(IndexOutOfBoundsException e){

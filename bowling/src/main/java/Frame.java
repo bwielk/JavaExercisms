@@ -3,10 +3,13 @@ public class Frame {
     private int firstRoll = -1;
     private int secondRoll = -1;
     private boolean isCompleted = false;
+    private boolean isStrike = false;
 
     public void setFirstRoll(int firstRoll) {
         if(firstRoll==10){
             isCompleted=true;
+            isStrike=true;
+            this.secondRoll = 0;
         }
         this.firstRoll = firstRoll;
     }
@@ -18,11 +21,11 @@ public class Frame {
         }
     }
 
-    public Integer getFirstRoll() {
+    public int getFirstRoll() {
         return firstRoll;
     }
 
-    public Integer getSecondRoll() {
+    public int getSecondRoll() {
         return secondRoll;
     }
 
@@ -32,5 +35,9 @@ public class Frame {
 
     public boolean isCompleted(){
         return isCompleted;
+    }
+
+    public boolean isStrike() {
+        return isStrike;
     }
 }
