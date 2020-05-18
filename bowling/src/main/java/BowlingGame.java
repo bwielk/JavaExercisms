@@ -46,13 +46,28 @@ class BowlingGame {
 
         for(int frame = 0; frame<frames.size(); frame++){
             try{
-                if(frames.get(frame).isStrike()){
-                    result += 10 + frames.get(frame+1).getTotalRolls();
+                Frame currentFrame = frames.get(frame);
+                if(currentFrame.isStrike()){
+                    result += 10;
+                    List<Integer> upcomingThrows = new ArrayList<>();
+                    for(int nextFrame=frame+1; nextFrame<=frame+2; nextFrame++){
+                        try{
+                            if(frames.get(nextFrame).isStrike()){
+                                upcomingThrows.add(10);
+                            }else{
+                                upcomingThrows.add(frames.get(nextFrame).getFirstRoll());
+                                upcomingThrows.add(frames.get(nextFrame).getSecondRoll());
+                            }
+                        }catch (IndexOutOfBoundsException e){
+                            System.out.println(e.getMessage());
+                        }
+                    }
+                    result += upcomingThrows.get(0) + upcomingThrows.get(1);
                 }else{
-                    if( frames.get(frame).getTotalRolls() == 10){
+                    if(currentFrame.getTotalRolls() == 10){
                         result += 10 + frames.get(frame+1).getFirstRoll();
-                    }else if( frames.get(frame).getTotalRolls()< 10) {
-                        result += frames.get(frame).getTotalRolls();
+                    }else if(currentFrame.getTotalRolls()< 10) {
+                        result += currentFrame.getTotalRolls();
                     }
                 }
             }catch(IndexOutOfBoundsException e){
