@@ -4,19 +4,27 @@ public class Frame {
     private int secondRoll = -1;
     private boolean isCompleted = false;
     private boolean isStrike = false;
+    private boolean isSpare = false;
+    private boolean isFirstRollThrown = false;
 
     public void setFirstRoll(int firstRoll) {
-        if(firstRoll==10){
-            isCompleted=true;
-            isStrike=true;
-            this.secondRoll = 0;
+        if(!isFirstRollThrown){
+            if(firstRoll==10){
+                isCompleted=true;
+                isStrike=true;
+                secondRoll = 0;
+            }
+            this.firstRoll = firstRoll;
+            isFirstRollThrown=true;
         }
-        this.firstRoll = firstRoll;
     }
 
     public void setSecondRoll(int secondRoll) {
-        if(!isCompleted){
+        if(!isCompleted && isFirstRollThrown){
             this.secondRoll = secondRoll;
+            if(firstRoll+secondRoll == 10){
+                isSpare = true;
+            }
             isCompleted=true;
         }
     }
@@ -30,7 +38,7 @@ public class Frame {
     }
 
     public int getTotalRolls(){
-        return this.firstRoll + this.secondRoll;
+        return firstRoll + secondRoll;
     }
 
     public boolean isCompleted(){
@@ -39,5 +47,9 @@ public class Frame {
 
     public boolean isStrike() {
         return isStrike;
+    }
+
+    public boolean isSpare() {
+        return isSpare;
     }
 }
