@@ -168,7 +168,6 @@ public class BowlingGameTest {
         assertThat(expected).hasMessage("Pin count exceeds pins on the lane");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void twoBonusRollsAfterAStrikeInTheLastFrameCanNotScoreMoreThan10Points() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 5, 6};
@@ -179,7 +178,6 @@ public class BowlingGameTest {
         assertThat(expected).hasMessage("Pin count exceeds pins on the lane");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void twoBonusRollsAfterAStrikeInTheLastFrameCanScoreMoreThan10PointsIfOneIsAStrike() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 6};
@@ -189,7 +187,6 @@ public class BowlingGameTest {
         assertEquals(26, game.score());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void theSecondBonusRollsAfterAStrikeInTheLastFrameCanNotBeAStrikeIfTheFirstOneIsNotAStrike() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 6, 10};
@@ -200,7 +197,6 @@ public class BowlingGameTest {
         assertThat(expected).hasMessage("Pin count exceeds pins on the lane");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void secondBonusRollAfterAStrikeInTheLastFrameCanNotScoreMoreThan10Points() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 11};
@@ -237,7 +233,6 @@ public class BowlingGameTest {
             .hasMessage("Score cannot be taken until the end of the game");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void canNotRollIfGameAlreadyHasTenFrames() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -248,7 +243,6 @@ public class BowlingGameTest {
         assertThat(expected).hasMessage("Cannot roll after game is over");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void bonusRollsForAStrikeInTheLastFrameMustBeRolledBeforeScoreCanBeCalculated() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10};
@@ -262,7 +256,6 @@ public class BowlingGameTest {
             .hasMessage("Score cannot be taken until the end of the game");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void bothBonusRollsForAStrikeInTheLastFrameMustBeRolledBeforeScoreCanBeCalculated() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10};
@@ -276,7 +269,6 @@ public class BowlingGameTest {
             .hasMessage("Score cannot be taken until the end of the game");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void bonusRollForASpareInTheLastFrameMustBeRolledBeforeScoreCanBeCalculated() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 3};
@@ -290,7 +282,6 @@ public class BowlingGameTest {
             .hasMessage("Score cannot be taken until the end of the game");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void canNotRollAfterBonusRollForSpare() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 3, 2, 2};
@@ -301,7 +292,6 @@ public class BowlingGameTest {
         assertThat(expected).hasMessage("Cannot roll after game is over");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void canNotRollAfterBonusRollForStrike() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 3, 2, 2};

@@ -15,7 +15,7 @@ class BowlingGame {
         if(roll > 10){
             throw new IllegalStateException(ErrorMessages.TOO_MANY_PINS);
         }
-        if((frames.size()>=1 && frames.size() <=10) || !frames.stream().allMatch(Frame::isCompleted)){
+        if((frames.size()>0 && frames.size() <10) || !frames.stream().allMatch(Frame::isCompleted)){
             if(roll == 10) {
                 frameToProcess = new Frame();
                 frameToProcess.setFirstRoll(roll);
@@ -59,15 +59,11 @@ class BowlingGame {
                         result += 10;
                         List<Integer> upcomingThrows = new ArrayList<>();
                         for (int nextFrame = frame + 1; nextFrame <= frame + 2; nextFrame++) {
-                            try {
-                                if (frames.get(nextFrame).isStrike()) {
-                                    upcomingThrows.add(10);
-                                } else {
-                                    upcomingThrows.add(frames.get(nextFrame).getFirstRoll());
-                                    upcomingThrows.add(frames.get(nextFrame).getSecondRoll());
-                                }
-                            } catch (IndexOutOfBoundsException e) {
-                                System.out.println(e.getMessage());
+                            if (frames.get(nextFrame).isStrike()) {
+                                upcomingThrows.add(10);
+                            } else {
+                                upcomingThrows.add(frames.get(nextFrame).getFirstRoll());
+                                upcomingThrows.add(frames.get(nextFrame).getSecondRoll());
                             }
                         }
                         result += upcomingThrows.get(0) + upcomingThrows.get(1);
@@ -76,7 +72,8 @@ class BowlingGame {
                             /**
                              * SPARE
                              */
-                            result += 10 + frames.get(frame + 1).getFirstRoll();
+                            result += 10;
+                            result += frames.get(frame + 1).getFirstRoll();
                         } else if (currentFrame.getTotalRolls() < 10) {
                             /**
                              * OPEN
