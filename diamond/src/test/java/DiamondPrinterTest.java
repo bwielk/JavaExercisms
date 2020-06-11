@@ -54,7 +54,6 @@ public class DiamondPrinterTest {
                                      "   A   ")));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testFullDiamond() {
         List<String> output = diamondPrinter.printToList('Z');
