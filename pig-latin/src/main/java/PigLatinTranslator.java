@@ -29,6 +29,7 @@ class PigLatinTranslator{
     }
 
     public String conductWordTranslation(String word){
+        //If a word contains a "y" after a consonant cluster
         if(word.matches(CONSONANTS_PROCEEDED_B_Y_AND_CHARS) && word.length()>2){
             //only the consonant cluster at the beginning of the word we're interested in, hence adding ^
             Pattern p = Pattern.compile(CONSONANTS_PROCEEDED_BY_Y);
@@ -38,9 +39,14 @@ class PigLatinTranslator{
                 return word.substring(m.end()-1) + word.substring(m.start(), m.end()-1) + "ay";
             }
         }
+        //If a word begins with a vowel sound, add an "ay" sound to the end of the word.
+        //Please note that "xr" and "yt" at the beginning of a word make vowel sounds
         if(vowels.stream().anyMatch(v-> word.substring(0, v.length()).equals(v))){
             return word + "ay";
         }else{
+            //If a word starts with a consonant sound followed by "qu", move it to the end of the word, and then add an "ay"
+            // If a word begins with a consonant sound,
+            // move it to the end of the word and then add an "ay" sound to the end of the word.
             for(String cluster : consonantClusters) {
                 try{
                     if(cluster.equals(word.substring(0, cluster.length()))) {
