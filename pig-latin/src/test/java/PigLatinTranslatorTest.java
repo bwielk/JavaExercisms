@@ -83,7 +83,6 @@ public class PigLatinTranslatorTest {
         assertEquals("erapythay", pigLatinTranslator.translate("therapy"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testThrTreatedLikeAConsonantAtTheBeginningOfAWord() {
         assertEquals("ushthray", pigLatinTranslator.translate("thrush"));
@@ -99,13 +98,11 @@ public class PigLatinTranslatorTest {
         assertEquals("yttriaay", pigLatinTranslator.translate("yttria"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testXrTreatedLikeAVowelAtTheBeginningOfAWord() {
         assertEquals("xrayay", pigLatinTranslator.translate("xray"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testYTreatedLikeAConsonantAtTheBeginningOfAWord() {
         assertEquals("ellowyay", pigLatinTranslator.translate("yellow"));
@@ -117,13 +114,11 @@ public class PigLatinTranslatorTest {
         assertEquals("ythmrhay", pigLatinTranslator.translate("rhythm"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testYAsSecondLetterInTwoLetterWord() {
         assertEquals("ymay", pigLatinTranslator.translate("my"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testAWholePhrase() {
         assertEquals("ickquay astfay unray", pigLatinTranslator.translate("quick fast run"));
