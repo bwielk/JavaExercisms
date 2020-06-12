@@ -19,9 +19,6 @@ class PascalsTriangleGenerator{
             }
             arrayResult[i]=row;
         }
-        for(int[] arr : arrayResult){
-            System.out.println(String.format("Size of an array : %s", arr.length));
-        }
         return arrayResult;
     }
 }
