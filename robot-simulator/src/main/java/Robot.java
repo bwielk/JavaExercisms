@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.util.stream.Collector;
 
 class Robot {
 
@@ -37,6 +36,22 @@ class Robot {
     }
 
     public void simulate(String directions){
-
+        char[] commands = directions.toUpperCase().replace(" ", "").toCharArray();
+        for(int i=0; i<commands.length; i++){
+            char currentChar = commands[i];
+            switch(currentChar){
+                case 'R':
+                    turnRight();
+                    break;
+                case 'L':
+                    turnLeft();
+                    break;
+                case 'A':
+                    advance();
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
