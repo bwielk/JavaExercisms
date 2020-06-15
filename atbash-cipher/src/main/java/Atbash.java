@@ -36,7 +36,12 @@ class Atbash {
         StringBuilder result = new StringBuilder();
         char[] splitWord = word.toLowerCase().replace(" ", "").toCharArray();
         for(int c=0; c<splitWord.length; c++){
-            result.append(atbashAlphabetMapping.get(splitWord[c]));
+            char currentChar = splitWord[c];
+            if(Character.isDigit(currentChar)){
+                result.append(currentChar);
+            }else{
+                result.append(atbashAlphabetMapping.get(currentChar));
+            }
         }
         return result.toString();
     }

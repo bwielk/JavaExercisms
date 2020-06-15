@@ -54,38 +54,32 @@ public class AtbashTest {
                 atbash.encode("The quick brown fox jumps over the lazy dog."));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testDecodeExercism() {
         assertEquals("exercism", atbash.decode("vcvix rhn"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testDecodeASentence() {
         assertEquals("anobstacleisoftenasteppingstone", atbash.decode("zmlyh gzxov rhlug vmzhg vkkrm thglm v"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testDecodeNumbers() {
         assertEquals("testing123testing", atbash.decode("gvhgr mt123 gvhgr mt"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testDecodeAllTheLetters() {
         assertEquals("thequickbrownfoxjumpsoverthelazydog",
                 atbash.decode("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"));
     }
-    
-    @Ignore("Remove to run test")
+
     @Test
     public void testDecodeWithTooManySpaces() {
         assertEquals("exercism", atbash.decode("vc vix    r hn"));
     }
-    
-    @Ignore("Remove to run test")
+
     @Test
     public void testDecodeWithNoSpaces() {
         assertEquals("anobstacleisoftenasteppingstone",
