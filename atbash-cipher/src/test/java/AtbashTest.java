@@ -23,37 +23,31 @@ public class AtbashTest {
         assertEquals("ml", atbash.encode("no"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testEncodeOmgInCapital() {
         assertEquals("lnt", atbash.encode("OMG"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testEncodeOmgWithSpaces() {
         assertEquals("lnt", atbash.encode("O M G"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testEncodeMindBlowingly() {
         assertEquals("nrmwy oldrm tob", atbash.encode("mindblowingly"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testEncodeNumbers() {
         assertEquals("gvhgr mt123 gvhgr mt", atbash.encode("Testing,1 2 3, testing."));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testEncodeDeepThought() {
         assertEquals("gifgs rhurx grlm", atbash.encode("Truth is fiction."));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testEncodeAllTheLetters() {
         assertEquals("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt",
