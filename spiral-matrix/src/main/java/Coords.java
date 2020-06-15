@@ -8,6 +8,10 @@ public class Coords {
         this.y=y;
     }
 
+    public Coords(){
+
+    }
+
     public int getX() {
         return x;
     }
