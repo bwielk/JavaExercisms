@@ -50,7 +50,6 @@ public class SpiralMatrixBuilderTest {
         assertArrayEquals(expected, spiralMatrixBuilder.buildMatrixOfSize(3));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testSpiralOfSize4() {
         int[][] expected = {
@@ -63,7 +62,6 @@ public class SpiralMatrixBuilderTest {
         assertArrayEquals(expected, spiralMatrixBuilder.buildMatrixOfSize(4));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testSpiralOfSize5() {
         int[][] expected = {
