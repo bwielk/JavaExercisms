@@ -27,7 +27,6 @@ public class RailFenceCipherTest {
             railFenceCipher.getEncryptedData("EXERCISES"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void decodeWithThreeRails() {
         railFenceCipher = new RailFenceCipher(3);

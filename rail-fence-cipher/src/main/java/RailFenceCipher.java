@@ -1,6 +1,8 @@
 import com.sun.istack.internal.NotNull;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 class RailFenceCipher {
 
@@ -42,11 +44,28 @@ class RailFenceCipher {
         for(int i=0; i<rails.length; i++){
             System.out.println(Arrays.toString(rails[i])+"\n");
         }
-        return result.toString();
+        String resultAsString = result.toString();
+        return resultAsString;
     }
 
     public String getDecryptedData(String stringToConsume){
+        char[][] rails = new char[numOfRows][stringToConsume.length()];
+        List<String> splitWord = new ArrayList<>(Arrays.asList(stringToConsume.split("")));
+        for(int row = 0; row<numOfRows; row++){
+            for(int charToInsert=row; charToInsert<stringToConsume.length(); charToInsert+=numOfRows-row+1){
+                rails[row][charToInsert]= splitWord.get(0).toCharArray()[0];
+                splitWord.remove(0);
+                printList(rails);
+            }
+        }
+
         String result = "";
         return result;
+    }
+
+    private void printList(char[][] list){
+        for(int i=0; i<list.length; i++){
+            System.out.println(Arrays.toString(list[i])+"\n");
+        }
     }
 }
