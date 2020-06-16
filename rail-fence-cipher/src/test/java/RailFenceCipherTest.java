@@ -13,7 +13,6 @@ public class RailFenceCipherTest {
             railFenceCipher.getEncryptedData("XOXOXOXOXOXOXOXOXO"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void encodeWithThreeRails() {
         railFenceCipher = new RailFenceCipher(3);
@@ -21,7 +20,6 @@ public class RailFenceCipherTest {
             railFenceCipher.getEncryptedData("WEAREDISCOVEREDFLEEATONCE"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void encodeWithEndingInTheMiddle() {
         railFenceCipher = new RailFenceCipher(4);
