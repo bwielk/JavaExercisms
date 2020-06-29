@@ -37,7 +37,6 @@ public class CryptoSquareTest {
         assertEquals(expectedOutput, cryptoSquare.getCiphertext());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void nineCharacterPlaintextResultsInThreeChunksOfThreeCharacters() {
         CryptoSquare cryptoSquare = new CryptoSquare("This is fun!");
@@ -46,7 +45,6 @@ public class CryptoSquareTest {
         assertEquals(expectedOutput, cryptoSquare.getCiphertext());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void eightCharacterPlaintextResultsInThreeChunksWithATrailingSpace() {
         CryptoSquare cryptoSquare = new CryptoSquare("Chill out.");
