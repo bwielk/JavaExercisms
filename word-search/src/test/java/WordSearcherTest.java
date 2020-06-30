@@ -286,7 +286,6 @@ public class WordSearcherTest {
         assertEquals(expectedLocations, actualLocations);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testLocatesWordsWrittenTopToBottom() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
