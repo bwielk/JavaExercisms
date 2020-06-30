@@ -17,12 +17,15 @@ class CryptoSquare {
     public String getCiphertext(){
         String result = "";
         if(textToProcess.length() > 1){
+            //calculate line length
             int lineLength = Math.round(Math.sqrt(textToProcess.length())) == Math.sqrt(textToProcess.length()) ?
                     (int) Math.sqrt(textToProcess.length()) : (int) Math.sqrt(textToProcess.length())+1;
+            //split text to process into chunks of lineLength length
             for(int c=0; c<textToProcess.length(); c+=lineLength){
                 try{
                     matrixSplit.add(textToProcess.substring(c, c+lineLength));
                 }catch(IndexOutOfBoundsException e){
+                    //add white spaces where the remaining string is shorter than lineLength
                     String stringToAppend = textToProcess.substring(c);
                     if(stringToAppend.length() < lineLength){
                         stringToAppend += String.join("", Collections.nCopies(lineLength-stringToAppend.length(), " "));
@@ -31,6 +34,7 @@ class CryptoSquare {
                 }
 
             }
+            //create lines of encrypted text out of the columns of matrixSplit
             for(int charIndex = 0; charIndex<lineLength; charIndex++){
                 String newWord = "";
                 for(String word : matrixSplit){
