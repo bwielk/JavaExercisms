@@ -17,26 +17,27 @@ class CryptoSquare {
     public String getCiphertext(){
         String result = "";
         if(textToProcess.length() > 1){
-            int aSide = (int) Math.round(Math.sqrt(textToProcess.length()));
-            for(int c=0; c<textToProcess.length(); c+=aSide){
+            int lineLength = Math.round(Math.sqrt(textToProcess.length())) == Math.sqrt(textToProcess.length()) ?
+                    (int) Math.sqrt(textToProcess.length()) : (int) Math.sqrt(textToProcess.length())+1;
+            for(int c=0; c<textToProcess.length(); c+=lineLength){
                 try{
-                    matrixSplit.add(textToProcess.substring(c, c+aSide));
+                    matrixSplit.add(textToProcess.substring(c, c+lineLength));
                 }catch(IndexOutOfBoundsException e){
                     String stringToAppend = textToProcess.substring(c);
-                    if(stringToAppend.length() < aSide){
-                        stringToAppend += String.join("", Collections.nCopies(aSide-stringToAppend.length(), " "));
+                    if(stringToAppend.length() < lineLength){
+                        stringToAppend += String.join("", Collections.nCopies(lineLength-stringToAppend.length(), " "));
                         matrixSplit.add(stringToAppend);
                     }
                 }
 
             }
-            for(int charIndex = 0; charIndex<aSide; charIndex++){
+            for(int charIndex = 0; charIndex<lineLength; charIndex++){
                 String newWord = "";
                 for(String word : matrixSplit){
                     newWord += word.charAt(charIndex);
                 }
                 result += newWord;
-                if(charIndex+1 != aSide){
+                if(charIndex+1 != lineLength){
                     result += " ";
                 }
             }
