@@ -30,4 +30,9 @@ class WordLocation {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return String.format("START: x:%s y:%s, FINISH: x:%s, y:%s",
+                startCoord.getX(), startCoord.getY(), endCoord.getX(), endCoord.getY());
+    }
 }
