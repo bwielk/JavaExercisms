@@ -61,8 +61,8 @@ class WordSearcher {
                         char[] temptArrayForChecks = Arrays.copyOfRange(currentVerticalWordAsCharArr, startChar, currentVerticalWordAsCharArr.length);
                         if(String.valueOf(temptArrayForChecks).contains(revertedWordToSearchFor)){
                             Optional<WordLocation> wordLocationToInsert = Optional.of(new WordLocation(
-                                    new Pair(column +1, word.length()+1),
-                                    new Pair(line, startChar+1)));
+                                    new Pair(column +1, startChar+word.length()),
+                                    new Pair(column+1, startChar+1)));
                             System.out.println(wordLocationToInsert.get().toString());
                             resultMap.put(word, wordLocationToInsert);
                         }

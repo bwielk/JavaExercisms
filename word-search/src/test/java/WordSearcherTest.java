@@ -317,7 +317,6 @@ public class WordSearcherTest {
         assertEquals(expectedLocations, actualLocations);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testLocatesWordsWrittenBottomToTop() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
@@ -325,6 +324,8 @@ public class WordSearcherTest {
         expectedLocations.put("elixir",      Optional.of(new WordLocation(new Pair(6,  5), new Pair(1,  5))));
         expectedLocations.put("ecmascript",  Optional.of(new WordLocation(new Pair(10,  1), new Pair(10, 10))));
         expectedLocations.put("rust",        Optional.of(new WordLocation(new Pair(9,  5), new Pair(9,  2))));
+        expectedLocations.put("julia",        Optional.of(new WordLocation(new Pair(4,  10), new Pair(4,  6))));
+        expectedLocations.put("haskell",        Optional.of(new WordLocation(new Pair(8,  10), new Pair(8,  4))));
 
         Set<String> searchWords = expectedLocations.keySet();
 
@@ -334,13 +335,13 @@ public class WordSearcherTest {
                         {'j', 'e', 'f', 'b', 'l', 'p', 'e', 'p', 'r', 'e'},
                         {'c', 'a', 'm', 'd', 'c', 'i', 'm', 'g', 't', 'c'},
                         {'o', 'i', 'v', 'o', 'k', 'p', 'r', 'j', 's', 'm'},
-                        {'p', 'b', 'w', 'a', 's', 'q', 'r', 'o', 'u', 'a'},
-                        {'r', 'i', 'x', 'i', 'l', 'e', 'l', 'h', 'r', 's'},
-                        {'w', 'o', 'l', 'c', 'q', 'l', 'i', 'r', 'p', 'c'},
-                        {'s', 'c', 'r', 'e', 'e', 'a', 'u', 'm', 'g', 'r'},
-                        {'a', 'l', 'x', 'h', 'p', 'b', 'u', 'r', 'y', 'i'},
-                        {'j', 'a', 'l', 'a', 'y', 'c', 'a', 'l', 'm', 'p'},
-                        {'c', 'l', 'o', 'j', 'u', 'r', 'e', 'r', 'm', 't'}});
+                        {'p', 'b', 'w', 'a', 's', 'q', 'r', 'l', 'u', 'a'},
+                        {'r', 'i', 'x', 'i', 'l', 'e', 'l', 'l', 'r', 's'},
+                        {'w', 'o', 'l', 'a', 'q', 'l', 'i', 'e', 'p', 'c'},
+                        {'s', 'c', 'r', 'i', 'e', 'a', 'u', 'k', 'g', 'r'},
+                        {'a', 'l', 'x', 'l', 'p', 'b', 'u', 's', 'y', 'i'},
+                        {'j', 'a', 'l', 'u', 'y', 'c', 'a', 'a', 'm', 'p'},
+                        {'c', 'l', 'o', 'j', 'u', 'r', 'e', 'h', 'm', 't'}});
 
         assertEquals(expectedLocations, actualLocations);
     }
