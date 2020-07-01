@@ -292,6 +292,9 @@ public class WordSearcherTest {
         expectedLocations.put("clojure",     Optional.of(new WordLocation(new Pair(1, 10), new Pair(7, 10))));
         expectedLocations.put("elixir",      Optional.of(new WordLocation(new Pair(6,  5), new Pair(1,  5))));
         expectedLocations.put("ecmascript",  Optional.of(new WordLocation(new Pair(10,  1), new Pair(10, 10))));
+        expectedLocations.put("swift",  Optional.of(new WordLocation(new Pair(4,  3), new Pair(4, 7))));
+        expectedLocations.put("python",  Optional.of(new WordLocation(new Pair(8,  2), new Pair(8, 7))));
+        expectedLocations.put("java",  Optional.of(new WordLocation(new Pair(1,  1), new Pair(1, 4))));
 
         Set<String> searchWords = expectedLocations.keySet();
 
@@ -299,12 +302,12 @@ public class WordSearcherTest {
                 searchWords,
                 new char[][]{
                         {'j', 'e', 'f', 'b', 'l', 'p', 'e', 'p', 'r', 'e'},
-                        {'c', 'a', 'm', 'd', 'c', 'i', 'm', 'g', 't', 'c'},
-                        {'o', 'i', 'v', 'o', 'k', 'p', 'r', 'j', 's', 'm'},
-                        {'p', 'b', 'w', 'a', 's', 'q', 'r', 'o', 'u', 'a'},
+                        {'a', 'a', 'm', 'd', 'c', 'i', 'm', 'p', 't', 'c'},
+                        {'v', 'i', 'v', 's', 'k', 'p', 'r', 'y', 's', 'm'},
+                        {'a', 'b', 'w', 'w', 's', 'q', 'r', 't', 'u', 'a'},
                         {'r', 'i', 'x', 'i', 'l', 'e', 'l', 'h', 'r', 's'},
-                        {'w', 'o', 'l', 'c', 'q', 'l', 'i', 'r', 'p', 'c'},
-                        {'s', 'c', 'r', 'e', 'e', 'a', 'u', 'm', 'g', 'r'},
+                        {'w', 'o', 'l', 'f', 'q', 'l', 'i', 'o', 'p', 'c'},
+                        {'s', 'c', 'r', 't', 'e', 'a', 'u', 'n', 'g', 'r'},
                         {'a', 'l', 'x', 'h', 'p', 'b', 'u', 'r', 'y', 'i'},
                         {'j', 'a', 'l', 'a', 'y', 'c', 'a', 'l', 'm', 'p'},
                         {'c', 'l', 'o', 'j', 'u', 'r', 'e', 'r', 'm', 't'}
