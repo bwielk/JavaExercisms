@@ -91,8 +91,30 @@ class WordSearcher {
                     }catch (ArrayIndexOutOfBoundsException e){
                     }
                 }
-                //top right to bottom left
                 //bottom right to top left
+                for(int charIndex=0; charIndex<currentMatrixLine.length; charIndex++){
+                    //check if such coords exist at all
+                    int columnNumber = charIndex+1;
+                    int rowNumber  = line+1;
+                    try{
+                        String currentVerticalWord = "";
+                        Pair startCoords = new Pair(columnNumber, rowNumber);
+                        //iterate to define the diagonal coords - here we care about the length of the search word
+                        //rather than its contents
+                        for(int wordChar=0; wordChar<word.length(); wordChar++){
+                            currentVerticalWord += charMatrix[line-wordChar][charIndex-wordChar];
+                        }
+                        if(currentVerticalWord.length() >= word.length() && currentVerticalWord.contains(word)){
+                            Optional<WordLocation> wordLocationToInsert = Optional.of(new WordLocation(
+                                    startCoords,
+                                    new Pair(columnNumber-(word.length()-1), rowNumber-(word.length()-1))));
+                            System.out.println(wordLocationToInsert.get().toString());
+                            resultMap.put(word, wordLocationToInsert);
+                        }
+                    }catch (ArrayIndexOutOfBoundsException e){
+                    }
+                }
+                //top right to bottom left
                 //bottom left to top right
             }
         }

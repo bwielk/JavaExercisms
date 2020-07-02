@@ -376,7 +376,6 @@ public class WordSearcherTest {
         assertEquals(expectedLocations, actualLocations);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testLocatesWordsWrittenBottomRightToTopLeft() {
         Map<String, Optional<WordLocation>> expectedLocations = new HashMap<>();
@@ -386,6 +385,9 @@ public class WordSearcherTest {
         expectedLocations.put("rust",        Optional.of(new WordLocation(new Pair(9,  5), new Pair(9,  2))));
         expectedLocations.put("java",        Optional.of(new WordLocation(new Pair(1,  1), new Pair(4,  4))));
         expectedLocations.put("lua",         Optional.of(new WordLocation(new Pair(8,  9), new Pair(6,  7))));
+        expectedLocations.put("rullava",         Optional.of(new WordLocation(new Pair(8,  8), new Pair(2,  2))));
+        expectedLocations.put("mtp",         Optional.of(new WordLocation(new Pair(10,  3), new Pair(8,  1))));
+        expectedLocations.put("cpe",         Optional.of(new WordLocation(new Pair(6,  9), new Pair(4,  7))));
 
         Set<String> searchWords = expectedLocations.keySet();
 
@@ -402,6 +404,7 @@ public class WordSearcherTest {
                         {'a', 'l', 'x', 'h', 'p', 'b', 'u', 'r', 'y', 'i'},
                         {'j', 'a', 'l', 'a', 'y', 'c', 'a', 'l', 'm', 'p'},
                         {'c', 'l', 'o', 'j', 'u', 'r', 'e', 'r', 'm', 't'}});
+
 
         assertEquals(expectedLocations, actualLocations);
     }
