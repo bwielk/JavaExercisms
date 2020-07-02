@@ -69,6 +69,31 @@ class WordSearcher {
                     }
                     currentVerticalWord = "";
                 }
+                //diagonal
+                //top left to bottom right
+                for(int charIndex=0; charIndex<currentMatrixLine.length; charIndex++){
+                    //check if such coords exist at all
+                    try{
+                        String currentVerticalWord = "";
+                        Pair startCoords = new Pair(charIndex+1, line+1);
+                        //iterate to define the diagonal coords - here we care about the length of the search word
+                        //rather than its contents
+                        for(int wordChar=1; wordChar<=word.length(); wordChar++){
+                            currentVerticalWord += charMatrix[line+wordChar-1][charIndex+wordChar-1];
+                        }
+                        if(currentVerticalWord.length() >= word.length() && currentVerticalWord.contains(word)){
+                            Optional<WordLocation> wordLocationToInsert = Optional.of(new WordLocation(
+                                    startCoords,
+                                    new Pair(charIndex+word.length(), line+word.length())));
+                            System.out.println(wordLocationToInsert.get().toString());
+                            resultMap.put(word, wordLocationToInsert);
+                        }
+                    }catch (ArrayIndexOutOfBoundsException e){
+                    }
+                }
+                //top right to bottom left
+                //bottom right to top left
+                //bottom left to top right
             }
         }
         return resultMap;
