@@ -74,78 +74,51 @@ class WordSearcher {
                     //check if such coords exist at all
                     int columnNumber = charIndex+1;
                     int rowNumber  = line+1;
+                    Pair startCoords = new Pair(columnNumber, rowNumber);
                     //top left to bottom right
-                    try{
-                        String topLeftToBottomRight = "";
-                        Pair startCoords = new Pair(charIndex+1, line+1);
-                        //iterate to define the diagonal coords - here we care about the length of the search word
-                        //rather than its contents
-                        for(int wordChar=0; wordChar<word.length(); wordChar++){
-                            topLeftToBottomRight += charMatrix[line+wordChar][charIndex+wordChar];
-                        }
-                        if(topLeftToBottomRight.length() >= word.length() && topLeftToBottomRight.contains(word)){
-                            Optional<WordLocation> wordLocationToInsert = Optional.of(new WordLocation(
-                                    startCoords,
-                                    new Pair(charIndex+word.length(), line+word.length())));
-                            System.out.println(wordLocationToInsert.get().toString());
-                            resultMap.put(word, wordLocationToInsert);
-                        }
-                    }catch (ArrayIndexOutOfBoundsException e){
-                    }
-                    //bottom right to top left
-                    try{
-                        String bottomRightToTopLeft = "";
-                        Pair startCoords = new Pair(columnNumber, rowNumber);
-                        //iterate to define the diagonal coords - here we care about the length of the search word
-                        //rather than its contents
-                        for(int wordChar=0; wordChar<word.length(); wordChar++){
-                            bottomRightToTopLeft += charMatrix[line-wordChar][charIndex-wordChar];
-                        }
-                        if(bottomRightToTopLeft.length() >= word.length() && bottomRightToTopLeft.contains(word)){
-                            Optional<WordLocation> wordLocationToInsert = Optional.of(new WordLocation(
-                                    startCoords,
-                                    new Pair(columnNumber-(word.length()-1), rowNumber-(word.length()-1))));
-                            System.out.println(wordLocationToInsert.get().toString());
-                            resultMap.put(word, wordLocationToInsert);
-                        }
-                    }catch (ArrayIndexOutOfBoundsException e){
-                    }
-                    //bottom left to top right
-                    try{
-                        String bottomLeftToTopRight = "";
-                        Pair startCoords = new Pair(columnNumber, rowNumber);
-                        //iterate to define the diagonal coords - here we care about the length of the search word
-                        //rather than its contents
-                        for(int wordChar=0; wordChar<word.length(); wordChar++){
+                    String topRightToBottomLeft = "";
+                    String topLeftToBottomRight = "";
+                    String bottomRightToTopLeft = "";
+                    String bottomLeftToTopRight = "";
+                    //iterate to define the diagonal coords - here we care about the length of the search word
+                    //rather than its contents
+                    for(int wordChar=0; wordChar<word.length(); wordChar++){
+                        try{
                             bottomLeftToTopRight += charMatrix[line-wordChar][charIndex+wordChar];
-                        }
-                        if(bottomLeftToTopRight.length() >= word.length() && bottomLeftToTopRight.contains(word)){
-                            Optional<WordLocation> wordLocationToInsert = Optional.of(new WordLocation(
-                                    startCoords,
-                                    new Pair(columnNumber+(word.length()-1), rowNumber-(word.length()-1))));
-                            System.out.println(wordLocationToInsert.get().toString());
-                            resultMap.put(word, wordLocationToInsert);
-                        }
-                    }catch (ArrayIndexOutOfBoundsException e){
-                    }
-                    //check if such coords exist at all
-                    //top right to bottom left
-                    try{
-                        String topRightToBottomLeft = "";
-                        Pair startCoords = new Pair(columnNumber, rowNumber);
-                        //iterate to define the diagonal coords - here we care about the length of the search word
-                        //rather than its contents
-                        for(int wordChar=0; wordChar<word.length(); wordChar++){
+                        }catch (ArrayIndexOutOfBoundsException e){}
+                        try{
+                            bottomRightToTopLeft += charMatrix[line-wordChar][charIndex-wordChar];
+                        }catch (ArrayIndexOutOfBoundsException e){}
+                        try{
+                            topLeftToBottomRight += charMatrix[line+wordChar][charIndex+wordChar];
+                        }catch (ArrayIndexOutOfBoundsException e){}
+                        try{
                             topRightToBottomLeft += charMatrix[line+wordChar][charIndex-wordChar];
-                        }
-                        if(topRightToBottomLeft.length() >= word.length() && topRightToBottomLeft.contains(word)){
-                            Optional<WordLocation> wordLocationToInsert = Optional.of(new WordLocation(
-                                    startCoords,
-                                    new Pair(columnNumber-(word.length()-1), rowNumber+(word.length()-1))));
-                            System.out.println(wordLocationToInsert.get().toString());
-                            resultMap.put(word, wordLocationToInsert);
-                        }
-                    }catch (ArrayIndexOutOfBoundsException e){
+                        }catch (ArrayIndexOutOfBoundsException e){}
+                    }
+                    if(topLeftToBottomRight.length() >= word.length() && topLeftToBottomRight.contains(word)){
+                        Optional<WordLocation> wordLocationToInsert = Optional.of(new WordLocation(
+                                startCoords,
+                                new Pair(charIndex+word.length(), line+word.length())));
+                        resultMap.put(word, wordLocationToInsert);
+                    }
+                    if(bottomRightToTopLeft.length() >= word.length() && bottomRightToTopLeft.contains(word)){
+                        Optional<WordLocation> wordLocationToInsert = Optional.of(new WordLocation(
+                                startCoords,
+                                new Pair(columnNumber-(word.length()-1), rowNumber-(word.length()-1))));
+                        resultMap.put(word, wordLocationToInsert);
+                    }
+                    if(bottomLeftToTopRight.length() >= word.length() && bottomLeftToTopRight.contains(word)){
+                        Optional<WordLocation> wordLocationToInsert = Optional.of(new WordLocation(
+                                startCoords,
+                                new Pair(columnNumber+(word.length()-1), rowNumber-(word.length()-1))));
+                        resultMap.put(word, wordLocationToInsert);
+                    }
+                    if(topRightToBottomLeft.length() >= word.length() && topRightToBottomLeft.contains(word)){
+                        Optional<WordLocation> wordLocationToInsert = Optional.of(new WordLocation(
+                                startCoords,
+                                new Pair(columnNumber-(word.length()-1), rowNumber+(word.length()-1))));
+                        resultMap.put(word, wordLocationToInsert);
                     }
                 }
             }
