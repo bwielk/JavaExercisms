@@ -70,18 +70,20 @@ class WordSearcher {
                     currentVerticalWord = "";
                 }
                 //diagonal
-                //top left to bottom right
                 for(int charIndex=0; charIndex<currentMatrixLine.length; charIndex++){
                     //check if such coords exist at all
+                    int columnNumber = charIndex+1;
+                    int rowNumber  = line+1;
+                    //top left to bottom right
                     try{
-                        String currentVerticalWord = "";
+                        String topLeftToBottomRight = "";
                         Pair startCoords = new Pair(charIndex+1, line+1);
                         //iterate to define the diagonal coords - here we care about the length of the search word
                         //rather than its contents
-                        for(int wordChar=1; wordChar<=word.length(); wordChar++){
-                            currentVerticalWord += charMatrix[line+wordChar-1][charIndex+wordChar-1];
+                        for(int wordChar=0; wordChar<word.length(); wordChar++){
+                            topLeftToBottomRight += charMatrix[line+wordChar][charIndex+wordChar];
                         }
-                        if(currentVerticalWord.length() >= word.length() && currentVerticalWord.contains(word)){
+                        if(topLeftToBottomRight.length() >= word.length() && topLeftToBottomRight.contains(word)){
                             Optional<WordLocation> wordLocationToInsert = Optional.of(new WordLocation(
                                     startCoords,
                                     new Pair(charIndex+word.length(), line+word.length())));
@@ -90,21 +92,16 @@ class WordSearcher {
                         }
                     }catch (ArrayIndexOutOfBoundsException e){
                     }
-                }
-                //bottom right to top left
-                for(int charIndex=0; charIndex<currentMatrixLine.length; charIndex++){
-                    //check if such coords exist at all
-                    int columnNumber = charIndex+1;
-                    int rowNumber  = line+1;
+                    //bottom right to top left
                     try{
-                        String currentVerticalWord = "";
+                        String bottomRightToTopLeft = "";
                         Pair startCoords = new Pair(columnNumber, rowNumber);
                         //iterate to define the diagonal coords - here we care about the length of the search word
                         //rather than its contents
                         for(int wordChar=0; wordChar<word.length(); wordChar++){
-                            currentVerticalWord += charMatrix[line-wordChar][charIndex-wordChar];
+                            bottomRightToTopLeft += charMatrix[line-wordChar][charIndex-wordChar];
                         }
-                        if(currentVerticalWord.length() >= word.length() && currentVerticalWord.contains(word)){
+                        if(bottomRightToTopLeft.length() >= word.length() && bottomRightToTopLeft.contains(word)){
                             Optional<WordLocation> wordLocationToInsert = Optional.of(new WordLocation(
                                     startCoords,
                                     new Pair(columnNumber-(word.length()-1), rowNumber-(word.length()-1))));
@@ -113,21 +110,16 @@ class WordSearcher {
                         }
                     }catch (ArrayIndexOutOfBoundsException e){
                     }
-                }
-                //bottom left to top right
-                for(int charIndex=0; charIndex<currentMatrixLine.length; charIndex++){
-                    //check if such coords exist at all
-                    int columnNumber = charIndex+1;
-                    int rowNumber  = line+1;
+                    //bottom left to top right
                     try{
-                        String currentVerticalWord = "";
+                        String bottomLeftToTopRight = "";
                         Pair startCoords = new Pair(columnNumber, rowNumber);
                         //iterate to define the diagonal coords - here we care about the length of the search word
                         //rather than its contents
                         for(int wordChar=0; wordChar<word.length(); wordChar++){
-                            currentVerticalWord += charMatrix[line-wordChar][charIndex+wordChar];
+                            bottomLeftToTopRight += charMatrix[line-wordChar][charIndex+wordChar];
                         }
-                        if(currentVerticalWord.length() >= word.length() && currentVerticalWord.contains(word)){
+                        if(bottomLeftToTopRight.length() >= word.length() && bottomLeftToTopRight.contains(word)){
                             Optional<WordLocation> wordLocationToInsert = Optional.of(new WordLocation(
                                     startCoords,
                                     new Pair(columnNumber+(word.length()-1), rowNumber-(word.length()-1))));
@@ -136,21 +128,17 @@ class WordSearcher {
                         }
                     }catch (ArrayIndexOutOfBoundsException e){
                     }
-                }
-                //top right to bottom left
-                for(int charIndex=0; charIndex<currentMatrixLine.length; charIndex++){
                     //check if such coords exist at all
-                    int columnNumber = charIndex+1;
-                    int rowNumber  = line+1;
+                    //top right to bottom left
                     try{
-                        String currentVerticalWord = "";
+                        String topRightToBottomLeft = "";
                         Pair startCoords = new Pair(columnNumber, rowNumber);
                         //iterate to define the diagonal coords - here we care about the length of the search word
                         //rather than its contents
                         for(int wordChar=0; wordChar<word.length(); wordChar++){
-                            currentVerticalWord += charMatrix[line+wordChar][charIndex-wordChar];
+                            topRightToBottomLeft += charMatrix[line+wordChar][charIndex-wordChar];
                         }
-                        if(currentVerticalWord.length() >= word.length() && currentVerticalWord.contains(word)){
+                        if(topRightToBottomLeft.length() >= word.length() && topRightToBottomLeft.contains(word)){
                             Optional<WordLocation> wordLocationToInsert = Optional.of(new WordLocation(
                                     startCoords,
                                     new Pair(columnNumber-(word.length()-1), rowNumber+(word.length()-1))));
