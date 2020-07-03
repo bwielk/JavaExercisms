@@ -2,57 +2,58 @@ import java.util.*;
 
 class Matrix {
 
-    private List<List<Integer>> values;
+    private List<List<Integer>> rows;
+    private List<List<Integer>> columns = new ArrayList<>();
 
     Matrix(List<List<Integer>> values) {
-        this.values = values;
+        this.rows = values;
+        if(!values.isEmpty()){
+            for(int col=0; col<values.get(0).size(); col++){
+                List<Integer> columnValues = new ArrayList<>();
+                for(List<Integer> row : values){
+                    columnValues.add(row.get(col));
+                }
+                this.columns.add(columnValues);
+            }
+        }
     }
 
     Set<MatrixCoordinate> getSaddlePoints() {
         Set<MatrixCoordinate> coordinates = new HashSet<>();
-        if(this.values.isEmpty()){
+        if(this.rows.isEmpty()){
             return Collections.emptySet();
         }
-        Integer rowIndex = 0;
-        for(List<Integer> row: values){
-            HashMap<List<Integer>, Integer> rowAnalysisResult = findGreaterOrEqualNumberInARow(row);
-            List<Integer> indexesOfGreaterOrEqualNumberInARow = new ArrayList<>(rowAnalysisResult.keySet()).get(0);
-            Integer greaterOrEqualNumberInARow = new ArrayList<>(rowAnalysisResult.values()).get(0);
-            for(Integer columnIndex : indexesOfGreaterOrEqualNumberInARow){
-                if(isSaddleNumber(rowIndex, columnIndex, greaterOrEqualNumberInARow)){
-                    MatrixCoordinate coord = new MatrixCoordinate(rowIndex+1, columnIndex+1);
-                    coordinates.add(coord);
+        List<Integer> columnIndexes = new ArrayList<>();
+        Integer numberToCompareRows;
+        for(int rowIndex = 0; rowIndex<rows.size(); rowIndex++){
+            numberToCompareRows = Integer.MIN_VALUE;
+            columnIndexes.clear();
+            //find the greater or equal number
+            for(int i=0; i<rows.get(rowIndex).size(); i++){
+                if(numberToCompareRows <= rows.get(rowIndex).get(i)){
+                    numberToCompareRows = rows.get(rowIndex).get(i);
                 }
             }
-            rowIndex++;
+            //find indexes of the greater or equal number in a row
+            for(int i=0; i<rows.get(rowIndex).size(); i++){
+                if(rows.get(rowIndex).get(i) == numberToCompareRows){
+                    columnIndexes.add(i);
+                }
+            }
+            boolean isLesserOrEqual = true;
+            for(Integer columnIndex : columnIndexes){
+                //check is the lesser or egual to the rest of nums in the column
+                for(int numInColumn=0; numInColumn<columns.get(columnIndex).size(); numInColumn++){
+                    if(numberToCompareRows > columns.get(columnIndex).get(numInColumn)){
+                        isLesserOrEqual=false;
+                        break;
+                    }
+                }
+                if(isLesserOrEqual){
+                    coordinates.add(new MatrixCoordinate(rowIndex+1, columnIndex+1));
+                }
+            }
         }
         return coordinates;
-    }
-
-    private HashMap<List<Integer>, Integer> findGreaterOrEqualNumberInARow(List<Integer> numbers){
-        Integer numberToCompare = Integer.MIN_VALUE;
-        //find the greatest number in the row
-        for(int i=0; i<numbers.size(); i++){
-            if(numberToCompare <= numbers.get(i)){
-                numberToCompare = numbers.get(i);
-            }
-        }
-        HashMap<List<Integer>, Integer> results = new HashMap<>();
-        //get indexes of the greater or equal number in the row
-        List<Integer> listOfIndexes = new ArrayList<>();
-        for(int i=0; i<numbers.size(); i++){
-            if(numbers.get(i) == numberToCompare){
-                listOfIndexes.add(i);
-            }
-        }
-        results.put(listOfIndexes, numberToCompare);
-        return results;
-    }
-
-    private boolean isSaddleNumber(int rowIndex, int columnIndex, int numberToCompare){
-        if(numberToCompare >= values.get(rowIndex).get(columnIndex)){
-            return true;
-        }
-        return false;
     }
 }
