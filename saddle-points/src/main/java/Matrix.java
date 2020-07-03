@@ -34,7 +34,9 @@ class Matrix {
                     numberToCompareRows = rows.get(rowIndex).get(i);
                 }
             }
-            //find indexes of the greater or equal number in a row
+            //find indexes of the greater or equal number in a row. The indexes essentially become
+            //the indexes of columns that will be checked if the numberToCompareRows is actually lesser or equal
+            //that others in the column
             for(int i=0; i<rows.get(rowIndex).size(); i++){
                 if(rows.get(rowIndex).get(i) == numberToCompareRows){
                     columnIndexes.add(i);
