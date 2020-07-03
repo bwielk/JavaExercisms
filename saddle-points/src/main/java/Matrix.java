@@ -18,9 +18,9 @@ class Matrix {
             HashMap<List<Integer>, Integer> rowAnalysisResult = findGreaterOrEqualNumberInARow(row);
             List<Integer> indexesOfGreaterOrEqualNumberInARow = new ArrayList<>(rowAnalysisResult.keySet()).get(0);
             Integer greaterOrEqualNumberInARow = new ArrayList<>(rowAnalysisResult.values()).get(0);
-            for(Integer index : indexesOfGreaterOrEqualNumberInARow){
-                if(isSaddleNumber(index, greaterOrEqualNumberInARow)){
-                    MatrixCoordinate coord = new MatrixCoordinate(rowIndex+1, index+1);
+            for(Integer columnIndex : indexesOfGreaterOrEqualNumberInARow){
+                if(isSaddleNumber(rowIndex, columnIndex, greaterOrEqualNumberInARow)){
+                    MatrixCoordinate coord = new MatrixCoordinate(rowIndex+1, columnIndex+1);
                     coordinates.add(coord);
                 }
             }
@@ -49,12 +49,10 @@ class Matrix {
         return results;
     }
 
-    private boolean isSaddleNumber(int columnIndex, int numberToCompare){
-        for(int row = 0; row<values.size(); row++){
-            if(numberToCompare >= values.get(0).get(columnIndex)){
-                return false;
-            }
+    private boolean isSaddleNumber(int rowIndex, int columnIndex, int numberToCompare){
+        if(numberToCompare >= values.get(rowIndex).get(columnIndex)){
+            return true;
         }
-        return true;
+        return false;
     }
 }
