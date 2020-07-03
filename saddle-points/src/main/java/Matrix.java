@@ -3,19 +3,9 @@ import java.util.*;
 class Matrix {
 
     private List<List<Integer>> values;
-    private List<List<Integer>> columns = new ArrayList<>();
 
     Matrix(List<List<Integer>> values) {
         this.values = values;
-        if(!values.isEmpty()){
-            for(int col=0; col<values.get(0).size(); col++){
-                List<Integer> columnValues = new ArrayList<>();
-                for(List<Integer> row : values){
-                    columnValues.add(row.get(col));
-                }
-                this.columns.add(columnValues);
-            }
-        }
     }
 
     Set<MatrixCoordinate> getSaddlePoints() {
@@ -25,12 +15,12 @@ class Matrix {
         }
         Integer rowIndex = 0;
         for(List<Integer> row: values){
-            HashMap<Integer, Integer> rowAnalysisResult = findGreaterOrEqualNumberInARow(row);
-            for(Integer number : rowAnalysisResult.keySet()){
-                Integer columnIndex = number;
-                Integer numberToCompare = rowAnalysisResult.get(columnIndex);
-                if(isSaddleNumber(columnIndex, numberToCompare)){
-                    MatrixCoordinate coord = new MatrixCoordinate(rowIndex+1, columnIndex+1);
+            HashMap<List<Integer>, Integer> rowAnalysisResult = findGreaterOrEqualNumberInARow(row);
+            List<Integer> indexesOfGreaterOrEqualNumberInARow = new ArrayList<>(rowAnalysisResult.keySet()).get(0);
+            Integer greaterOrEqualNumberInARow = new ArrayList<>(rowAnalysisResult.values()).get(0);
+            for(Integer index : indexesOfGreaterOrEqualNumberInARow){
+                if(isSaddleNumber(index, greaterOrEqualNumberInARow)){
+                    MatrixCoordinate coord = new MatrixCoordinate(rowIndex+1, index+1);
                     coordinates.add(coord);
                 }
             }
@@ -39,25 +29,29 @@ class Matrix {
         return coordinates;
     }
 
-    private HashMap<Integer, Integer> findGreaterOrEqualNumberInARow(List<Integer> numbers){
-        Integer indexOfTheGreaterOrEqualNumber = 0;
+    private HashMap<List<Integer>, Integer> findGreaterOrEqualNumberInARow(List<Integer> numbers){
         Integer numberToCompare = Integer.MIN_VALUE;
+        //find the greatest number in the row
         for(int i=0; i<numbers.size(); i++){
             if(numberToCompare <= numbers.get(i)){
                 numberToCompare = numbers.get(i);
-                indexOfTheGreaterOrEqualNumber = i;
             }
         }
-        HashMap<Integer, Integer> results = new HashMap<>();
-        results.put(indexOfTheGreaterOrEqualNumber, numberToCompare);
+        HashMap<List<Integer>, Integer> results = new HashMap<>();
+        //get indexes of the greater or equal number in the row
+        List<Integer> listOfIndexes = new ArrayList<>();
+        for(int i=0; i<numbers.size(); i++){
+            if(numbers.get(i) == numberToCompare){
+                listOfIndexes.add(i);
+            }
+        }
+        results.put(listOfIndexes, numberToCompare);
         return results;
     }
 
     private boolean isSaddleNumber(int columnIndex, int numberToCompare){
-        int numberToCheck = numberToCompare;
-        List<Integer> columnToCheck= this.columns.get(columnIndex);
-        for(Integer number : columnToCheck){
-            if(numberToCheck > number){
+        for(int row = 0; row<values.size(); row++){
+            if(numberToCompare >= values.get(0).get(columnIndex)){
                 return false;
             }
         }
