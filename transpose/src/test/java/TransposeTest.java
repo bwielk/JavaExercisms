@@ -151,7 +151,6 @@ public class TransposeTest {
         assertEquals(expected, transpose.transpose(input));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void square() {
         String input = "HEART\n" +
@@ -169,7 +168,6 @@ public class TransposeTest {
         assertEquals(expected, transpose.transpose(input));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void rectangle() {
         String input = "FRACTURE\n" +
@@ -189,7 +187,6 @@ public class TransposeTest {
         assertEquals(expected, transpose.transpose(input));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void triangle() {
         String input = "T\n" +
