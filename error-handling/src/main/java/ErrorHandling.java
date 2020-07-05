@@ -10,15 +10,15 @@ class ErrorHandling {
     }
 
     void handleErrorByThrowingIllegalArgumentExceptionWithDetailMessage(String message) {
-        throw new IllegalArgumentException("This is the detail message.");
+        throw new IllegalArgumentException(message);
     }
 
     void handleErrorByThrowingAnyCheckedException() throws IOException{
-        throw new IOException("This is the detail message.");
+        throw new IOException();
     }
 
     void handleErrorByThrowingAnyCheckedExceptionWithDetailMessage(String message) throws SQLException{
-        throw new SQLException("This is the detail message.");
+        throw new SQLException(message);
     }
 
     void handleErrorByThrowingAnyUncheckedException() {
@@ -26,7 +26,7 @@ class ErrorHandling {
     }
 
     void handleErrorByThrowingAnyUncheckedExceptionWithDetailMessage(String message) {
-       throw new IndexOutOfBoundsException("This is the detail message.");
+       throw new IndexOutOfBoundsException(message);
     }
 
     void handleErrorByThrowingCustomCheckedException() throws CustomCheckedException {
@@ -34,7 +34,7 @@ class ErrorHandling {
     }
 
     void handleErrorByThrowingCustomCheckedExceptionWithDetailMessage(String message) throws CustomCheckedException{
-        throw new CustomCheckedException("This is the detail message.");
+        throw new CustomCheckedException(message);
     }
 
     void handleErrorByThrowingCustomUncheckedException() {
@@ -42,7 +42,7 @@ class ErrorHandling {
     }
 
     void handleErrorByThrowingCustomUncheckedExceptionWithDetailMessage(String message) {
-        throw new CustomUncheckedException("This is the detail message.");
+        throw new CustomUncheckedException(message);
     }
 
     Optional<Integer> handleErrorByReturningOptionalInstance(String integer) {
