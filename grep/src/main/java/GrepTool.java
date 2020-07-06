@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 class GrepTool {
 
@@ -22,32 +21,55 @@ class GrepTool {
         for(String file : files){
             List<String> linesOfText = readFile(file);
             if(flags.isEmpty()){
-                result += linesOfText.stream().filter(x -> x.contains(word)).collect(Collectors.joining());
-            }
+                for(int i=0; i<linesOfText.size(); i++){
+                    if(linesOfText.get(i).contains(word)){
+                        if(!result.isEmpty()){
+                            result+="\n";
+                        }
+                        result+= linesOfText.get(i);
+                    }
+                }
+            }//line order
             if(flags.contains("-n")){
                 for(int i=0; i<linesOfText.size(); i++){
                     if(linesOfText.get(i).contains(word)){
+                        if(!result.isEmpty()){
+                            result+="\n";
+                        }
                         result+= String.format("%s:%s",i+1, linesOfText.get(i));
                     }
                 }
-            }
+            }//case insensitive
             if(flags.contains("-i")){
                 for(int i=0; i<linesOfText.size(); i++){
                     if(linesOfText.get(i).toLowerCase().contains(word.toLowerCase())){
+                        if(!result.isEmpty()){
+                            result+="\n";
+                        }
                         result+=linesOfText.get(i);
                     }
                 }
-            }
+            }//file name
             if(flags.contains("-l")){
                 for(int i=0; i<linesOfText.size(); i++){
                     if(linesOfText.get(i).contains(word)){
                         result+=file;
                     }
                 }
-            }
+            }//exact word match
             if(flags.contains("-x")){
                 for(int i=0; i<linesOfText.size(); i++){
                     if(linesOfText.get(i).equals(word)){
+                        result+=linesOfText.get(i);
+                    }
+                }
+            }//invert
+            if(flags.contains("-v")){
+                for(int i=0; i<linesOfText.size(); i++){
+                    if(!linesOfText.get(i).contains(word)){
+                        if(!result.isEmpty()){
+                            result+="\n";
+                        }
                         result+=linesOfText.get(i);
                     }
                 }
