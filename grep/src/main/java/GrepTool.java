@@ -21,7 +21,37 @@ class GrepTool {
         }
         for(String file : files){
             List<String> linesOfText = readFile(file);
-            result += linesOfText.stream().filter(x -> x.contains(word)).collect(Collectors.joining());
+            if(flags.isEmpty()){
+                result += linesOfText.stream().filter(x -> x.contains(word)).collect(Collectors.joining());
+            }
+            if(flags.contains("-n")){
+                for(int i=0; i<linesOfText.size(); i++){
+                    if(linesOfText.get(i).contains(word)){
+                        result+= String.format("%s:%s",i+1, linesOfText.get(i));
+                    }
+                }
+            }
+            if(flags.contains("-i")){
+                for(int i=0; i<linesOfText.size(); i++){
+                    if(linesOfText.get(i).toLowerCase().contains(word.toLowerCase())){
+                        result+=linesOfText.get(i);
+                    }
+                }
+            }
+            if(flags.contains("-l")){
+                for(int i=0; i<linesOfText.size(); i++){
+                    if(linesOfText.get(i).contains(word)){
+                        result+=file;
+                    }
+                }
+            }
+            if(flags.contains("-x")){
+                for(int i=0; i<linesOfText.size(); i++){
+                    if(linesOfText.get(i).equals(word)){
+                        result+=linesOfText.get(i);
+                    }
+                }
+            }
         }
         return result;
     }
