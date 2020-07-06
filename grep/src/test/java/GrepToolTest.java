@@ -201,7 +201,6 @@ public class GrepToolTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void oneFileSeveralMatchesInvertedFlag() {
         String expected = "Brought Death into the World, and all our woe,\n"
@@ -219,7 +218,6 @@ public class GrepToolTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void oneFileNoMatchesVariousFlags() {
         String expected = "";
@@ -233,7 +231,6 @@ public class GrepToolTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void oneFileOneMatchFileFlagTakesPrecedenceOverLineFlag() {
         String expected = "iliad.txt";

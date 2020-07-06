@@ -29,14 +29,22 @@ class GrepTool {
                         result+= linesOfText.get(i);
                     }
                 }
-            }//line order
-            if(flags.contains("-n")){
+            }else {
+                //file name
                 for(int i=0; i<linesOfText.size(); i++){
-                    if(linesOfText.get(i).contains(word)){
-                        if(!result.isEmpty()){
-                            result+="\n";
+                    if(flags.contains("-l")){
+                        if(linesOfText.get(i).contains(word)) {
+                            result += file;
+                            break;
                         }
-                        result+= String.format("%s:%s",i+1, linesOfText.get(i));
+                    //line order
+                    }else if(flags.contains("-n")){
+                        if(linesOfText.get(i).contains(word)){
+                            if(!result.isEmpty()){
+                                result+="\n";
+                            }
+                            result+= String.format("%s:%s",i+1, linesOfText.get(i));
+                        }
                     }
                 }
             }//case insensitive
@@ -47,13 +55,6 @@ class GrepTool {
                             result+="\n";
                         }
                         result+=linesOfText.get(i);
-                    }
-                }
-            }//file name
-            if(flags.contains("-l")){
-                for(int i=0; i<linesOfText.size(); i++){
-                    if(linesOfText.get(i).contains(word)){
-                        result+=file;
                     }
                 }
             }//exact word match
