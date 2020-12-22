@@ -9,43 +9,26 @@ import java.util.stream.Stream;
 
 class Transpose{
 
+    private String delimeter = "\n";
+
     public String transpose(String input){
-        String result = "";
-        char[][] mappedCharsOfInputLines;
-        if(input.length()<2){
+        if(input.isEmpty()){
             return input;
         }else{
-            List<String> splitString = Arrays.asList(input.split("\n"));
-            Integer lengthOfTheLongestString = Collections.max(splitString.stream().map(String::length).collect(Collectors.toList()));
-            mappedCharsOfInputLines = new char[splitString.size()][lengthOfTheLongestString];
-            for(int line=0; line<splitString.size(); line++){
-               char[] lineToCharArr = splitString.get(line).toCharArray();
-               if(lineToCharArr.length != lengthOfTheLongestString){
-                   char[] filling = new char[lengthOfTheLongestString-lineToCharArr.length];
-                   Arrays.fill(filling, ' ');
-                   char[] currentLine = Arrays.copyOf(lineToCharArr, lineToCharArr.length+filling.length);
-                   System.arraycopy(filling, 0, currentLine, lineToCharArr.length, filling.length);
-                   mappedCharsOfInputLines[line] = currentLine;
-               }else{
-                   mappedCharsOfInputLines[line]=lineToCharArr;
-               }
-            }
-            for(int column=0; column<lengthOfTheLongestString; column++){
+            List<String> rowsOfText = Arrays.asList(input.split(delimeter));
+            Integer lengthOfTheLongestString = Collections.max(rowsOfText.stream().map(String::length).collect(Collectors.toList()));
+            StringBuffer cumulativeSb = new StringBuffer();
+            for(int i=0; i<lengthOfTheLongestString; i++){
                 StringBuffer sb = new StringBuffer();
-                for(int row=0; row<splitString.size(); row++){
-                    if(mappedCharsOfInputLines[row][column] == '\0'){
-                        sb.append(" ");
-                    }else{
-                        sb.append(mappedCharsOfInputLines[row][column]);
+                for(int wordIndex=0; wordIndex<rowsOfText.size(); wordIndex++){
+                    if(i>0 && wordIndex==0){
+                        sb.append(delimeter);
                     }
+                    sb.append(rowsOfText.get(wordIndex).charAt(i));
                 }
-                if(column+1<lengthOfTheLongestString){
-                    sb.append("\n");
-                }
-                result+=sb.toString();
+                cumulativeSb.append(sb.toString());
             }
+            return cumulativeSb.toString();
         }
-        System.out.println(mappedCharsOfInputLines.toString());
-        return result;
     }
 }
