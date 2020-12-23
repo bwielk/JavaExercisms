@@ -30,7 +30,7 @@ public class TransposeTest {
 
         assertEquals(expected, transpose.transpose(input));
     }
-    
+
     @Test
     public void twoCharactersInAColumn() {
         String input = "A\n" +
@@ -41,7 +41,6 @@ public class TransposeTest {
         assertEquals(expected, transpose.transpose(input));
     }
 
-    @Ignore
     @Test
     public void simple() {
         String input = "ABC\n" +
@@ -54,7 +53,6 @@ public class TransposeTest {
         assertEquals(expected, transpose.transpose(input));
     }
 
-    @Ignore
     @Test
     public void singleLine() {
         String input = "Single line.";
@@ -75,7 +73,6 @@ public class TransposeTest {
         assertEquals(expected, transpose.transpose(input));
     }
 
-    @Ignore
     @Test
     public void firstLineLongerThanSecondLine() {
         String input = "The fourth line.\n" +
@@ -101,7 +98,6 @@ public class TransposeTest {
         assertEquals(expected, transpose.transpose(input));
     }
 
-    @Ignore
     @Test
     public void secondLineLongerThanFirstLine() {
         String input = "The first line.\n" +
