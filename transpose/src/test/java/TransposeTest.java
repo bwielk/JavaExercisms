@@ -123,7 +123,6 @@ public class TransposeTest {
         assertEquals(expected, transpose.transpose(input));
     }
 
-    @Ignore
     @Test
     public void mixedLineLength() {
         String input = "The longest line.\n" +
@@ -152,7 +151,6 @@ public class TransposeTest {
         assertEquals(expected, transpose.transpose(input));
     }
 
-    @Ignore
     @Test
     public void square() {
         String input = "HEART\n" +
@@ -170,7 +168,6 @@ public class TransposeTest {
         assertEquals(expected, transpose.transpose(input));
     }
 
-    @Ignore
     @Test
     public void rectangle() {
         String input = "FRACTURE\n" +
@@ -189,8 +186,7 @@ public class TransposeTest {
 
         assertEquals(expected, transpose.transpose(input));
     }
-
-    @Ignore
+    
     @Test
     public void triangle() {
         String input = "T\n" +
