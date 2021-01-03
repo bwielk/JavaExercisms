@@ -11,26 +11,22 @@ public class SayTest {
     public void zero() {
         assertEquals("zero", say.say(0));
     }
-    
-    @Ignore("Remove to run test")
+
     @Test
     public void one() {
         assertEquals("one", say.say(1));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void fourteen() {
         assertEquals("fourteen", say.say(14));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void twenty() {
         assertEquals("twenty", say.say(20));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void twentyTwo() {
         assertEquals("twenty-two", say.say(22));
