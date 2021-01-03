@@ -186,7 +186,7 @@ public class TransposeTest {
 
         assertEquals(expected, transpose.transpose(input));
     }
-    
+
     @Test
     public void triangle() {
         String input = "T\n" +
