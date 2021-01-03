@@ -32,43 +32,37 @@ public class SayTest {
         assertEquals("twenty-two", say.say(22));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void oneHundred() {
         assertEquals("one hundred", say.say(100));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void oneHundredTwentyThree() {
         assertEquals("one hundred twenty-three", say.say(123));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void oneThousand() {
         assertEquals("one thousand", say.say(1_000));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void oneThousandTwoHundredThirtyFour() {
         assertEquals("one thousand two hundred thirty-four", say.say(1_234));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void oneMillion() {
         assertEquals("one million", say.say(1_000_000));
     }
     
-    @Ignore("Remove to run test")
+
     @Test
     public void oneMillionTwoThousandThreeHundredFortyFive() {
         assertEquals("one million two thousand three hundred forty-five", say.say(1_002_345));
     }
-    
-    @Ignore("Remove to run test")
+
     @Test
     public void oneBillion() {
         assertEquals("one billion", say.say(1_000_000_000));
