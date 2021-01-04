@@ -1,8 +1,5 @@
 import com.sun.istack.internal.NotNull;
-
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 class RailFenceCipher {
 
@@ -54,16 +51,21 @@ class RailFenceCipher {
         for(int i=0; i<stringToConsume.length(); i++){
             try{
                 matrix[currentRowIndex][indexInRailsMatrix]=stringToConsume.charAt(i);
+            //the logic below is responsible for proceeding to another row of the matrix and
+            //switching the appropriate intervals/distances between the chars
             }catch (IndexOutOfBoundsException e){
                 intervals[0] = intervals[0]-2 == 0 ? 2*numOfRows-2 : intervals[0]-2;
                 intervals[1] = intervals[1] == 2*numOfRows-2 ? 2 : intervals[1]+2;
                 currentRowIndex++;
                 indexInRailsMatrix = currentRowIndex;
                 matrix[currentRowIndex][indexInRailsMatrix] = stringToConsume.charAt(i);
+                //set the interval to 0 given we've already inserted a char and the next interval is of index 1
+                currentIntervalIndex = 0;
             }
             indexInRailsMatrix+=intervals[currentIntervalIndex];
             currentIntervalIndex = currentIntervalIndex == 1 ? 0 : 1;
         }
+        System.out.println(Arrays.deepToString(matrix));
         //decrypt the word by columns
         StringBuffer sb = new StringBuffer();
         for(int i = 0; i<stringToConsume.length(); i++){
