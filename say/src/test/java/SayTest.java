@@ -73,14 +73,13 @@ public class SayTest {
         assertEquals("nine hundred eighty-seven billion six hundred fifty-four million" +
                      " three hundred twenty-one thousand one hundred twenty-three", say.say(987_654_321_123L));
     }
-    
-    @Ignore("Remove to run test")
+
     @Test(expected = IllegalArgumentException.class)
     public void illegalNegativeNumber() {
         say.say(-1);
     }
 
-    @Ignore("Remove to run test")
+
     @Test(expected = IllegalArgumentException.class)
     public void illegalTooBigNumber() {
         say.say(1_000_000_000_000L);

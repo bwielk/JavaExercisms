@@ -11,6 +11,9 @@ class Say {
     private StringBuffer sb = new StringBuffer();
 
     public String say(long number){
+        if(number < 0 || number >= 1_000_000_000_000L){
+            throw new IllegalArgumentException();
+        }
         if(number == 0){
             return "zero";
         }
@@ -20,7 +23,7 @@ class Say {
             amount = defineTens(amount);
             amount = defineTeens(amount);
             defineUnits(amount);
-            sb.append(numberUnits[(int)number/1000000000] + " " + billion);
+            sb.append(" ").append(billion);
             number -= number/1000000000*1000000000;
             if(number%1000000000 != 0){
                 sb.append(" ");
@@ -50,18 +53,12 @@ class Say {
                 sb.append(" ");
             }
         }
-        if(number >= 100 && number < 1000){
-           number = defineHundreds(number);
-        }
-        if(number >= 20 && number < 100){
-            number = defineTens(number);
-        }
-        if(number > 10 && number < 20){
-            number = defineTeens(number);
-        }
-        if(number > 0 && number < 10){
-            defineUnits(number);
-        }
+
+        number = defineHundreds(number);
+        number = defineTens(number);
+        number = defineTeens(number);
+        defineUnits(number);
+
         //clear string buffer pre return
         String returnValue = sb.toString();
         sb.delete(0, sb.length());
@@ -69,32 +66,40 @@ class Say {
     }
 
     private long defineHundreds(long number){
-        sb.append(numberUnits[(int)number/100] + " " + hundred);
-        if(number%100 != 0){
-            sb.append(" ");
+        if(number >= 100 && number < 1000) {
+            sb.append(numberUnits[(int) number / 100] + " " + hundred);
+            if (number % 100 != 0) {
+                sb.append(" ");
+            }
+            number -= number/100*100;
         }
-        number -= number/100*100;
         return number;
     }
 
     private long defineTens(long number){
-        sb.append(numberTens[(int)number/10]);
-        if(number%10 != 0){
+        if(number >= 20 && number < 100){
+            sb.append(numberTens[(int)number/10]);
+            if(number%10!=0){
             sb.append("-");
+            }
+            number-=number/10*10;
         }
-        number -= number/10*10;
         return number;
     }
 
     private long defineTeens(long number){
-        sb.append(numberTeens[(int)number-10]);
-        number -= number;
+        if(number > 10 && number < 20) {
+            sb.append(numberTeens[(int) number%10]);
+            number -= number;
+        }
         return number;
     }
 
     private long defineUnits(long number){
-        sb.append(numberUnits[(int)number]);
-        return 0;
+        if(number > 0 && number < 10) {
+            sb.append(numberUnits[(int) number]);
+            number -= number;
+        }
+        return number;
     }
-
 }
