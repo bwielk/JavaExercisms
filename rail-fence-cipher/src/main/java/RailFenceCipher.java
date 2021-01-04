@@ -41,29 +41,26 @@ class RailFenceCipher {
         for(int row=0; row<numOfRows; row++){
             sb.append(new String(matrix[row]));
         }
-        System.out.println(Arrays.deepToString(matrix));
         String cleanedUpResult = sb.toString().replace("\u0000", "");
         return cleanedUpResult;
     }
 
     public String getDecryptedData(String stringToConsume){
-        char[][] rails = new char[numOfRows][stringToConsume.length()];
-        List<String> splitWord = new ArrayList<>(Arrays.asList(stringToConsume.split("")));
-        for(int row = 0; row<numOfRows; row++){
-            for(int charToInsert=row; charToInsert<stringToConsume.length(); charToInsert+=numOfRows-row+1){
-                rails[row][charToInsert]= splitWord.get(0).toCharArray()[0];
-                splitWord.remove(0);
-                printList(rails);
+        char[][] matrix = new char[numOfRows][stringToConsume.length()];
+        boolean goDown = true;
+        int[] intervals = new int[]{2*numOfRows-2, 2*numOfRows-2};
+        int currentIntervalIndex = 0;
+        int indexInRailsMatrix = 0;
+        int currentRowIndex = 0;
+        for(int i=0; i<stringToConsume.length(); i++){
+            try{
+                matrix[currentRowIndex][indexInRailsMatrix]=stringToConsume.charAt(i);
+            }catch (IndexOutOfBoundsException e){
+                
             }
+            indexInRailsMatrix+=intervals[currentIntervalIndex];
+            currentIntervalIndex = currentIntervalIndex == 1 ? 0 : 1;
         }
-
-        String result = "";
-        return result;
-    }
-
-    private void printList(char[][] list){
-        for(int i=0; i<list.length; i++){
-            System.out.println(Arrays.toString(list[i])+"\n");
-        }
+        return "";
     }
 }

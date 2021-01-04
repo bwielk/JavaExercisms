@@ -34,7 +34,6 @@ public class RailFenceCipherTest {
             railFenceCipher.getDecryptedData("TEITELHDVLSNHDTISEIIEA"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void decodeWithFiveRails() {
         railFenceCipher = new RailFenceCipher(5);
@@ -42,7 +41,6 @@ public class RailFenceCipherTest {
             railFenceCipher.getDecryptedData("EIEXMSMESAORIWSCE"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void decodeWithSixRails() {
         railFenceCipher = new RailFenceCipher(6);
