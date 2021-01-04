@@ -47,7 +47,6 @@ class RailFenceCipher {
 
     public String getDecryptedData(String stringToConsume){
         char[][] matrix = new char[numOfRows][stringToConsume.length()];
-        boolean goDown = true;
         int[] intervals = new int[]{2*numOfRows-2, 2*numOfRows-2};
         int currentIntervalIndex = 0;
         int indexInRailsMatrix = 0;
@@ -56,11 +55,25 @@ class RailFenceCipher {
             try{
                 matrix[currentRowIndex][indexInRailsMatrix]=stringToConsume.charAt(i);
             }catch (IndexOutOfBoundsException e){
-                
+                intervals[0] = intervals[0]-2 == 0 ? 2*numOfRows-2 : intervals[0]-2;
+                intervals[1] = intervals[1] == 2*numOfRows-2 ? 2 : intervals[1]+2;
+                currentRowIndex++;
+                indexInRailsMatrix = currentRowIndex;
+                matrix[currentRowIndex][indexInRailsMatrix] = stringToConsume.charAt(i);
             }
             indexInRailsMatrix+=intervals[currentIntervalIndex];
             currentIntervalIndex = currentIntervalIndex == 1 ? 0 : 1;
         }
-        return "";
+        //decrypt the word by columns
+        StringBuffer sb = new StringBuffer();
+        for(int i = 0; i<stringToConsume.length(); i++){
+            for(int row=0; row<numOfRows; row++){
+                if(matrix[row][i] != '\u0000'){
+                    sb.append(matrix[row][i]);
+                    break;
+                }
+            }
+        }
+        return sb.toString();
     }
 }
