@@ -14,7 +14,7 @@ class Transpose{
             List<String> rowsOfText = Arrays.asList(input.split(delimeter));
             Integer lengthOfTheLongestString = Collections.max(rowsOfText.stream().map(String::length).collect(Collectors.toList()));
             StringBuffer cumulativeSb = new StringBuffer();
-            //turns rows of strings into array or arrays
+            //turns rows of strings into array of arrays
             char[][] charGrid = new char[rowsOfText.size()][lengthOfTheLongestString];
             for(int wordIndex=0; wordIndex<rowsOfText.size(); wordIndex++){
                 String word = rowsOfText.get(wordIndex);
@@ -39,7 +39,7 @@ class Transpose{
                 indexTranspositionArray++){
                 int lastCharInRow = 0;
                 char[] currentArray = transpositionArray[indexTranspositionArray];
-                //find index of the last char in the current array so we can fill the gaps of missing spaces where they should be
+                //find index of the last char in the current array so we can fill the gaps of missing spaces in between of the actual chars
                 for(int indexChar = currentArray.length-1; indexChar>=0; indexChar--){
                     if(currentArray[indexChar] != '\u0000'){
                         lastCharInRow = indexChar;
@@ -54,7 +54,7 @@ class Transpose{
                 }
             }
 
-            //create transpose elements clear of null-terminators
+            //create transpose elements free of unnecessary nulls - '\u0000'
             String[] joinedTransposeStrings = new String[lengthOfTheLongestString];
             for(int j=0; j<lengthOfTheLongestString; j++) {
                 String line = new String(transpositionArray[j]);
