@@ -17,6 +17,21 @@ class Say {
         if(number == 0){
             return "zero";
         }
+        number = defineBillions(number);
+        number = defineMillions(number);
+        number = defineThouands(number);
+        number = defineHundreds(number);
+        number = defineTens(number);
+        number = defineTeens(number);
+        defineUnits(number);
+
+        //clear string buffer pre return
+        String returnValue = sb.toString();
+        sb.delete(0, sb.length());
+        return returnValue;
+    }
+
+    private long defineBillions(long number){
         if(number >= 1000000000){
             int amountOfBillions = (int)(number/1000000000);
             long amount = defineHundreds(amountOfBillions);
@@ -29,6 +44,10 @@ class Say {
                 sb.append(" ");
             }
         }
+        return number;
+    }
+
+    private long defineMillions(long number){
         if(number >= 100000 && number < 1000000000){
             int amountOfMillions = (int)(number/1000000);
             long amount = defineHundreds(amountOfMillions);
@@ -41,6 +60,10 @@ class Say {
                 sb.append(" ");
             }
         }
+        return number;
+    }
+
+    private long defineThouands(long number){
         if(number >= 1000 && number < 1000000){
             int amountOfThousands = (int)(number/1000);
             long amount = defineHundreds(amountOfThousands);
@@ -53,17 +76,9 @@ class Say {
                 sb.append(" ");
             }
         }
-
-        number = defineHundreds(number);
-        number = defineTens(number);
-        number = defineTeens(number);
-        defineUnits(number);
-
-        //clear string buffer pre return
-        String returnValue = sb.toString();
-        sb.delete(0, sb.length());
-        return returnValue;
+        return number;
     }
+
 
     private long defineHundreds(long number){
         if(number >= 100 && number < 1000) {
