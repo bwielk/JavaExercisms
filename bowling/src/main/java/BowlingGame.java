@@ -19,8 +19,15 @@ class BowlingGame {
         int result = 0;
         for(int roll=0; roll<rolls.size(); roll++){
             try{if(rolls.get(roll) == 10){
-                    result+= rolls.get(roll) + 2*(rolls.get(roll+1) + rolls.get(roll+2));
-                    roll+=2;
+                    if(roll == 18){
+                        result+= rolls.get(roll) + rolls.get(roll+1) + rolls.get(roll+2);
+                        roll+=2;
+                    }else if(rolls.get(roll+1) + rolls.get(roll+2) < 10){
+                        result+= rolls.get(roll) + 2*(rolls.get(roll+1) + rolls.get(roll+2));
+                        roll+=2;
+                    }else if(rolls.get(roll+1) == 10){
+                        result+= rolls.get(roll) + rolls.get(roll+1) + rolls.get(roll+2);
+                    }
                 }else if(rolls.get(roll) + rolls.get(roll+1) < 10){
                     result+= rolls.get(roll)+rolls.get(roll+1);
                     roll++;

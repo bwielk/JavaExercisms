@@ -78,7 +78,7 @@ public class BowlingGameTest {
         assertEquals(26, game.score());
     }
 
-    @Ignore
+
     @Test
     public void consecutiveStrikesEachGetTheTwoRollBonus() {
         int[] rolls = {10, 10, 10, 5, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -87,7 +87,6 @@ public class BowlingGameTest {
         assertEquals(81, game.score());
     }
 
-    @Ignore
     @Test
     public void aStrikeInTheLastFrameGetsATwoRollBonusThatIsCountedOnce() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 7, 1};
@@ -96,7 +95,6 @@ public class BowlingGameTest {
         assertEquals(18, game.score());
     }
 
-    @Ignore
     @Test
     public void rollingASpareWithTheTwoRollBonusDoesNotGetABonusRoll() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 7, 3};
@@ -105,7 +103,6 @@ public class BowlingGameTest {
         assertEquals(20, game.score());
     }
 
-    @Ignore
     @Test
     public void strikesWithTheTwoRollBonusDoNotGetBonusRolls() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 10};
@@ -114,7 +111,6 @@ public class BowlingGameTest {
         assertEquals(30, game.score());
     }
 
-    @Ignore
     @Test
     public void aStrikeWithTheOneRollBonusAfterASpareInTheLastFrameDoesNotGetABonus() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 3, 10};
@@ -123,7 +119,6 @@ public class BowlingGameTest {
         assertEquals(20, game.score());
     }
 
-    @Ignore
     @Test
     public void allStrikesIsAPerfectGame() {
         int[] rolls = {10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10};
@@ -131,8 +126,7 @@ public class BowlingGameTest {
         playGame(rolls);
         assertEquals(300, game.score());
     }
-
-    @Ignore
+    
     @Test
     public void rollsCanNotScoreNegativePoints() {
         int[] rolls = {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
