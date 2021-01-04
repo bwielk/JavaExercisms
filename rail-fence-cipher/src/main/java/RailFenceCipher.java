@@ -7,45 +7,43 @@ import java.util.List;
 class RailFenceCipher {
 
     private int numOfRows;
-    private RailCipherCoords startingPoint;
-    private RailCipherDirection currentDirection = RailCipherDirection.DOWN;
     private String unnecessaryPunctuationRegex = "[\"\\#$%&()*+,\\s\n\r\t\\-./:;<=>@\\[\n\\\\\\]^_‘{|}~]";
 
     public RailFenceCipher(@NotNull int numOfRows){
         this.numOfRows = numOfRows;
-        this.startingPoint = new RailCipherCoords(0,0);
     }
 
     public String getEncryptedData(@NotNull String stringToConsume){
-        char[][] rails = new char[numOfRows][stringToConsume.length()];
-        char[] splitWord = stringToConsume.toCharArray();
-        RailCipherCoords newCoords = new RailCipherCoords();
-        for(int c = 0; c<stringToConsume.length(); c++){
-            if(c==0){
-                rails[startingPoint.getY()][startingPoint.getX()]=splitWord[c];
+        char[][] matrix = new char[numOfRows][stringToConsume.length()];
+        boolean goDown = true;
+        int rowIndex = 0;
+        for(int charIndex=0; charIndex<stringToConsume.length(); charIndex++){
+            matrix[rowIndex][charIndex] = stringToConsume.charAt(charIndex);
+            //deal with traversing through the appropriate rows of the matrix - the up and down logic
+            if(goDown){
+                if(rowIndex+1>numOfRows-1){
+                    goDown = false;
+                    rowIndex--;
+                }else{
+                    rowIndex++;
+                }
             }else{
-                newCoords = new RailCipherCoords(startingPoint.getX()+currentDirection.getCoords().getX(),
-                        startingPoint.getY()+currentDirection.getCoords().getY());
-                try{
-                    rails[newCoords.getY()][newCoords.getX()]=splitWord[c];
-                }catch (IndexOutOfBoundsException e){
-                    currentDirection = currentDirection == RailCipherDirection.UP ? RailCipherDirection.DOWN : RailCipherDirection.UP;
-                    newCoords = new RailCipherCoords(startingPoint.getX()+currentDirection.getCoords().getX(),
-                            startingPoint.getY()+currentDirection.getCoords().getY());
-                    rails[newCoords.getY()][newCoords.getX()]=splitWord[c];
+                if(rowIndex-1<0){
+                    goDown = true;
+                    rowIndex++;
+                }else{
+                    rowIndex--;
                 }
             }
-            startingPoint=newCoords;
         }
-        StringBuilder result = new StringBuilder();
-        for(int row=0; row<rails.length; row++){
-            result.append(Arrays.toString(rails[row]).replaceAll(unnecessaryPunctuationRegex, ""));
+        //read the encoded lines
+        StringBuffer sb = new StringBuffer();
+        for(int row=0; row<numOfRows; row++){
+            sb.append(new String(matrix[row]));
         }
-        for(int i=0; i<rails.length; i++){
-            System.out.println(Arrays.toString(rails[i])+"\n");
-        }
-        String resultAsString = result.toString();
-        return resultAsString;
+        System.out.println(Arrays.deepToString(matrix));
+        String cleanedUpResult = sb.toString().replace("\u0000", "");
+        return cleanedUpResult;
     }
 
     public String getDecryptedData(String stringToConsume){
