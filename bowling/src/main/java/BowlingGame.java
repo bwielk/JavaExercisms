@@ -1,13 +1,36 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
 
 class BowlingGame {
 
     private List<Integer> rolls = new ArrayList<>();
+    private List<Frame> frames = new ArrayList<>();
+    private int startOfNewFrame = 0;
 
 
     public void roll(int roll){
+        if(roll < 0){
+            throw new IllegalStateException(ErrorMessages.NEGATIVE_ROLL_VALUE);
+        }else if(roll > 10){
+            throw new IllegalStateException(ErrorMessages.TOO_MANY_PINS);
+        }
+        if(roll < 10){
+            if(frames.isEmpty()){
+                Frame frame = new Frame(roll);
+                frames.add(frame);
+            }else{
+                Frame previousFrame = frames.get(frames.size()-1);
+                if(!previousFrame.isFull()){
+                    previousFrame.setSecondRoll(roll);
+                }else{
+                    if(previousFrame.getFirstRoll() + previousFrame.getSecondRoll() == 10){
+                        previousFrame.setBonusPoint(roll);
+                    }
+                    Frame frame = new Frame(roll);
+                    frames.add(frame);
+                }
+            }
+        }
         rolls.add(roll);
     }
 

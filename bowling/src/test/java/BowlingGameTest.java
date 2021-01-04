@@ -127,7 +127,6 @@ public class BowlingGameTest {
         assertEquals(300, game.score());
     }
 
-    @Ignore
     @Test
     public void rollsCanNotScoreNegativePoints() {
         int[] rolls = {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -140,7 +139,7 @@ public class BowlingGameTest {
         assertThat(expected).hasMessage("Negative roll is invalid");
     }
 
-    @Ignore
+
     @Test
     public void aRollCanNotScoreMoreThan10Points() {
         int[] rolls = {11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -151,7 +150,6 @@ public class BowlingGameTest {
         assertThat(expected).hasMessage("Pin count exceeds pins on the lane");
     }
 
-    @Ignore
     @Test
     public void twoRollsInAFrameCanNotScoreMoreThan10Points() {
         int[] rolls = {5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};

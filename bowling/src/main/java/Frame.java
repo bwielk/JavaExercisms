@@ -1,31 +1,17 @@
 public class Frame {
 
-    private int firstRoll = -1;
-    private int secondRoll = -1;
-    private boolean isCompleted = false;
-    private boolean isStrike = false;
-    private boolean isSpare = false;
-    private boolean isFirstRollThrown = false;
+    private int firstRoll;
+    private int secondRoll;
+    private boolean full = false;
+    private int bonusPoint;
 
-    public void setFirstRoll(int firstRoll) {
-        if(!isFirstRollThrown){
-            if(firstRoll==10){
-                isCompleted=true;
-                isStrike=true;
-                secondRoll = 0;
-            }
-            this.firstRoll = firstRoll;
-            isFirstRollThrown=true;
+    public Frame(int firstRoll) {
+        if(firstRoll > 10){
+            throw new IllegalStateException(ErrorMessages.TOO_MANY_PINS);
         }
-    }
-
-    public void setSecondRoll(int secondRoll) {
-        if(!isCompleted && isFirstRollThrown){
-            this.secondRoll = secondRoll;
-            if(firstRoll+secondRoll == 10){
-                isSpare = true;
-            }
-            isCompleted=true;
+        this.firstRoll = firstRoll;
+        if(firstRoll == 10){
+            full = true;
         }
     }
 
@@ -33,23 +19,35 @@ public class Frame {
         return firstRoll;
     }
 
+    public void setFirstRoll(int firstRoll) {
+        this.firstRoll = firstRoll;
+    }
+
     public int getSecondRoll() {
         return secondRoll;
     }
 
-    public int getTotalRolls(){
-        return firstRoll + secondRoll;
+    public void setSecondRoll(int secondRoll) {
+        if(!full && firstRoll > -1){
+            if(this.firstRoll + secondRoll > 10){
+                throw new IllegalStateException(ErrorMessages.TOO_MANY_PINS);
+            }
+            this.secondRoll = secondRoll;
+            this.full = true;
+        }
     }
 
-    public boolean isCompleted(){
-        return isCompleted;
+    public boolean isFull() {
+        return full;
     }
 
-    public boolean isStrike() {
-        return isStrike;
+    public int getBonusPoint() {
+        return bonusPoint;
     }
 
-    public boolean isSpare() {
-        return isSpare;
+    public void setBonusPoint(int bonusPoint) {
+        if(full){
+            this.bonusPoint = bonusPoint;
+        }
     }
 }
