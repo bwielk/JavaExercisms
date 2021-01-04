@@ -5,10 +5,6 @@ import java.util.NoSuchElementException;
 class BowlingGame {
 
     private List<Integer> rolls = new ArrayList<>();
-    boolean openFrame = false;
-    boolean spare = false;
-    boolean strike = false;
-    boolean doubleStrike = false;
 
 
     public void roll(int roll){
@@ -19,7 +15,7 @@ class BowlingGame {
         int result = 0;
         for(int roll=0; roll<rolls.size(); roll++){
             try{if(rolls.get(roll) == 10){
-                    if(roll == 18){
+                    if(roll == rolls.size()-3){
                         result+= rolls.get(roll) + rolls.get(roll+1) + rolls.get(roll+2);
                         roll+=2;
                     }else if(rolls.get(roll+1) + rolls.get(roll+2) < 10){
