@@ -14,20 +14,36 @@ class BowlingGame {
         }else if(roll > 10){
             throw new IllegalStateException(ErrorMessages.TOO_MANY_PINS);
         }
-        if(roll < 10){
-            if(frames.isEmpty()){
-                Frame frame = new Frame(roll);
-                frames.add(frame);
+        //essentially creates the first frame
+        if(frames.isEmpty()){
+            Frame newFrame = new Frame(roll);
+            frames.add(newFrame);
+        }else{
+            Frame alreadyExistingFrame = frames.get(frames.size()-1);
+            //already existing frame is not full - set the second roll then
+            if(!alreadyExistingFrame.isFull()){
+                alreadyExistingFrame.setSecondRoll(roll);
+                //check if the frame before the already existing frame is a strike which means it
+                //gets a bonus of two next rolls
+                if(frames.get(frames.size()-2) != null && frames.get(frames.size()-2).isStrike()){
+                    frames.get(frames.size()-2).setBonusPoint(alreadyExistingFrame.getFirstRoll() +
+                            alreadyExistingFrame.getSecondRoll());
+                }
+            //already existing frame is full
             }else{
-                Frame previousFrame = frames.get(frames.size()-1);
-                if(!previousFrame.isFull()){
-                    previousFrame.setSecondRoll(roll);
+                //total points is 10 but not strike
+                if(alreadyExistingFrame.getFirstRoll() + alreadyExistingFrame.getSecondRoll() == 10 && !alreadyExistingFrame.isStrike()){
+                    alreadyExistingFrame.setBonusPoint(roll);
+                //total points is 10 and strike
+                }else if(alreadyExistingFrame.isStrike()){
+                    alreadyExistingFrame.setBonusPoint(alreadyExistingFrame.getBonusPoint()+roll);
+                }
+                //scenario when we either create a new frame or set the bonus for the already existing frame
+                if(frames.size() <=10){
+                    Frame newFrame = new Frame(roll);
+                    frames.add(newFrame);
                 }else{
-                    if(previousFrame.getFirstRoll() + previousFrame.getSecondRoll() == 10){
-                        previousFrame.setBonusPoint(roll);
-                    }
-                    Frame frame = new Frame(roll);
-                    frames.add(frame);
+                    alreadyExistingFrame.setBonusPoint(roll);
                 }
             }
         }

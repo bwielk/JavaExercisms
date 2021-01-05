@@ -3,6 +3,7 @@ public class Frame {
     private int firstRoll;
     private int secondRoll;
     private boolean full = false;
+    private boolean isStrike = false;
     private int bonusPoint;
 
     public Frame(int firstRoll) {
@@ -12,7 +13,12 @@ public class Frame {
         this.firstRoll = firstRoll;
         if(firstRoll == 10){
             full = true;
+            isStrike = true;
         }
+    }
+
+    public boolean isStrike() {
+        return isStrike;
     }
 
     public int getFirstRoll() {
