@@ -1,8 +1,10 @@
 class MicroBlog {
+
     public String truncate(String input) {
-        if(input.length()<=5){
-            return input;
-        }
-        return input.substring(0, 5);
+        StringBuilder newSb = new StringBuilder();
+        input.codePoints().limit(5).forEach(x -> {
+            newSb.appendCodePoint(x);
+        });
+        return newSb.toString();
     }
 }
