@@ -8,7 +8,6 @@ class BowlingGame {
 
     private List<Integer> rolls = new ArrayList<>();
     private List<Frame> frames = new ArrayList<>();
-    private int startOfNewFrame = 0;
 
 
     public void roll(int roll){
@@ -28,27 +27,30 @@ class BowlingGame {
             //already existing frame is not full - set the second roll then
             if(!alreadyExistingFrame.isFull()){
                 alreadyExistingFrame.setSecondRoll(roll, indexOfCurrentRoll);
-            //already existing frame is full
+            //already existing frame is full. Create a new one with the value of the first roll set
             }else{
-                if(frames.size() <=10) {
-                    Frame newFrame = new Frame(roll, indexOfCurrentRoll);
-                    frames.add(newFrame);
-                }
+                Frame newFrame = new Frame(roll, indexOfCurrentRoll);
+                frames.add(newFrame);
             }
         }
         //deal with bonuses across all previous frames
-        for(Frame f : frames){
-            if(f.isStrike() && IntStream.of(f.getIndexeOfStrikeBonusRolls()).anyMatch(x -> x == indexOfCurrentRoll)){
-                List<Integer> list = Arrays.stream(f.getIndexeOfStrikeBonusRolls()).boxed().collect(Collectors.toList());
-                if(list.indexOf(indexOfCurrentRoll) == 0){
-                    f.setStrikeBonusFirstRoll(roll);
-                }else{
-                    f.setStrikeBonusSecondRoll(roll);
+        if(frames.size() < 10) {
+            for (Frame f : frames) {
+                if (f.isStrike() && IntStream.of(f.getIndexeOfStrikeBonusRolls()).anyMatch(x -> x == indexOfCurrentRoll)) {
+                    List<Integer> list = Arrays.stream(f.getIndexeOfStrikeBonusRolls()).boxed().collect(Collectors.toList());
+                    if (list.indexOf(indexOfCurrentRoll) == 0) {
+                        f.setStrikeBonusFirstRoll(roll);
+                    } else {
+                        f.setStrikeBonusSecondRoll(roll);
+                    }
+                } else if (f.isSpare() && f.getIndexOfSpareBonusRoll() == indexOfCurrentRoll) {
+                    f.setBonusSparePoint(roll);
                 }
-            }else if(f.isSpare() && f.getIndexOfSpareBonusRoll() == indexOfCurrentRoll){
-                f.setBonusSparePoint(roll);
             }
+        }else{
+            System.out.println("I am the final frame");
         }
+        System.out.println(String.format("The result during rolling %s is %s", String.valueOf(roll), String.valueOf(score())));
     }
 
     public int score(){

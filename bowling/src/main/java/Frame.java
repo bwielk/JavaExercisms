@@ -11,7 +11,8 @@ public class Frame {
     private int strikeBonusFirstRoll;
     private int strikeBonusSecondRoll;
     private int bonusSparePoint;
-    private boolean frameLocked = false;
+    private int frameNumber;
+
 
     public Frame(int firstRoll, int indexOfFirstRoll) {
         this.indexOfFirstRoll = indexOfFirstRoll;
@@ -30,14 +31,6 @@ public class Frame {
 
     public boolean isStrike() {
         return this.isStrike;
-    }
-
-    public boolean isFrameLocked() {
-        return this.frameLocked;
-    }
-
-    public void lockFrame() {
-        this.frameLocked = true;
     }
 
     public int getFirstRoll() {
@@ -110,5 +103,13 @@ public class Frame {
 
     public int getIndexOfSpareBonusRoll() {
         return this.indexOfSpareBonusRoll;
+    }
+
+    public int getFrameNumber() {
+        return frameNumber;
+    }
+
+    public void setFrameNumber(int frameNumber) {
+        this.frameNumber = frameNumber;
     }
 }
