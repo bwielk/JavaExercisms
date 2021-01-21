@@ -15,7 +15,6 @@ public class SimpleLinkedListTest {
         assertThat(list.size()).isEqualTo(0);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void canCreateFromArray() {
         Character[] values = new Character[]{'1', '2', '3'};
@@ -23,7 +22,6 @@ public class SimpleLinkedListTest {
         assertThat(list.size()).isEqualTo(3);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void popOnEmptyListWillThrow() {
         SimpleLinkedList<String> list = new SimpleLinkedList<String>();
@@ -33,7 +31,6 @@ public class SimpleLinkedListTest {
             list::pop);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void popReturnsLastAddedElement() {
         SimpleLinkedList<Integer> list = new SimpleLinkedList<Integer>();
@@ -45,7 +42,7 @@ public class SimpleLinkedListTest {
         assertThat(list.size()).isEqualTo(0);
     }
 
-    @Ignore("Remove to run test")
+
     @Test
     public void reverseReversesList() {
         SimpleLinkedList<String> list = new SimpleLinkedList<String>();
@@ -62,7 +59,6 @@ public class SimpleLinkedListTest {
         assertThat(list.pop()).isEqualTo("5");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void canReturnListAsArray() {
         SimpleLinkedList<Character> list = new SimpleLinkedList<Character>();
@@ -72,10 +68,10 @@ public class SimpleLinkedListTest {
         list.push('6');
         list.push('5');
         Character[] expected = {'5', '6', '7', '8', '9'};
-        assertArrayEquals(expected, list.asArray(Character.class));
+        Object[] actual = list.asArray(Character.class);
+        assertArrayEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void canReturnEmptyListAsEmptyArray() {
         SimpleLinkedList<Object> list = new SimpleLinkedList<Object>();
