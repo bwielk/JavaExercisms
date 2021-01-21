@@ -42,7 +42,7 @@ public class SimpleLinkedListTest {
         assertThat(list.size()).isEqualTo(0);
     }
 
-
+    @Ignore("Remove to run test")
     @Test
     public void reverseReversesList() {
         SimpleLinkedList<String> list = new SimpleLinkedList<String>();
@@ -59,6 +59,7 @@ public class SimpleLinkedListTest {
         assertThat(list.pop()).isEqualTo("5");
     }
 
+    @Ignore("Remove to run test")
     @Test
     public void canReturnListAsArray() {
         SimpleLinkedList<Character> list = new SimpleLinkedList<Character>();
@@ -68,10 +69,10 @@ public class SimpleLinkedListTest {
         list.push('6');
         list.push('5');
         Character[] expected = {'5', '6', '7', '8', '9'};
-        Object[] actual = list.asArray(Character.class);
-        assertArrayEquals(expected, actual);
+        assertArrayEquals(expected, list.asArray(Character.class));
     }
 
+    @Ignore("Remove to run test")
     @Test
     public void canReturnEmptyListAsEmptyArray() {
         SimpleLinkedList<Object> list = new SimpleLinkedList<Object>();

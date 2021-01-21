@@ -1,68 +1,59 @@
-import com.sun.istack.internal.NotNull;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 import java.util.NoSuchElementException;
 
 class SimpleLinkedList<T> {
 
-    private T[] list;
+    private SimpleLinkedListElement<T> recentElement;
+    private int length = 0;
+
 
     public SimpleLinkedList(T[] values){
-        this.list = values;
+        Arrays.asList(values).forEach(this::push);
     }
 
     public SimpleLinkedList(){
-        this.list = (T[]) new Object[0];
     }
 
     public int size(){
-        return list.length;
+        return this.length;
     }
 
     public void push(T s) {
-        int currentSize = size();
-        int newSize = currentSize +1;
-        T[] newlist = (T[]) new Object[newSize];
-        for(int i=0; i<currentSize; i++){
-            newlist[i] = this.list[i];
+        SimpleLinkedListElement<T> newElement = new SimpleLinkedListElement<>(s);
+        if(this.recentElement == null){
+            this.recentElement = newElement;
+        }else{
+            newElement.setNextElement(this.recentElement);
+            this.recentElement = newElement;
         }
-        newlist[newSize-1] = s;
-        this.list = newlist;
+        this.length++;
     }
 
     public T pop() {
-        if(this.list.length > 0){
-            int currentSize = size();
-            int newSize = currentSize -1;
-            T[] newlist = (T[]) new Object[newSize];
-            for(int i=0; i<newSize; i++){
-                newlist[i] = this.list[i];
-            }
-            T objectToReturn = this.list[currentSize-1];
-            this.list = newlist;
-            return objectToReturn;
-        }else{
+        if(this.length == 0 && this.recentElement == null){
             throw new NoSuchElementException();
         }
+        SimpleLinkedListElement<T> elementToReturn = this.recentElement;
+        this.recentElement = elementToReturn.getNextElement();
+        this.length--;
+        return elementToReturn.getValue();
     }
 
     public void reverse() {
-        Collections.reverse(Arrays.asList(this.list));
     }
 
     public Object[] asArray(Class<T> characterClass) {
-        return this.list;
+        return null;
     }
 
     class SimpleLinkedListElement<T> {
 
         private T value;
-        private SimpleLinkedListElement nextElement;
+        private SimpleLinkedListElement<T> nextElement;
         private boolean hasNext = false;
 
-        public void setValue(T value) {
+        public SimpleLinkedListElement(T value) {
             this.value = value;
         }
 
@@ -70,13 +61,17 @@ class SimpleLinkedList<T> {
             return value;
         }
 
-        public SimpleLinkedListElement getNextElement() {
+        public SimpleLinkedListElement<T> getNextElement() {
             return nextElement;
         }
 
-        public void setNextElement(@NotNull SimpleLinkedListElement nextElement) {
+        public void setNextElement(SimpleLinkedListElement<T> nextElement) {
             this.nextElement = nextElement;
-            this.hasNext = true;
+            if(nextElement != null){
+                this.hasNext=true;
+            }else{
+                this.hasNext = true;
+            }
         }
     }
 
