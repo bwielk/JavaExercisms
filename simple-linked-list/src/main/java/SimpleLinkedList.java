@@ -1,5 +1,6 @@
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 class SimpleLinkedList<T> {
@@ -24,7 +25,7 @@ class SimpleLinkedList<T> {
         if(this.recentElement == null){
             this.recentElement = newElement;
         }else{
-            newElement.setNextElement(this.recentElement);
+            newElement.setTail(this.recentElement);
             this.recentElement = newElement;
         }
         this.length++;
@@ -35,23 +36,33 @@ class SimpleLinkedList<T> {
             throw new NoSuchElementException();
         }
         SimpleLinkedListElement<T> elementToReturn = this.recentElement;
-        this.recentElement = elementToReturn.getNextElement();
+        this.recentElement = elementToReturn.getTail();
         this.length--;
         return elementToReturn.getValue();
     }
 
     public void reverse() {
+        Object[] arr = asArray((Class<T>) Object.class);
+        this.recentElement = null;
+        for(int i=0; i<arr.length; i++){
+            push((T) arr[i]);
+        }
     }
 
     public Object[] asArray(Class<T> characterClass) {
-        return null;
+        Object[] arrayToReturn = new Object[this.length];
+        for(int i=0; i<this.length; i++){
+            arrayToReturn[i] = this.recentElement.getValue();
+            this.recentElement = this.recentElement.getTail();
+        }
+        return arrayToReturn;
     }
 
     class SimpleLinkedListElement<T> {
 
         private T value;
-        private SimpleLinkedListElement<T> nextElement;
-        private boolean hasNext = false;
+        private SimpleLinkedListElement<T> tail;
+        private boolean hasTail = false;
 
         public SimpleLinkedListElement(T value) {
             this.value = value;
@@ -61,16 +72,16 @@ class SimpleLinkedList<T> {
             return value;
         }
 
-        public SimpleLinkedListElement<T> getNextElement() {
-            return nextElement;
+        public SimpleLinkedListElement<T> getTail() {
+            return tail;
         }
 
-        public void setNextElement(SimpleLinkedListElement<T> nextElement) {
-            this.nextElement = nextElement;
+        public void setTail(SimpleLinkedListElement<T> nextElement) {
+            this.tail = nextElement;
             if(nextElement != null){
-                this.hasNext=true;
+                this.hasTail = true;
             }else{
-                this.hasNext = true;
+                this.hasTail = true;
             }
         }
     }
