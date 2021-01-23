@@ -41,21 +41,28 @@ class DoublyLinkedList<T> {
     public T shift(){
         DoublyLinkedListElement<T> firstElement = null;
         DoublyLinkedListElement<T> previousElement = this.currentTail.getPreviousElement();
+        //only one node exists scenario
         if(this.size-1==0){
             firstElement = this.currentTail;
             this.currentTail = null;
             return firstElement.getValue();
         }else{
+            //traverse through the nodes until the very first one
             for(int i=this.size-1; i>=0; i--){
+                //if a node has another node set as the previous one, then keep going
                 if(previousElement.getPreviousElement() != null){
                     previousElement = previousElement.getPreviousElement();
                 }else{
+                    //if a node doesn't have the previous node set, then it's clear it's the first node
                     firstElement = previousElement;
                 }
             }
             DoublyLinkedListElement<T> secondElementToBecomeFirst = firstElement.getNextElement();
             secondElementToBecomeFirst.setPreviousElement(null);
             this.size--;
+            //if there's only one node left after the method's been called, also set the control
+            // variable previous element to null
+            // so there's nothing to reference to anymore and it's coherent with the tail object
             if(this.size == 1){
                 this.previousElement = null;
             }
@@ -65,16 +72,18 @@ class DoublyLinkedList<T> {
 
     public void unshift(T t){
         DoublyLinkedListElement<T> newElement = new DoublyLinkedListElement<>(t);
-
+        //insert the first node if the whole list is empty
         if(this.currentTail == null && this.size==0){
             this.currentTail = newElement;
         }else{
             DoublyLinkedListElement<T> previousElement = this.currentTail.getPreviousElement();
             for(int i=this.size; i>0; i--){
+                //only one node scenario
                 if(previousElement == null && this.previousElement == null){
                     newElement.setNextElement(this.currentTail);
                     this.previousElement = newElement;
                     this.currentTail.setPreviousElement(newElement);
+                //more than one node already exist
                 }else{
                     previousElement.setPreviousElement(newElement);
                     newElement.setNextElement(previousElement);
