@@ -64,6 +64,24 @@ class DoublyLinkedList<T> {
     }
 
     public void unshift(T t){
+        DoublyLinkedListElement<T> newElement = new DoublyLinkedListElement<>(t);
+
+        if(this.currentTail == null && this.size==0){
+            this.currentTail = newElement;
+        }else{
+            DoublyLinkedListElement<T> previousElement = this.currentTail.getPreviousElement();
+            for(int i=this.size; i>0; i--){
+                if(previousElement == null && this.previousElement == null){
+                    newElement.setNextElement(this.currentTail);
+                    this.previousElement = newElement;
+                    this.currentTail.setPreviousElement(newElement);
+                }else{
+                    previousElement.setPreviousElement(newElement);
+                    newElement.setNextElement(previousElement);
+                }
+            }
+        }
+        this.size++;
     }
 
     class DoublyLinkedListElement<T>{
