@@ -18,7 +18,6 @@ public class DoublyLinkedListTest {
         assertThat(list.pop()).isEqualTo(10);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testPushShift() {
         DoublyLinkedList<String> list = new DoublyLinkedList<>();

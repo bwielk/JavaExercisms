@@ -30,13 +30,37 @@ class DoublyLinkedList<T> {
         }else{
             elementToReturn = this.currentTail;
             this.currentTail = this.previousElement;
-            this.previousElement = this.previousElement.getPreviousElement();
+            if(this.previousElement != null){
+                this.previousElement = this.previousElement.getPreviousElement();
+            }
         }
+        this.size--;
         return elementToReturn.getValue();
     }
 
     public T shift(){
-        return null;
+        DoublyLinkedListElement<T> firstElement = null;
+        DoublyLinkedListElement<T> previousElement = this.currentTail.getPreviousElement();
+        if(this.size-1==0){
+            firstElement = this.currentTail;
+            this.currentTail = null;
+            return firstElement.getValue();
+        }else{
+            for(int i=this.size-1; i>=0; i--){
+                if(previousElement.getPreviousElement() != null){
+                    previousElement = previousElement.getPreviousElement();
+                }else{
+                    firstElement = previousElement;
+                }
+            }
+            DoublyLinkedListElement<T> secondElementToBecomeFirst = firstElement.getNextElement();
+            secondElementToBecomeFirst.setPreviousElement(null);
+            if(secondElementToBecomeFirst == this.previousElement){
+                this.previousElement = null;
+            }
+            this.size--;
+        }
+        return firstElement.getValue();
     }
 
     public void unshift(T t){
