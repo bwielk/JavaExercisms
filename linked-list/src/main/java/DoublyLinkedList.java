@@ -55,10 +55,10 @@ class DoublyLinkedList<T> {
             }
             DoublyLinkedListElement<T> secondElementToBecomeFirst = firstElement.getNextElement();
             secondElementToBecomeFirst.setPreviousElement(null);
-            if(secondElementToBecomeFirst == this.previousElement){
+            this.size--;
+            if(this.size == 1){
                 this.previousElement = null;
             }
-            this.size--;
         }
         return firstElement.getValue();
     }
