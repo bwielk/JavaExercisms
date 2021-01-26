@@ -22,11 +22,12 @@ class BinarySearch {
                 int value = list.get(interval);
                 if(numberToSearch >= list.get(interval+1)){
                     start = interval+1;
+                    interval = (end+start)/2;
                 }else{
                     end = interval-1;
+                    interval = end/2;
                 }
             }
-            interval=interval/2;
         }
         return index;
     }
