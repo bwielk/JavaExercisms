@@ -53,7 +53,6 @@ public class BinarySearchTest {
         assertEquals(6, search.indexOf(11));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void findsAValueInAnArrayOfOddLength() throws ValueNotFoundException {
         List<Integer> sortedListOfOddLength = Collections.unmodifiableList(
@@ -65,7 +64,6 @@ public class BinarySearchTest {
         assertEquals(9, search.indexOf(144));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void findsAValueInAnArrayOfEvenLength() throws ValueNotFoundException {
         List<Integer> sortedListOfEvenLength = Collections.unmodifiableList(
