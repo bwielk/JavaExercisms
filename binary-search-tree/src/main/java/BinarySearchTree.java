@@ -5,7 +5,13 @@ class BinarySearchTree<T extends Comparable<T>> {
     private Node<T> root = null;
 
     void insert(T value) {
-        this.root = new Node<>(value);
+        if(root==null){
+            this.root = new Node<>(value);
+        }else if(this.root.getData().compareTo(value) >= 0){
+            this.root.setLeftNode(value);
+        }else if(this.root.getData().compareTo(value) < 0){
+            this.root.setRightNode(value);
+        }
     }
 
     List<T> getAsSortedList() {
@@ -30,12 +36,12 @@ class BinarySearchTree<T extends Comparable<T>> {
             this.data = data;
         }
 
-        public void setLeftNode(Node<T> leftNode) {
-            this.leftNode = leftNode;
+        public void setLeftNode(T leftNode) {
+            this.leftNode = new Node<T>(leftNode);
         }
 
-        public void setRightNode(Node<T> rightNode) {
-            this.rightNode = rightNode;
+        public void setRightNode(T rightNode) {
+            this.rightNode = new Node<T>(rightNode);
         }
 
         public Node<T> getLeft() {
