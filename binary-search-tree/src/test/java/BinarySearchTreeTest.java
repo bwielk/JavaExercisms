@@ -84,6 +84,44 @@ public class BinarySearchTreeTest {
     }
 
     @Test
+    public void createsSimpleTripleLevelledTree() {
+        BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
+        int expectedRoot = 4;
+        int expectedRightOfRoot = 5;
+        int expectedLeftOfRoot = 2;
+        int expectedLeftOf5 = 3;
+        int expectedRightOf5 = 6;
+
+        binarySearchTree.insert(expectedRoot);
+        binarySearchTree.insert(expectedRightOfRoot);
+        binarySearchTree.insert(expectedLeftOfRoot);
+        binarySearchTree.insert(expectedLeftOf5);
+        binarySearchTree.insert(expectedRightOf5);
+
+        BinarySearchTree.Node<Integer> root = binarySearchTree.getRoot();
+        assertNotNull(root);
+        BinarySearchTree.Node<Integer> right = root.getRight();
+        assertNotNull(right);
+        BinarySearchTree.Node<Integer> left = root.getLeft();
+        assertNotNull(left);
+        BinarySearchTree.Node<Integer> rightOfRight = root.getRight().getRight();
+        assertNotNull(rightOfRight);
+        BinarySearchTree.Node<Integer> leftOfRight = root.getRight().getLeft();
+        assertNotNull(leftOfRight);
+
+        int actualRoot = root.getData();
+        int actualRight = right.getData();
+        int actualLeft = left.getData();
+        int actualRightOfRight = rightOfRight.getData();
+        int actualLeftOfRight = leftOfRight.getData();
+        assertEquals(expectedRightOfRoot, actualRight);
+        assertEquals(expectedRoot, actualRoot);
+        assertEquals(expectedLeftOfRoot, actualLeft);
+        assertEquals(expectedRightOf5, actualRightOfRight);
+        assertEquals(expectedLeftOf5, actualLeftOfRight);
+    }
+
+    @Test
     public void createsComplexTree() {
         BinarySearchTree<Character> binarySearchTree = new BinarySearchTree<>();
         List<Character> expected = Collections.unmodifiableList(

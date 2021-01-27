@@ -3,14 +3,29 @@ import java.util.List;
 class BinarySearchTree<T extends Comparable<T>> {
 
     private Node<T> root = null;
+    private Node<T> currentNode = null;
 
     void insert(T value) {
-        if(root==null){
-            this.root = new Node<>(value);
-        }else if(this.root.getData().compareTo(value) >= 0){
-            this.root.setLeftNode(value);
-        }else if(this.root.getData().compareTo(value) < 0){
-            this.root.setRightNode(value);
+        if(this.root==null){
+            Node<T> r = new Node<>(value);
+            this.currentNode = r;
+            this.root = r;
+        }else{
+            if(currentNode.getData().compareTo(value) >= 0){
+                if(currentNode.getLeft()==null){
+                    currentNode.setLeftNode(value);
+                }else{
+                    currentNode=currentNode.getRight();
+                    insert(value);
+                }
+            }else if(currentNode.getData().compareTo(value) < 0){
+                if(currentNode.getRight()==null){
+                    currentNode.setRightNode(value);
+                }else{
+                    currentNode=currentNode.getLeft();
+                    insert(value);
+                }
+            }
         }
     }
 
