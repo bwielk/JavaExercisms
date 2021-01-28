@@ -7,7 +7,7 @@ class BinarySearchTree<T extends Comparable<T>> {
 
     private Node<T> root = null;
     private Node<T> currentNode = null;
-    
+
     void insert(T value) {
         if(this.root==null){
             Node<T> r = new Node<>(value);
