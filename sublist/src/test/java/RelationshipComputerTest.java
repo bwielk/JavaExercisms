@@ -18,7 +18,6 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.EQUAL, computedRelationship);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testEmptyListIsSublistOfNonEmptyList() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
@@ -28,7 +27,6 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.SUBLIST, relationship);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testNonEmptyListIsSuperlistOfEmptyList() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
@@ -38,7 +36,6 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.SUPERLIST, relationship);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testListIsEqualToItself() {
         List<String> anyList = asList("1", "2", "3");
@@ -50,7 +47,6 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.EQUAL, relationship);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testDifferentListsOfTheSameLengthAreUnequal() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
@@ -60,7 +56,6 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.UNEQUAL, relationship);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testSublistCheckDoesNotAbortAfterFalseStart() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
