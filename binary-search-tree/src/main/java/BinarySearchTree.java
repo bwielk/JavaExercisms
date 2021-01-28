@@ -5,28 +5,31 @@ class BinarySearchTree<T extends Comparable<T>> {
     private Node<T> root = null;
     private Node<T> currentNode = null;
 
+
     void insert(T value) {
         if(this.root==null){
             Node<T> r = new Node<>(value);
-            this.currentNode = r;
             this.root = r;
-        }else{
+            this.currentNode = r;
+        }else {
+            //if current.getData >= value
             if(currentNode.getData().compareTo(value) >= 0){
                 if(currentNode.getLeft()==null){
                     currentNode.setLeftNode(value);
                 }else{
-                    currentNode=currentNode.getRight();
+                    currentNode=currentNode.getLeft();
                     insert(value);
                 }
-            }else if(currentNode.getData().compareTo(value) < 0){
+            }else {
                 if(currentNode.getRight()==null){
                     currentNode.setRightNode(value);
                 }else{
-                    currentNode=currentNode.getLeft();
+                    currentNode=currentNode.getRight();
                     insert(value);
                 }
             }
         }
+        currentNode=this.root;
     }
 
     List<T> getAsSortedList() {
