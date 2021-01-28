@@ -122,6 +122,20 @@ public class BinarySearchTreeTest {
     }
 
     @Test
+    public void canCreateLevelOrderedListForSmallTrees(){
+        BinarySearchTree<Character> binarySearchTree = new BinarySearchTree<>();
+        List<Character> expected = Collections.unmodifiableList(
+                Arrays.asList('4', '2', '6')
+        );
+        List<Character> treeData = Collections.unmodifiableList(
+                Arrays.asList('4', '2', '6')
+        );
+        treeData.forEach(binarySearchTree::insert);
+        List<Character> actual = binarySearchTree.getAsLevelOrderList();
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void createsComplexTree() {
         BinarySearchTree<Character> binarySearchTree = new BinarySearchTree<>();
         List<Character> expected = Collections.unmodifiableList(

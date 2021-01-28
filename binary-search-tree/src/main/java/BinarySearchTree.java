@@ -1,9 +1,12 @@
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 class BinarySearchTree<T extends Comparable<T>> {
 
     private Node<T> root = null;
     private Node<T> currentNode = null;
+    private List<T> levelOrderedList = new ArrayList<>();
 
 
     void insert(T value) {
@@ -37,7 +40,20 @@ class BinarySearchTree<T extends Comparable<T>> {
     }
 
     List<T> getAsLevelOrderList() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        List<Node<T>> allNodesAsList = new ArrayList<>();
+        if(this.root != null){
+            allNodesAsList.add(this.root);
+            for(int i=0; i<allNodesAsList.size(); i++){
+                Node<T> currentNode = allNodesAsList.get(i);
+                if(currentNode.getLeft() != null){
+                    allNodesAsList.add(currentNode.getLeft());
+                }
+                if(currentNode.getRight() != null){
+                    allNodesAsList.add(currentNode.getRight());
+                }
+            }
+        }
+        return allNodesAsList.stream().map(Node::getData).collect(Collectors.toList());
     }
 
     Node<T> getRoot() {
