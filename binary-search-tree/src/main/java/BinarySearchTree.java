@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -36,7 +37,9 @@ class BinarySearchTree<T extends Comparable<T>> {
     }
 
     List<T> getAsSortedList() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        List<T> nodeValues = getAsLevelOrderList();
+        Collections.sort(nodeValues);
+        return nodeValues;
     }
 
     List<T> getAsLevelOrderList() {
