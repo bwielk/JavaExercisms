@@ -40,14 +40,29 @@ class RelationshipComputer<T> {
                 }catch (IndexOutOfBoundsException e){
                     e.getMessage();
                 }
-
             }
         }
     }
 
     private void isSuperlist(){
-        if(!comparedList.isEmpty() && comparingList.isEmpty() && relationship==null) {
-            relationship = Relationship.SUPERLIST;
+        List<T> tempList;
+        if(relationship==null){
+            if(!comparedList.isEmpty() && comparingList.isEmpty()) {
+                relationship = Relationship.SUPERLIST;
+            }else{
+                int sizeOfComparedList = comparingList.size();
+                try{
+                    for(int i=0; i<comparedList.size(); i++){
+                        tempList = comparedList.subList(i, i+sizeOfComparedList);
+                        if(tempList.equals(comparingList)){
+                            relationship=Relationship.SUPERLIST;
+                            break;
+                        }
+                    }
+                }catch (IndexOutOfBoundsException e){
+                    e.getMessage();
+                }
+            }
         }
     }
 

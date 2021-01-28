@@ -65,7 +65,6 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.SUBLIST, relationship);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testSublistCheckHandlesExtraneousRepeatsOfFirstEntry() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
@@ -75,7 +74,6 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.SUBLIST, relationship);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testSublistAtStart() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
@@ -85,7 +83,6 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.SUBLIST, relationship);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testSublistInMiddle() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
@@ -95,7 +92,6 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.SUBLIST, relationship);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testSublistAtEnd() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
@@ -105,7 +101,6 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.SUBLIST, relationship);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testAtStartOfSuperlist() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
@@ -115,7 +110,6 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.SUPERLIST, relationship);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testInMiddleOfSuperlist() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(
@@ -125,7 +119,6 @@ public class RelationshipComputerTest {
         assertEquals(Relationship.SUPERLIST, relationship);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testAtEndOfSuperlist() {
         Relationship relationship = new RelationshipComputer<>().computeRelationship(

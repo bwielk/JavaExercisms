@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -7,9 +7,7 @@ class BinarySearchTree<T extends Comparable<T>> {
 
     private Node<T> root = null;
     private Node<T> currentNode = null;
-    private List<T> levelOrderedList = new ArrayList<>();
-
-
+    
     void insert(T value) {
         if(this.root==null){
             Node<T> r = new Node<>(value);
@@ -37,8 +35,17 @@ class BinarySearchTree<T extends Comparable<T>> {
     }
 
     List<T> getAsSortedList() {
-        List<T> nodeValues = getAsLevelOrderList();
-        Collections.sort(nodeValues);
+        return collectSortedNodeValues(this.root);
+    }
+
+    List<T> collectSortedNodeValues(Node<T> node){
+        List<T> nodeValues = new LinkedList<>();
+        if(node == null){
+            return nodeValues;
+        }
+        nodeValues.addAll(collectSortedNodeValues(node.getLeft()));
+        nodeValues.add(node.getData());
+        nodeValues.addAll(collectSortedNodeValues(node.getRight()));
         return nodeValues;
     }
 
