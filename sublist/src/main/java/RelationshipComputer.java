@@ -23,45 +23,19 @@ class RelationshipComputer<T> {
     }
 
     private void isSublist(){
-        List<T> tempList;
         if(relationship==null){
-            if(comparedList.isEmpty() && !comparingList.isEmpty()){
+            if((comparedList.isEmpty() && !comparingList.isEmpty()) ||
+                    compareSublistWithList(comparedList, comparingList)){
                 relationship = Relationship.SUBLIST;
-            }else{
-                int sizeOfComparedList = comparedList.size();
-                try{
-                    for(int i=0; i<comparingList.size(); i++){
-                        tempList = comparingList.subList(i, i+sizeOfComparedList);
-                        if(tempList.equals(comparedList)){
-                            relationship=Relationship.SUBLIST;
-                            break;
-                        }
-                    }
-                }catch (IndexOutOfBoundsException e){
-                    e.getMessage();
-                }
             }
         }
     }
 
     private void isSuperlist(){
-        List<T> tempList;
         if(relationship==null){
-            if(!comparedList.isEmpty() && comparingList.isEmpty()) {
+            if((!comparedList.isEmpty() && comparingList.isEmpty()) ||
+                    compareSublistWithList(comparingList, comparedList)) {
                 relationship = Relationship.SUPERLIST;
-            }else{
-                int sizeOfComparedList = comparingList.size();
-                try{
-                    for(int i=0; i<comparedList.size(); i++){
-                        tempList = comparedList.subList(i, i+sizeOfComparedList);
-                        if(tempList.equals(comparingList)){
-                            relationship=Relationship.SUPERLIST;
-                            break;
-                        }
-                    }
-                }catch (IndexOutOfBoundsException e){
-                    e.getMessage();
-                }
             }
         }
     }
@@ -70,5 +44,21 @@ class RelationshipComputer<T> {
         if(!comparingList.equals(comparedList) && relationship==null){
             relationship = Relationship.UNEQUAL;
         }
+    }
+
+    private boolean compareSublistWithList(List<T> listBeingCompared, List<T> listToBeComparedWith){
+        List<T> tempList;
+        int sizeOfComparedList = listBeingCompared.size();
+        try{
+            for(int i=0; i<listToBeComparedWith.size(); i++){
+                tempList = listToBeComparedWith.subList(i, i+sizeOfComparedList);
+                if(tempList.equals(listBeingCompared)){
+                    return true;
+                }
+            }
+        }catch (IndexOutOfBoundsException e){
+            e.getMessage();
+        }
+        return false;
     }
 }
