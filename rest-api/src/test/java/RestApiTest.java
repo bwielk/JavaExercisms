@@ -61,7 +61,6 @@ public class RestApiTest {
     }
 
     public static class IouTest {
-        @Ignore
         @Test
         public void bothUsersHave0Balance() {
             String expected =

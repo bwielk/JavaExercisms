@@ -1,6 +1,7 @@
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -67,6 +68,45 @@ class RestApi {
             newUserJSON.put("owedBy", Collections.emptyMap());
             newUserJSON.put("balance", 0.0);
             return newUserJSON.toString();
+        }else if(url.equals("/iou")){
+            String lender = payload.getString("lender");
+            String borrower = payload.getString("borrower");
+            BigDecimal amount = payload.getBigDecimal("amount");
+            //deals with lender
+            for(User user : listOfUsers){
+                if(user.name().equals(lender)){
+                    user.owedBy().add(new Iou(borrower, amount.doubleValue()));
+                }
+            }
+            //deals with borrower
+            for(User user : listOfUsers){
+                if(user.name().equals(borrower)){
+                    user.owedBy().add(new Iou(lender, amount.doubleValue()));
+                }
+            }
+            JSONObject js = new JSONObject();
+            JSONArray jsa = new JSONArray();
+            List<String> namesOfTransactionPair = new ArrayList<>(Arrays.asList(lender, borrower));
+            for(String name : namesOfTransactionPair){
+                for(User user : listOfUsers){
+                    if(user.name().equals(name)){
+                        JSONObject jso = new JSONObject();
+                        jso.put("name", user.name());
+                        jso.put("owes", user.owes());
+                        jso.put("owedBy", user.owedBy());
+                        double balance = 0.0;
+                        BigDecimal sumOfMoneyOwedByOthers = user.owedBy()
+                                .stream().map(x -> new BigDecimal(x.amount)).reduce(BigDecimal.ZERO, BigDecimal::add);
+                        BigDecimal sumOfMoneyOwedByTheUser = user.owes()
+                                .stream().map(x -> new BigDecimal(x.amount)).reduce(BigDecimal.ZERO, BigDecimal::add);
+                        balance+= (sumOfMoneyOwedByOthers.subtract(sumOfMoneyOwedByTheUser)).doubleValue();
+                        jso.put("balance", balance);
+                        jsa.put(jso);
+                    }
+                }
+            }
+            js.put("users", jsa);
+            return js.toString();
         }
         return null;
     }
