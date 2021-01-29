@@ -34,7 +34,6 @@ public class RestApiTest {
             assertEquals(expected, new RestApi().post(url, payload));
         }
 
-        @Ignore
         @Test
         public void getSingleUser() {
             String expected = new JSONObject()
