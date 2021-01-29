@@ -75,13 +75,15 @@ class RestApi {
             //deals with lender
             for(User user : listOfUsers){
                 if(user.name().equals(lender)){
-                    user.owedBy().add(new Iou(borrower, amount.doubleValue()));
+                    User userCopy = User.builder().setName(user.name()).owedBy(borrower, amount.doubleValue()).build();
+                    listOfUsers.set(listOfUsers.indexOf(user), userCopy);
                 }
             }
             //deals with borrower
             for(User user : listOfUsers){
                 if(user.name().equals(borrower)){
-                    user.owedBy().add(new Iou(lender, amount.doubleValue()));
+                    User userCopy = User.builder().setName(user.name()).owes(lender, amount.doubleValue()).build();
+                    listOfUsers.set(listOfUsers.indexOf(user), userCopy);
                 }
             }
             JSONObject js = new JSONObject();
@@ -92,8 +94,16 @@ class RestApi {
                     if(user.name().equals(name)){
                         JSONObject jso = new JSONObject();
                         jso.put("name", user.name());
-                        jso.put("owes", user.owes());
-                        jso.put("owedBy", user.owedBy());
+                        JSONObject jsoOwes = new JSONObject();
+                        JSONObject jsoOwedBy = new JSONObject();
+                        for(Iou el : user.owes()){
+                            jsoOwes.put(el.name, el.amount);
+                        }
+                        for(Iou el : user.owedBy()){
+                            jsoOwedBy.put(el.name, el.amount);
+                        }
+                        jso.put("owes", jsoOwes);
+                        jso.put("owedBy", jsoOwedBy);
                         double balance = 0.0;
                         BigDecimal sumOfMoneyOwedByOthers = user.owedBy()
                                 .stream().map(x -> new BigDecimal(x.amount)).reduce(BigDecimal.ZERO, BigDecimal::add);
