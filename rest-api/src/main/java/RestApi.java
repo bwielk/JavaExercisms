@@ -72,18 +72,21 @@ class RestApi {
             String lender = payload.getString("lender");
             String borrower = payload.getString("borrower");
             BigDecimal amount = payload.getBigDecimal("amount");
-            //deals with lender
+            //deals with lender and borrower
             for(User user : listOfUsers){
                 if(user.name().equals(lender)){
-                    User userCopy = User.builder().setName(user.name()).owedBy(borrower, amount.doubleValue()).build();
-                    listOfUsers.set(listOfUsers.indexOf(user), userCopy);
-                }
-            }
-            //deals with borrower
-            for(User user : listOfUsers){
-                if(user.name().equals(borrower)){
-                    User userCopy = User.builder().setName(user.name()).owes(lender, amount.doubleValue()).build();
-                    listOfUsers.set(listOfUsers.indexOf(user), userCopy);
+                    User.Builder userCopy = User.builder().setName(user.name());
+                    //.owedBy(borrower, amount.doubleValue()).build();
+                    user.owedBy().forEach(x -> userCopy.owedBy(x.name, x.amount));
+                    userCopy.owedBy(borrower, amount.doubleValue());
+                    user.owes().forEach(x -> userCopy.owes(x.name, x.amount));
+                    listOfUsers.set(listOfUsers.indexOf(user), userCopy.build());
+                }else if(user.name().equals(borrower)){
+                    User.Builder userCopy = User.builder().setName(user.name());
+                    user.owedBy().forEach(x -> userCopy.owedBy(x.name, x.amount));
+                    user.owes().forEach(x -> userCopy.owes(x.name, x.amount));
+                    userCopy.owes(lender, amount.doubleValue());
+                    listOfUsers.set(listOfUsers.indexOf(user), userCopy.build());
                 }
             }
             JSONObject js = new JSONObject();

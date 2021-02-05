@@ -100,7 +100,6 @@ public class RestApiTest {
                     .post(url, payload));
         }
 
-        @Ignore
         @Test
         public void borrowerHasNegativeBalance() {
             String expected =
@@ -143,7 +142,6 @@ public class RestApiTest {
                     .post(url, payload));
         }
 
-        @Ignore
         @Test
         public void lenderHasNegativeBalance() {
             String expected =
@@ -188,7 +186,6 @@ public class RestApiTest {
                     .post(url, payload));
         }
 
-        @Ignore
         @Test
         public void lenderOwesBorrower() {
             String expected =
